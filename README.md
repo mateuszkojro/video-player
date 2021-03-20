@@ -4,8 +4,11 @@ This is a project for computer graphics class
 
 # How to build for development
 
-1. Install `git`
-1. Create a `build` folder then configure using CMake 
+1. Clone using
+```bash
+git clone --recurse-submodules https://github.com/mateuszkojro/video_player
+```
+3. Create a `build` folder then configure using CMake 
 ```bash
    cd build && cmake ..
 ```
