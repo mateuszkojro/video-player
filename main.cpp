@@ -13,7 +13,7 @@ void draw_rect(SDL_Rect rect, SDL_Renderer *rend) {
 }
 
 
-void draw_surface(uint32_t* image_buffer, uint32_t width, uint32_t height, SDL_Renderer *rend) {
+void draw_surface(uint32_t *image_buffer, SDL_Rect position, uint32_t width, uint32_t height, SDL_Renderer *rend) {
     // creates a surface to load an image into the main memory
     SDL_Surface *surface;
 
@@ -47,6 +47,7 @@ void draw_surface(uint32_t* image_buffer, uint32_t width, uint32_t height, SDL_R
 
     surface->pixels = image_buffer;
 
+
     // loads image to our graphics hardware memory.
     SDL_Texture *tex = SDL_CreateTextureFromSurface(rend, surface);
 
@@ -58,17 +59,11 @@ void draw_surface(uint32_t* image_buffer, uint32_t width, uint32_t height, SDL_R
     // clears main-memory
     //SDL_FreeSurface(surface);
 
-    // let us control our image position
-    // so that we can move it with our keyboard.
-    SDL_Rect dest;
-    dest.x = 100;
-    dest.y = 100;
-
-    // connects our texture with dest to control position
-    SDL_QueryTexture(tex, NULL, NULL, &dest.w, &dest.h);
+    // connects our texture with position to control position on screen
+    SDL_QueryTexture(tex, NULL, NULL, &position.w, &position.h);
     // clears the screen
     SDL_RenderClear(rend);
-    SDL_RenderCopy(rend, tex, NULL, &dest);
+    SDL_RenderCopy(rend, tex, NULL, &position);
 }
 
 
@@ -111,14 +106,24 @@ int main(int argc, char *argv[]) {
     // how much should we move rect on click
     int delta = 25;
 
-    uint32_t image[200*200];
+    const int view_width = width - 20, view_height = height - 20;
+
+    uint32_t* image = new uint32_t [view_height * view_width];
 
     int j = 0;
-    for (int i = 0; i < 200 * 200; i++) {
+    for (int i = 0; i < view_height * view_width; i++) {
+        // every pixel consists of
+        // - 1 byte of alpha
+        // - 1 byte of red
+        // - 1 byte of green
+        // - 1 byte of blue
+        // in that order
         image[i] = 0xff00ff00;
     }
 
-    draw_surface(image, 200,200 ,rend);
+    SDL_Rect position = {10, 10};
+
+    draw_surface(image, position, view_width, view_height, rend);
 
     // loop until not told to close
     while (!close) {
