@@ -2,7 +2,7 @@
 #define VIDEO_PLAYER_H
 
 #include <QMainWindow>
-#include <helper.h>
+#include "helper.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;

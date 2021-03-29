@@ -1,31 +1,15 @@
-cmake_minimum_required(VERSION 3.5)
-
-project(video_player_qt LANGUAGES CXX)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+cmake_minimum_required(VERSION 3.17)
+project(video_player_qt)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check https://doc.qt.io/qt/deployment-android.html for more information.
-# They need to be set before the find_package( ...) calls below.
-
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
-
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+set(QT_VERSION 5)
+set(REQUIRED_LIBS Core Gui Widgets)
+set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -35,22 +19,42 @@ set(PROJECT_SOURCES
         glwidget.cpp
         helper.h
         helper.cpp
-)
-
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(video_player_qt
-        ${PROJECT_SOURCES}
-    )
-else()
-    if(ANDROID)
-        add_library(video_player_qt SHARED
-            ${PROJECT_SOURCES}
         )
-    else()
-        add_executable(video_player_qt
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
 
-target_link_libraries(video_player_qt PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+add_executable(${PROJECT_NAME} main.cpp VideoPlayer.cpp VideoPlayer.h glwidget.h glwidget.cpp helper.h helper.cpp )
+
+if (NOT CMAKE_PREFIX_PATH)
+    message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
+            "(-DCMAKE_PREFIX_PATH=\"path/to/Qt/lib/cmake\" or -DCMAKE_PREFIX_PATH=/usr/include/{host}/qt{version}/ on Ubuntu)")
+endif ()
+
+find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
+target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
+if (WIN32)
+    set(DEBUG_SUFFIX)
+    if (CMAKE_BUILD_TYPE MATCHES "Debug")
+        # set(DEBUG_SUFFIX "d")
+    endif ()
+    set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
+    if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
+        set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
+        if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
+            set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
+        endif ()
+    endif ()
+    if (EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E make_directory
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy
+                "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
+    endif ()
+    foreach (QT_LIB ${REQUIRED_LIBS})
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy
+                "${QT_INSTALL_PATH}/bin/Qt${QT_VERSION}${QT_LIB}${DEBUG_SUFFIX}.dll"
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
+    endforeach (QT_LIB)
+endif ()

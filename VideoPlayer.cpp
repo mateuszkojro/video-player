@@ -1,5 +1,5 @@
 #include <QtWidgets>
-#include <glwidget.h>
+#include "glwidget.h"
 
 #include "VideoPlayer.h"
 
