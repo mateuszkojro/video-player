@@ -8,9 +8,10 @@ GLWidget::GLWidget(Helper *helper, QWidget *parent)
     : QOpenGLWidget(parent), helper(helper)
 {
     elapsed = 0;
-    setFixedSize(500, 500);
-    //setBaseSize(500,500);
-    setAutoFillBackground(false);
+    setFixedSize(parent->width(), parent->height());
+    setBackgroundRole(QPalette::Base);
+    // That should make it resizable
+    // setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
 void GLWidget::animate()
@@ -21,9 +22,8 @@ void GLWidget::animate()
 
 void GLWidget::paintEvent(QPaintEvent *event)
 {
-    QPainter painter;
-    painter.begin(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::LosslessImageRendering);
     helper->paint(&painter, event, elapsed);
     painter.end();
 }
