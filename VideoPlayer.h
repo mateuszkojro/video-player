@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "helper.h"
+#include "glwidget.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -57,6 +58,18 @@ private:
     QAction *open_settings_action_;
 
     QDialog *second_window_;
+
+    /// Widgets
+    QWidget* central_widget_;
+    QWidget* top_filler_;
+    QWidget* bottom_filler_;
+    GLWidget* opengl_widget_;
+
+    QLayout* layout_;
+
+    QTimer* timer_;
+
+
 private:
     Helper helper_;
 };

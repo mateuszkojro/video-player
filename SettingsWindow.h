@@ -9,6 +9,9 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QDialog>
+#include <QVBoxLayout>
+#include <QAction>
+#include <QMessageBox>
 
 class SettingsWindow : public QDialog {
 public:
@@ -18,9 +21,12 @@ public:
 
 private:
 
-    QWidget* parent_;
+    QWidget *parent_;
+
+    QLayout *layout_;
 
     void effect1_handler();
+
     void effect2_handler();
 
     QPushButton *effect_one_button_;
