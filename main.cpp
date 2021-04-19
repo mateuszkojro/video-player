@@ -2,6 +2,7 @@
 
 #include "VideoPlayer.h"
 
+#if WITH_OPENCV
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
@@ -97,10 +98,14 @@ int main() {
     return 0;
 }
 
-int main_(int argc, char *argv[])
+#else
+
+int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     VideoPlayer window;
     window.show();
     return app.exec();
 }
+
+#endif

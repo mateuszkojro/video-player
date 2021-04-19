@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
 project(video_player)
 
+set(WITH_OPENCV OFF)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
 set(CMAKE_AUTOMOC ON)
@@ -31,14 +33,16 @@ endif ()
 find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
 target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
 
-add_subdirectory(lib/opencv)
 
+if(${WITH_OPENCV})
 # START OPENCV
+add_subdirectory(lib/opencv)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
-
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 # END OPENCV
+endif()
+
 
 if (WIN32)
     set(DEBUG_SUFFIX)
