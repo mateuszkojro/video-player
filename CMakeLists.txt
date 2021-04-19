@@ -21,7 +21,7 @@ set(PROJECT_SOURCES
         helper.cpp
         )
 
-add_executable(${PROJECT_NAME} main.cpp VideoPlayer.cpp VideoPlayer.h glwidget.h glwidget.cpp helper.h helper.cpp )
+add_executable(${PROJECT_NAME} main.cpp VideoPlayer.cpp VideoPlayer.h glwidget.h glwidget.cpp helper.h helper.cpp SettingsWindow.cc SettingsWindow.h)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
@@ -30,6 +30,7 @@ endif ()
 
 find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
 target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
+
 if (WIN32)
     set(DEBUG_SUFFIX)
     if (CMAKE_BUILD_TYPE MATCHES "Debug")
