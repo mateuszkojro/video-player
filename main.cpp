@@ -1,197 +1,111 @@
-#include <SDL.h>
-#include <cstdio>
-//#include <SDL_image.h>
-#include <SDL_timer.h>
-#include <bitset>
+#include <QApplication>
 
-// draw a rect
-void draw_rect(SDL_Rect rect, SDL_Renderer *rend) {
-    SDL_SetRenderDrawColor(rend, 255, 255, 255, 255);
-    SDL_RenderDrawRect(rend, &rect);
-    SDL_SetRenderDrawColor(rend, 0, 0, 0, 255);
-    SDL_RenderPresent(rend);
-}
+#include "VideoPlayer.h"
 
+#if WITH_OPENCV
 
-void draw_surface(uint32_t *image_buffer, SDL_Rect position, uint32_t width, uint32_t height, SDL_Renderer *rend) {
-    // creates a surface to load an image into the main memory
-    SDL_Surface *surface;
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/highgui/highgui_c.h>
+#include <opencv2/imgproc/imgproc.hpp>
 
-#if IMG_LOAD
-    // please provide a path for your image
-    surface = IMG_Load("path");
-#endif
+#include <iostream>
+#include <string>
 
-    Uint32 rmask, gmask, bmask, amask;
+using namespace cv;
 
-    /* SDL interprets each pixel as a 32-bit number, so our masks must depend
-       on the endianness (byte order) of the machine */
-#if SDL_BYTEORDER == SDL_BIG_ENDIAN
-    rmask = 0xff000000;
-    gmask = 0x00ff0000;
-    bmask = 0x0000ff00;
-    amask = 0x000000ff;
-#else
-    rmask = 0x000000ff;
-    gmask = 0x0000ff00;
-    bmask = 0x00ff0000;
-    amask = 0xff000000;
-#endif
-    surface = SDL_CreateRGBSurface(0, width, height, 32,
-                                   rmask, gmask, bmask, amask);
+int main() {
 
-    if (surface == NULL) {
-        SDL_Log("SDL_CreateRGBSurface() failed: %s", SDL_GetError());
-        exit(1);
+    std::string file_in_name = "sunflower.jpg";
+    std::string file_out_name = "wynik.jpg";
+
+    bool grey = 0;
+    bool hsv = 0;
+    bool blur_r = 0;
+    bool sobel = 0;
+    bool canny = 0;
+    bool szum = 0;
+    bool gauss = 0;
+
+    Mat img_src, img_dst;
+    std::vector<int> compression_params;					//element przechowuj�cy dane o sposobie zapisu
+    //compression_params.push_back(100);
+    img_src = imread(file_in_name);
+
+    if (!img_src.data)										//Sprawdzenie poprawnosci odczytu
+    {
+        std::cout << "Nie znaleziono pliku " << file_in_name << ".";
+        return -1;
     }
 
-    surface->pixels = image_buffer;
+    grey = 1;
+    //hsv = 1;
+    //blur_r = 1;
+    //sobel = 1;
+    //canny = 1;
+    //szum = 1;
+    //gauss = 1;
 
-
-    // loads image to our graphics hardware memory.
-    SDL_Texture *tex = SDL_CreateTextureFromSurface(rend, surface);
-
-    if (!tex) {
-        SDL_Log("SDL_CreateTextureFromSurface() failed: %s", SDL_GetError());
-        exit(1);
+    if (grey) {
+        cvtColor(img_src, img_dst, CV_RGB2GRAY);
+        imwrite(file_out_name, img_dst, compression_params);
     }
-
-    // clears main-memory
-    //SDL_FreeSurface(surface);
-
-    // connects our texture with position to control position on screen
-    SDL_QueryTexture(tex, NULL, NULL, &position.w, &position.h);
-    // clears the screen
-    SDL_RenderClear(rend);
-    SDL_RenderCopy(rend, tex, NULL, &position);
-}
-
-
-// dimentions of a window
-const int width = 1024, height = 720;
-
-int main(int argc, char *argv[]) {
-
-    // retutns zero on success else non-zero
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-        printf("error initializing SDL: %s\n", SDL_GetError());
+    if (hsv) {
+        cvtColor(img_src, img_dst, CV_BGR2HSV);
+        imwrite(file_out_name, img_dst, compression_params);
     }
-
-    // create a window
-    SDL_Window *win = SDL_CreateWindow("Video Player",
-                                       SDL_WINDOWPOS_CENTERED,
-                                       SDL_WINDOWPOS_CENTERED,
-                                       width, height, 0);
-
-    // triggers the program that controls
-    // your graphics hardware and sets flags
-    Uint32 render_flags = SDL_RENDERER_ACCELERATED;
-
-    // creates a renderer to render our images
-    SDL_Renderer *rend = SDL_CreateRenderer(win, -1, render_flags);
-
-    // should window be closed
-    bool close = false;
-
-    // create starting rect to show later
-    SDL_Rect pos;
-    pos.x = 100;
-    pos.y = 150;
-    pos.w = 200;
-    pos.h = 200;
-
-    // show rect on set position
-    draw_rect(pos, rend);
-
-    // how much should we move rect on click
-    int delta = 25;
-
-    const int view_width = width - 20, view_height = height - 20;
-
-    uint32_t* image = new uint32_t [view_height * view_width];
-
-    int j = 0;
-    for (int i = 0; i < view_height * view_width; i++) {
-        // every pixel consists of
-        // - 1 byte of alpha
-        // - 1 byte of red
-        // - 1 byte of green
-        // - 1 byte of blue
-        // in that order
-        image[i] = 0xff00ff00;
+    if (blur_r) {
+        int sigma = 2;
+        int ksize = (sigma * 5) | 1;
+        blur(img_src, img_dst, Size(ksize, ksize));
+        imwrite(file_out_name, img_dst, compression_params);
     }
+    if (sobel) {
+        Mat img_1, img_2;
+        Sobel(img_src, img_1, -1, 1, 0);
+        Sobel(img_src, img_2, -1, 0, 1);
+        img_dst = abs(img_1) + abs(img_2);
+        imwrite(file_out_name, img_dst, compression_params);
+    }
+    if (canny) {												//wykrywanie krawedzi
+        Canny(img_src, img_dst, 100, 200);
+        imwrite(file_out_name, img_dst, compression_params);
+    }
+    if (szum) {
+        img_dst = img_src.clone();
+        double noise_percentage = 10.0;
+        int img_rows = img_dst.rows;
+        int img_columns = img_dst.cols;
+        int img_channels = img_dst.channels();
+        int noise_points = (int)(((double)img_rows * img_columns * img_channels) * noise_percentage / 100.0);
 
-    SDL_Rect position = {10, 10};
-
-    draw_surface(image, position, view_width, view_height, rend);
-
-    // loop until not told to close
-    while (!close) {
-        SDL_Event event;
-
-        // get last event
-        while (SDL_PollEvent(&event)) {
-            switch (event.type) {
-                // what should happen on key down
-                case SDL_KEYDOWN:
-                    switch (event.key.keysym.scancode) {
-                        // what should happen on arrow_left
-                        case SDL_SCANCODE_LEFT:
-                            pos.x -= delta;
-                            draw_rect(pos, rend);
-                            break;
-                        case SDL_SCANCODE_RIGHT:
-                            pos.x += delta;
-                            draw_rect(pos, rend);
-                            break;
-                        case SDL_SCANCODE_DOWN:
-                            pos.y += delta;
-                            draw_rect(pos, rend);
-                            break;
-                        case SDL_SCANCODE_UP:
-                            pos.y -= delta;
-                            draw_rect(pos, rend);
-                            break;
-                        case SDL_SCANCODE_Q:
-                            close = true;
-                            break;
-                        case SDL_SCANCODE_C:
-                            // clear the window content
-                            SDL_RenderClear(rend);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                    // what happens on closing button click
-                case SDL_QUIT: {
-                    // handling of close button
-                    close = true;
-                    break;
-                }
-            }
+        for (int count = 0; count < noise_points; count++) {
+            int row = rand() % img_rows;
+            int column = rand() % img_columns;
+            int channel = rand() % img_channels;
+            uchar* pixel = img_dst.ptr(row) + (column * img_channels) + channel;
+            *pixel = (rand() % 2 == 1) ? 255 : 0;
         }
-
-
-
-
-
-        // triggers the double buffers
-        // for multiple rendering
-        SDL_RenderPresent(rend);
-
-        // calculates to 60 fps
-        SDL_Delay(1000 / 60);
+        imwrite(file_out_name, img_dst, compression_params);
     }
-    // destroy renderer
-    SDL_DestroyRenderer(rend);
-
-    // destroy window
-    SDL_DestroyWindow(win);
-
-    // close SDL
-    SDL_Quit();
-
+    if (gauss) {
+        for (int i = 1; i < 10; i++) {
+            img_dst = img_src.clone();
+            GaussianBlur(img_src, img_dst, Size(2 * i + 1, 2 * i + 1), 1.5);
+            imwrite(file_out_name, img_dst, compression_params);
+        }
+    }
 
     return 0;
 }
+
+#else
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    VideoPlayer window;
+    window.show();
+    return app.exec();
+}
+
+#endif

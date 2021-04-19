@@ -1,19 +1,9 @@
-# VIDEO PLAYER
+# Setup
 
-This is a project for computer graphics class 
+Project is CMake based so the only think that is neded to change is directory containing Qt libraries
 
-# How to build for development
+This line needs to be changed:
 
-1. Clone using
-```bash
-git clone --recurse-submodules https://github.com/mateuszkojro/video_player
+```CMake
+set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
 ```
-3. Create a `build` folder then configure using CMake 
-```bash
-   cd build && cmake ..
-```
-3. Make using your favourite build tool for example
-```bash
-make
-```
-4. There is a issue with CMake config so you need to copy `./build/SDL/SDL2d.dll` the `./build/` folder.
