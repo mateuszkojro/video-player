@@ -2,9 +2,10 @@
 #include "glwidget.h"
 
 #include "VideoPlayer.h"
+#include "SettingsWindow.h"
 
-VideoPlayer::VideoPlayer()
-{
+VideoPlayer::VideoPlayer() {
+
     /// i think thtat is the main widget on the window
     QWidget *widget = new QWidget;
     setCentralWidget(widget);
@@ -15,7 +16,8 @@ VideoPlayer::VideoPlayer()
     QWidget *bottomFiller = new QWidget;
     bottomFiller->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    GLWidget *openGL = new GLWidget(&helper, this);
+    GLWidget *openGL = new GLWidget(&helper_, this);
+    openGL->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, openGL, &GLWidget::animate);
@@ -24,7 +26,7 @@ VideoPlayer::VideoPlayer()
     /// layout is containing elements in some configuration
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setContentsMargins(5, 5, 5, 5);
-//    layout->addWidget(topFiller);
+    /// layout->addWidget(topFiller);
     layout->addWidget(bottomFiller);
     layout->addWidget(openGL);
     widget->setLayout(layout);
@@ -32,103 +34,118 @@ VideoPlayer::VideoPlayer()
     createActions();
     createMenus();
 
-    QString message = tr("A context menu is available by right-clicking");
+    QString message = tr("Hello!");
     statusBar()->showMessage(message);
 
     setWindowTitle(tr("Video Player"));
-    setMinimumSize(520, 510);
+    /// setMinimumSize(520, 510);
 
     /// set the window size
-    resize(520, 520);
+    /// resize(520, 520);
+    second_window_create();
+    second_window_->setFocus();
+}
+
+VideoPlayer::~VideoPlayer() {
+    delete second_window_;
 }
 
 /// \brief helpers to make actions
-void VideoPlayer::createActions(){
+void VideoPlayer::createActions() {
 
-    newAct = new QAction(tr("&New"), this);
-    newAct->setShortcuts(QKeySequence::New);
-    newAct->setStatusTip(tr("Create a new file"));
-    connect(newAct, &QAction::triggered, this, &VideoPlayer::newFile);
+    new_action_ = new QAction(tr("&New"), this);
+    new_action_->setShortcuts(QKeySequence::New);
+    new_action_->setStatusTip(tr("Create a new file"));
+    connect(new_action_, &QAction::triggered, this, &VideoPlayer::new_file_handler);
 
-    openAct = new QAction(tr("&Open..."), this);
-    openAct->setShortcuts(QKeySequence::Open);
-    openAct->setStatusTip(tr("Open an existing file"));
-    connect(openAct, &QAction::triggered, this, &VideoPlayer::open);
+    open_action_ = new QAction(tr("&Open..."), this);
+    open_action_->setShortcuts(QKeySequence::Open);
+    open_action_->setStatusTip(tr("Open an existing file"));
+    connect(open_action_, &QAction::triggered, this, &VideoPlayer::open_handler);
 
-    quitAct = new QAction(tr("Close application"), this);
-    quitAct->setShortcut(QKeySequence::Close);
-    quitAct->setStatusTip("Quit application");
-    connect(quitAct, &QAction::triggered, this, &VideoPlayer::close);
+    quit_action_ = new QAction(tr("Close application"), this);
+    quit_action_->setShortcut(QKeySequence::Close);
+    quit_action_->setStatusTip("Quit application");
+    connect(quit_action_, &QAction::triggered, this, &VideoPlayer::close);
 
-    showInfoAct = new QAction(tr("Info"), this);
-    showInfoAct->setShortcut(QKeySequence::HelpContents);
-    showInfoAct->setStatusTip("Info about application");
-    connect(showInfoAct,&QAction::triggered, this, &VideoPlayer::showInfo);
+    show_info_action_ = new QAction(tr("Info"), this);
+    show_info_action_->setShortcut(QKeySequence::HelpContents);
+    show_info_action_->setStatusTip("Info about application");
+    connect(show_info_action_, &QAction::triggered, this, &VideoPlayer::show_info_handler);
+
+    open_settings_action_ = new QAction(tr("Open settings"), this);
+    open_settings_action_->setStatusTip("Open a window with more settings");
+    connect(open_settings_action_, &QAction::triggered, this, &VideoPlayer::second_window_create);
 }
 
 /// \brief helpers to make menus
-void VideoPlayer::createMenus(){
+void VideoPlayer::createMenus() {
 
-    actionMenu = menuBar()->addMenu(tr("&Action"));
-    actionMenu->addAction(newAct);
-    actionMenu->addAction(openAct);
-    actionMenu->addAction(quitAct);
+    action_menu_ = menuBar()->addMenu(tr("&Action"));
+    action_menu_->addAction(new_action_);
+    action_menu_->addAction(open_action_);
+    action_menu_->addAction(quit_action_);
+    action_menu_->addAction(open_settings_action_);
 
-    infoMenu = menuBar()->addMenu(tr("&Info"));
-    infoMenu->addAction(showInfoAct);
+    info_menu_ = menuBar()->addMenu(tr("&Info"));
+    info_menu_->addAction(show_info_action_);
 }
 
 
 #ifndef QT_NO_CONTEXTMENU
-/// \brief I think these are context menus on the right click
-void VideoPlayer::contextMenuEvent(QContextMenuEvent *event){
 
+/// \brief I think these are context menus on the right click
+void VideoPlayer::contextMenuEvent(QContextMenuEvent *event) {
     QMenu menu(this);
     menu.exec(event->globalPos());
 }
+
 #endif // QT_NO_CONTEXTMENU
 
 
 /// \brief What happens when newFile is clicked
-void VideoPlayer::newFile(){
+void VideoPlayer::new_file_handler() {
 
     statusBar()->showMessage(QString("File->NewFile hit"));
 }
 
 /// \brief What happens when open is clicked
-void VideoPlayer::open(){
+void VideoPlayer::open_handler() {
     statusBar()->showMessage(QString("File->OpenFile hit"));
 }
 
 /// show dialog confirming a window closing then act accordingly
-void VideoPlayer::close(){
-    switch( QMessageBox::question(
-                this,
-                tr("Video Player"),
-                tr("Do you want to quit?"),
-                QMessageBox::Yes |
-                QMessageBox::Cancel,
-                QMessageBox::Cancel ) )
-    {
-      case QMessageBox::Yes:
-        qDebug( "yes" );
-        QCoreApplication::quit();
-        break;
-      case QMessageBox::Cancel:
-        qDebug( "cancel" );
-        break;
-      default:
-        qDebug( "close" );
-        break;
+void VideoPlayer::close_handler() {
+    switch (QMessageBox::question(
+            this,
+            tr("Video Player"),
+            tr("Do you want to quit?"),
+            QMessageBox::Yes |
+            QMessageBox::Cancel,
+            QMessageBox::Cancel)) {
+        case QMessageBox::Yes:
+            qDebug("yes");
+            QCoreApplication::quit();
+            break;
+        case QMessageBox::Cancel:
+            qDebug("cancel");
+            break;
+        default:
+            qDebug("close");
+            break;
     }
 }
 
 /// show info dialog
-void VideoPlayer::showInfo(){
+void VideoPlayer::show_info_handler() {
     statusBar()->showMessage(QString("Info->ShowInfo hit"));
     QMessageBox::information(
-        this,
-        tr("Video Player"),
-        tr("It plays video files duh ... well sometimes <br> well not yet") );
+            this,
+            tr("Video Player"),
+            tr("It plays video files duh ... well sometimes <br> well not yet"));
+}
+
+void VideoPlayer::second_window_create() {
+    second_window_ = new SettingsWindow(this);
 }
 
