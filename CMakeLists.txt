@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(video_player_qt)
+project(video_player)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
