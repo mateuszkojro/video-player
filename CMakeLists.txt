@@ -39,6 +39,16 @@ if(${WITH_OPENCV})
     include_directories( ${OpenCV_INCLUDE_DIRS} )
     message(STATUS ${OpenCV_LIBS})
     target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+
+    foreach(OPENCV_LIB ${OpenCV_LIBS})
+        add_custom_command(
+                TARGET ${PROJECT_NAME} POST_BUILD                     # Adds a post-build event to equalizer
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different   # which executes "cmake - E copy_if_different..."
+                "${OpenCV_DIR}/x64/mingw/bin/lib${OPENCV_LIB}${OpenCV_VERSION_MAJOR}${OpenCV_VERSION_MINOR}${OpenCV_VERSION_PATCH}.dll"    # <--this is in-file
+                $<TARGET_FILE_DIR:${PROJECT_NAME}>                   # <--this is out-file path
+        )
+    endforeach()
+
 endif()
 
 if (WIN32)
