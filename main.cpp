@@ -2,7 +2,7 @@
 
 #include "VideoPlayer.h"
 
-#if WITH_OPENCV
+
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
@@ -15,7 +15,7 @@ using namespace cv;
 
 int main() {
 
-    std::string file_in_name = "sunflower.jpg";
+    std::string file_in_name = "C:\\Users\\pc\\Documents\\kurwamac.jpg";
     std::string file_out_name = "wynik.jpg";
 
     bool grey = 0;
@@ -97,15 +97,3 @@ int main() {
 
     return 0;
 }
-
-#else
-
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
-    VideoPlayer window;
-    window.show();
-    return app.exec();
-}
-
-#endif
