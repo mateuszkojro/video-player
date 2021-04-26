@@ -13,6 +13,7 @@
 #define gray50 QColor("#fafafa")
 #define black QColor("#000000")
 #define gray400 QColor("#bdbdbd")
+#define orange QColor("#ff860d")
 
 Q_DECL_IMPORT void qt_blurImage(QPainter *p, QImage &blurImage, qreal radius, bool quality, bool alphaOnly, int transposed = 0); // src/widgets/effects/qpixmapfilter.cpp
 
@@ -33,11 +34,11 @@ namespace Style {
     struct Switch {
         Switch() :
                 height{ 36 },
-                font{ QFont("Roboto medium", 13) },
+                font{ QFont("Helvetica", 13) },
                 indicatorMargin{ QMargins(8, 8, 8, 8) },
-                thumbOnBrush{ cyan500 },
+                thumbOnBrush{ orange },
                 thumbOnOpacity{ 1 },
-                trackOnBrush{ cyan500 },
+                trackOnBrush{ orange },
                 trackOnOpacity{ 0.5 },
                 thumbOffBrush{ gray50 },
                 thumbOffOpacity{ 1 },
