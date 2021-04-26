@@ -14,23 +14,14 @@ set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL)
 set(QT_VERSION 5)
 set(REQUIRED_LIBS Core Gui Widgets Opengl)
 
-set(PROJECT_SOURCES
-        main.cpp
-        VideoPlayer.cpp
-        VideoPlayer.h
-        GLWidget.h
-        GLWidget.cpp
-        OpenGlWidget.cc
-        OpenGlWidget.h
-        )
-
 add_executable(${PROJECT_NAME}
         main.cpp
         VideoPlayer.cpp VideoPlayer.h
-        GLWidget.h GLWidget.cpp
+        glwidget.h glwidget.cpp
         SettingsWindow.cc SettingsWindow.h
         Switch.h Switch.cpp
         Style.h
+        Effect.h
         )
 
 if (NOT CMAKE_PREFIX_PATH)
