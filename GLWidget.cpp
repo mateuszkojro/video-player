@@ -129,5 +129,6 @@ void GLWidget::apply_effects(cv::Mat &frame) {
 
 void GLWidget::change_effect_(int idx, Effect *new_effect) {
     std::lock_guard<std::mutex> lock(effects_mutex_);
+    // todo we are leaking memory here
     effects_.at(idx) = new_effect;
 }
