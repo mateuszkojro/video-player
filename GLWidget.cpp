@@ -115,4 +115,19 @@ void GLWidget::change_image(const std::string &path) {
     cv::Mat input_image(0, 0, CV_8UC3);
     input_image = cv::imread(path);
     image_ = mat2Image(input_image);
+    apply_effects(input_image);
+}
+
+void GLWidget::apply_effects(cv::Mat &frame) {
+    std::lock_guard<std::mutex> lock(effects_mutex_);
+    for (auto effect : effects_) {
+        if (effect) {
+            (*effect)(frame);
+        }
+    }
+}
+
+void GLWidget::change_effect_(int idx, Effect *new_effect) {
+    std::lock_guard<std::mutex> lock(effects_mutex_);
+    effects_.at(idx) = new_effect;
 }

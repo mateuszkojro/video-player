@@ -7,8 +7,9 @@
 
 #include <opencv2/core.hpp>
 
-class Eeffect {
-    void operator()(const cv::Mat &frame) = 0;
+class Effect {
+public:
+    virtual void operator()(const cv::Mat &frame) = 0;
 };
 
 #endif //VIDEO_PLAYER_EFFECT_H
