@@ -1,29 +1,111 @@
 #include "glwidget.h"
-#include "helper.h"
 
 #include <QPainter>
 #include <QTimer>
+#include <QPainter>
+#include <QPaintEvent>
+#include <iostream>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
 
-GLWidget::GLWidget(Helper *helper, QWidget *parent)
-    : QOpenGLWidget(parent), helper(helper)
-{
-    elapsed = 0;
+// from: https://stackoverflow.com/questions/10167534/how-to-find-out-what-type-of-a-mat-object-is-with-mattype-in-opencv
+std::string type2str(int type) {
+    std::string r;
+
+    uchar depth = type & CV_MAT_DEPTH_MASK;
+    uchar chans = 1 + (type >> CV_CN_SHIFT);
+
+    switch (depth) {
+        case CV_8U:
+            r = "8U";
+            break;
+        case CV_8S:
+            r = "8S";
+            break;
+        case CV_16U:
+            r = "16U";
+            break;
+        case CV_16S:
+            r = "16S";
+            break;
+        case CV_32S:
+            r = "32S";
+            break;
+        case CV_32F:
+            r = "32F";
+            break;
+        case CV_64F:
+            r = "64F";
+            break;
+        default:
+            r = "User";
+            break;
+    }
+
+    r += "C";
+    r += (chans + '0');
+
+    return r;
+}
+
+QImage *mat2Image(cv::Mat &mat) {
+
+    // todo We should act differently for different cv::Mat formats
+
+    auto type = mat.type();
+
+    std::clog << "Matrix type: " << type2str(type) << std::endl;
+
+    const unsigned size = mat.rows * (mat.cols + 1) * mat.channels();
+    auto buffer = new uchar[size];
+
+    int i = 0;
+
+    // OpenCV Mat gives us access only to beginnings of the rows sow we need to
+    // go around that
+    for (int r = 0; r < mat.rows; ++r) {
+        uchar *ptr = mat.ptr(r, 0);
+        uchar *ptr_end = ptr + (int) ((mat.cols) * mat.channels()); // I dont wanna know why that is but it is
+        for (; ptr != ptr_end; ++ptr) {
+            buffer[i++] = *ptr;
+        }
+    }
+
+    auto *image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+    return image;
+}
+
+GLWidget::GLWidget(QWidget *parent)
+        : QOpenGLWidget(parent) {
+
+    elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
     setBackgroundRole(QPalette::Base);
+    std::string file_in_name = "jpg.jpg";
+    cv::Mat input_image(0, 0, CV_8UC3);
+
+    input_image = cv::imread(file_in_name);
+    image_ = mat2Image(input_image);
+
     // That should make it resizable
     // setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
-void GLWidget::animate()
-{
-    elapsed = (elapsed + qobject_cast<QTimer*>(sender())->interval()) % 1000;
+void GLWidget::animate() {
+    elapsed_ = (elapsed_ + qobject_cast<QTimer *>(sender())->interval()) % 1000;
     update();
 }
 
-void GLWidget::paintEvent(QPaintEvent *event)
-{
+void GLWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::LosslessImageRendering);
-    helper->paint(&painter, event, elapsed);
+    /// Paint on widget from QImage
+    auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
+        QPixmap pixmap = QPixmap::fromImage(*this->image_);
+        pixmap.scaled(1000, 1000);
+        painter->drawPixmap(QPoint(0, 0), pixmap);
+    };
+
+    paint(&painter, event, elapsed_);
     painter.end();
 }

@@ -8,7 +8,7 @@ class Helper;
 class GLWidget : public QOpenGLWidget
 {
    public:
-       GLWidget(Helper *helper, QWidget *parent);
+       GLWidget(QWidget *parent);
 
    public slots:
        void animate();
@@ -17,8 +17,8 @@ class GLWidget : public QOpenGLWidget
        void paintEvent(QPaintEvent *event) override;
 
    private:
-       Helper *helper;
-       int elapsed;
+       int elapsed_;
+       QImage* image_;
 };
 
 #endif // GLWIDGET_H

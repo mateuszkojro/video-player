@@ -20,8 +20,6 @@ set(PROJECT_SOURCES
         VideoPlayer.h
         glwidget.h
         glwidget.cpp
-        helper.h
-        helper.cpp
         OpenGlWidget.cc
         OpenGlWidget.h
         )
@@ -30,7 +28,6 @@ add_executable(${PROJECT_NAME}
         main.cpp
         VideoPlayer.cpp VideoPlayer.h
         glwidget.h glwidget.cpp
-        helper.h helper.cpp
         SettingsWindow.cc SettingsWindow.h
         )
 

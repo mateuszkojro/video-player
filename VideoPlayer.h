@@ -2,7 +2,6 @@
 #define VIDEO_PLAYER_H
 
 #include <QMainWindow>
-#include "helper.h"
 #include "glwidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -69,9 +68,6 @@ private:
 
     QTimer* timer_;
 
-
-private:
-    Helper helper_;
 };
 
 #endif

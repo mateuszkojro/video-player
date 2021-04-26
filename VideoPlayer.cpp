@@ -20,7 +20,7 @@ VideoPlayer::VideoPlayer() {
     bottom_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     /// Create the widget that is going to contain actual video frame
-    opengl_widget_ = new GLWidget(&helper_, this);
+    opengl_widget_ = new GLWidget(this);
     opengl_widget_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     /// Make a timer and run function on every tick - I am not sure tho
