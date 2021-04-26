@@ -2,11 +2,14 @@
 
 #include "VideoPlayer.h"
 
+#define WITH_OPENCV FALSE
+
 #if WITH_OPENCV
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core.hpp>
 
 #include <iostream>
 #include <string>
@@ -15,7 +18,7 @@ using namespace cv;
 
 int main() {
 
-    std::string file_in_name = "sunflower.jpg";
+    std::string file_in_name = "jpg.jpg";
     std::string file_out_name = "wynik.jpg";
 
     bool grey = 0;

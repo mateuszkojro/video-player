@@ -15,11 +15,6 @@ public:
 
 private:
     QImage *image_;
-    uchar *buffer;
-    int width_;
-    int height_;
-
-    int size() const { return width_ * height_; };
 };
 
 #endif

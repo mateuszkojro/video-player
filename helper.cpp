@@ -2,29 +2,39 @@
 
 #include <QPainter>
 #include <QPaintEvent>
-#include <QWidget>
 #include <iostream>
-#include <climits>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+QImage *mat2Image(cv::Mat &mat) {
+    const unsigned size = mat.rows * (mat.cols + 1) * 3;
+    auto buffer = new uchar[size];
+
+    int i = 0;
+
+    // OpenCV Mat gives us access only to beginnings of the rows sow we need to
+    // go around that
+    for (int r = 0; r < mat.rows; ++r) {
+        uchar *ptr = mat.ptr(r, 0);
+        uchar *ptr_end = ptr + (int) ((mat.cols + 1) * 3); // I dont wanna know why that is but it is
+        for (; ptr != ptr_end; ++ptr) {
+            buffer[i++] = *ptr;
+        }
+    }
+
+    auto *image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+    return image;
+}
 
 Helper::Helper() {
-    width_ = 200;
-    height_ = 200;
-    buffer = new uchar[size() * 4];
-    for (int i = 0; i < size() * 4; i++) {
-        buffer[i] = 255;
-    }
-    image_ = new QImage(buffer, width_, height_, QImage::Format_ARGB32);
+    std::string file_in_name = "jpg.jpg";
+    cv::Mat img_src(0, 0, CV_8UC3);
+    img_src = cv::imread(file_in_name);
+    image_ = mat2Image(img_src);
 }
 
 void Helper::paint(QPainter *painter, QPaintEvent *event, int elapsed) {
-    image_->load("C:\\Users\\mateu\\Documents\\work\\video_player\\cmake-build-debug-mingw\\file.png");
-    // image_->loadFromData(buffer, size() * 4); // <-- this does not work
-    if (image_->isNull()){
-        std::clog << "Image is for some reason null" << std::endl;
-        exit(1);
-    }
-    *image_ = image_->scaledToHeight(height_);
-    image_->scaledToHeight(width_);
-//    std::clog << image_->width() << "x" << image_->height() << std::endl;
-    painter->drawImage(QRect(0, 0, image_->width(), image_->height()), *image_);
+    QPixmap pixmap = QPixmap::fromImage(*image_);
+    pixmap.scaled(1000, 1000);
+    painter->drawPixmap(QPoint(0, 0), pixmap);
 }
