@@ -5,6 +5,19 @@
 #ifndef VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 #define VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 
+enum effect_nr {
+
+    effect_grey_cale_,
+    effect_hsv_,
+    effect_blur_r_,
+    effect_sobel_,
+    effect_canny_,
+    effect_noise_,
+    effect_gauss_
+
+};
+
+
 #include <QWindow>
 #include <QWidget>
 #include <QPushButton>
