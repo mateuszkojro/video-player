@@ -110,7 +110,8 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 void GLWidget::change_image(const std::string &path) {
     std::lock_guard<std::mutex> lock(image_mutex_);
-    delete image_;
+    // todo this delete segfaults
+    //delete image_;
     cv::Mat input_image(0, 0, CV_8UC3);
     input_image = cv::imread(path);
     image_ = mat2Image(input_image);

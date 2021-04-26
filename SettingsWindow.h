@@ -27,12 +27,30 @@ private:
 
     QLayout *layout_;
 
-    void effect1_handler();
+    void flip_effect_grey_scale();
 
-    void effect2_handler();
+    void flip_effect_hsv();
 
-    Switch  *effect_one_button_;
-    Switch *effect_two_button_;
+    void flip_effect_blur_r();
+
+    void flip_effect_sobel();
+
+    void flip_effect_canny();
+
+    void flip_effect_noise();
+
+    void flip_effect_gauss();
+
+    void flip_effect_blue_shift();
+
+    Switch *effect_grey_cale_;
+    Switch *effect_hsv_;
+    Switch *effect_blur_r_;
+    Switch *effect_sobel_;
+    Switch *effect_canny_;
+    Switch *effect_noise_;
+    Switch *effect_gauss_;
+    Switch *effect_blue_shift_;
 };
 
 

@@ -7,7 +7,7 @@
 
 VideoPlayer::VideoPlayer() {
 
-   /// Create the central widget
+    /// Create the central widget
     central_widget_ = new QWidget;
     setCentralWidget(central_widget_);
 

@@ -59,14 +59,14 @@ private:
     QDialog *second_window_;
 
     /// Widgets
-    QWidget* central_widget_;
-    QWidget* top_filler_;
-    QWidget* bottom_filler_;
-    GLWidget* opengl_widget_;
+    QWidget *central_widget_;
+    QWidget *top_filler_;
+    QWidget *bottom_filler_;
+    GLWidget *opengl_widget_;
 
-    QLayout* layout_;
+    QLayout *layout_;
 
-    QTimer* timer_;
+    QTimer *timer_;
 
 };
 

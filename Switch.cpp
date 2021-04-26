@@ -1,6 +1,6 @@
 #include "switch.h"
 
-Animator::Animator(QObject* target, QObject* parent) : QVariantAnimation(parent) {
+Animator::Animator(QObject *target, QObject *parent) : QVariantAnimation(parent) {
     setTargetObject(target);
 }
 
@@ -8,11 +8,11 @@ Animator::~Animator() {
     stop();
 }
 
-QObject* Animator::targetObject() const {
+QObject *Animator::targetObject() const {
     return target.data();
 }
 
-void Animator::setTargetObject(QObject* _target) {
+void Animator::setTargetObject(QObject *_target) {
     if (target.data() == _target)
         return;
 
@@ -24,7 +24,7 @@ void Animator::setTargetObject(QObject* _target) {
     target = _target;
 }
 
-void Animator::updateCurrentValue(const QVariant& value) {
+void Animator::updateCurrentValue(const QVariant &value) {
     Q_UNUSED(value);
 
     if (!target.isNull()) {
@@ -45,7 +45,8 @@ void Animator::updateState(QAbstractAnimation::State newState, QAbstractAnimatio
     QVariantAnimation::updateState(newState, oldState);
 
     if (!endValue().isValid() && direction() == Forward) {
-        qWarning("Animation::updateState (%s): starting an animation without end value", targetObject()->metaObject()->className());
+        qWarning("Animation::updateState (%s): starting an animation without end value",
+                 targetObject()->metaObject()->className());
     }
 }
 
@@ -54,21 +55,20 @@ void Animator::setup(int duration, QEasingCurve easing) {
     setEasingCurve(easing);
 }
 
-void Animator::interpolate(const QVariant& _start, const QVariant& end) {
+void Animator::interpolate(const QVariant &_start, const QVariant &end) {
     setStartValue(_start);
     setEndValue(end);
     start();
 }
 
-void Animator::setCurrentValue(const QVariant& value) {
+void Animator::setCurrentValue(const QVariant &value) {
     setStartValue(value);
     setEndValue(value);
     updateCurrentValue(currentValue());
 }
 
 
-
-SelectionControl::SelectionControl(QWidget* parent) : QAbstractButton(parent) {
+SelectionControl::SelectionControl(QWidget *parent) : QAbstractButton(parent) {
     setObjectName("SelectionControl");
     setCheckable(true);
 }
@@ -77,7 +77,7 @@ SelectionControl::~SelectionControl() {
 
 }
 
-void SelectionControl::enterEvent(QEvent* e) {
+void SelectionControl::enterEvent(QEvent *e) {
     setCursor(Qt::PointingHandCursor);
     QAbstractButton::enterEvent(e);
 }
@@ -98,14 +98,13 @@ void SelectionControl::nextCheckState() {
 }
 
 
-
 void Switch::init() {
     setFont(style.font);
     setObjectName("Switch");
     /* setup animations */
-    thumbBrushAnimation = new Animator{ this, this };
-    trackBrushAnimation = new Animator{ this, this };
-    thumbPosAniamtion = new Animator{ this, this };
+    thumbBrushAnimation = new Animator{this, this};
+    trackBrushAnimation = new Animator{this, this};
+    thumbPosAniamtion = new Animator{this, this};
     thumbPosAniamtion->setup(style.thumbPosAniamtion.duration, style.thumbPosAniamtion.easing);
     trackBrushAnimation->setup(style.trackBrushAnimation.duration, style.trackBrushAnimation.easing);
     thumbBrushAnimation->setup(style.thumbBrushAnimation.duration, style.thumbBrushAnimation.easing);
@@ -132,15 +131,15 @@ QRect Switch::textRect() {
     return ltr(this) ? rect().marginsRemoved(QMargins(w, 0, 0, 0)) : rect().marginsRemoved(QMargins(0, 0, w, 0));
 }
 
-Switch::Switch(QWidget* parent) : SelectionControl(parent) {
+Switch::Switch(QWidget *parent) : SelectionControl(parent) {
     init();
 }
 
-Switch::Switch(const QString& text, QWidget* parent) : Switch(parent) {
+Switch::Switch(const QString &text, QWidget *parent) : Switch(parent) {
     setText(text);
 }
 
-Switch::Switch(const QString& text, const QBrush& brush, QWidget* parent) : Switch(text, parent) {
+Switch::Switch(const QString &text, const QBrush &brush, QWidget *parent) : Switch(text, parent) {
     style.thumbOnBrush = brush.color();
     style.trackOnBrush = brush.color();
 }
@@ -156,7 +155,7 @@ QSize Switch::sizeHint() const {
     return QSize(w, h);
 }
 
-void Switch::paintEvent(QPaintEvent*) {
+void Switch::paintEvent(QPaintEvent *) {
     /* for desktop usage we do not need Radial reaction */
 
     QPainter p(this);
@@ -177,7 +176,8 @@ void Switch::paintEvent(QPaintEvent*) {
         p.drawRoundedRect(trackRect, CORNER_RADIUS, CORNER_RADIUS);
         p.setRenderHint(QPainter::Antialiasing, false);
         /* draw thumb */
-        trackRect.setX(trackRect.x() - trackMargin.left() - trackMargin.right() - 2 + thumbPosAniamtion->currentValue().toInt());
+        trackRect.setX(trackRect.x() - trackMargin.left() - trackMargin.right() - 2 +
+                       thumbPosAniamtion->currentValue().toInt());
         auto thumbRect = trackRect;
 
         if (!shadowPixmap.isNull())
@@ -232,7 +232,7 @@ void Switch::paintEvent(QPaintEvent*) {
     }
 }
 
-void Switch::resizeEvent(QResizeEvent* e) {
+void Switch::resizeEvent(QResizeEvent *e) {
     shadowPixmap = Style::drawShadowEllipse(THUMB_RADIUS, SHADOW_ELEVATION, QColor(0, 0, 0, 70));
     SelectionControl::resizeEvent(e);
 }
