@@ -10,9 +10,9 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets Qt5::OpenGL)
 set(QT_VERSION 5)
-set(REQUIRED_LIBS Core Gui Widgets)
-set(REQUIRED_LIBS_QUALIFIED Qt5::Core Qt5::Gui Qt5::Widgets)
+set(REQUIRED_LIBS Core Gui Widgets Opengl)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -22,9 +22,17 @@ set(PROJECT_SOURCES
         glwidget.cpp
         helper.h
         helper.cpp
+        OpenGlWidget.cc
+        OpenGlWidget.h
         )
 
-add_executable(${PROJECT_NAME} main.cpp VideoPlayer.cpp VideoPlayer.h glwidget.h glwidget.cpp helper.h helper.cpp SettingsWindow.cc SettingsWindow.h)
+add_executable(${PROJECT_NAME}
+        main.cpp
+        VideoPlayer.cpp VideoPlayer.h
+        glwidget.h glwidget.cpp
+        helper.h helper.cpp
+        SettingsWindow.cc SettingsWindow.h
+        OpenGlWidget.h OpenGlWidget.cc)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
