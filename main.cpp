@@ -37,10 +37,10 @@ int main() {
         return -1;
     }
 
-    grey = 1;
+   // grey = 1;
     //hsv = 1;
     //blur_r = 1;
-    //sobel = 1;
+    sobel = 1;
     //canny = 1;
     //szum = 1;
     //gauss = 1;
