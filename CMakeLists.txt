@@ -19,6 +19,8 @@ add_executable(${PROJECT_NAME}
         VideoPlayer.cpp VideoPlayer.h
         glwidget.h glwidget.cpp
         SettingsWindow.cc SettingsWindow.h
+        Switch.h Switch.cpp
+        Style.h
         Effect.h
         )
 
