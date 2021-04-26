@@ -2,6 +2,8 @@
 
 #include "VideoPlayer.h"
 #include "SettingsWindow.h"
+#include <iostream>
+
 
 VideoPlayer::VideoPlayer() {
 
@@ -140,6 +142,9 @@ void VideoPlayer::new_file_handler() {
 void VideoPlayer::open_handler() {
     /// Show message in status bar
     statusBar()->showMessage(QString("File->OpenFile hit"));
+    auto fileName = QFileDialog::getOpenFileName(this,
+                                                 tr("Open Image"), "/home/jana", tr("Image Files (*.png *.jpg *.bmp)"));
+    std::cout << "filename: " << fileName.toStdString() << std::endl;
 }
 
 /// show dialog confirming a window closing then act accordingly
