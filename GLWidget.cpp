@@ -1,4 +1,4 @@
-#include "glwidget.h"
+#include "GLWidget.h"
 
 #include <QPainter>
 #include <QTimer>
@@ -56,7 +56,7 @@ QImage *mat2Image(cv::Mat &mat) {
 
     std::clog << "Matrix type: " << type2str(type) << std::endl;
 
-    const unsigned size = mat.rows * (mat.cols + 1) * mat.channels();
+    const unsigned size = mat.rows * mat.cols  * mat.channels();
     auto buffer = new uchar[size];
 
     int i = 0;
@@ -64,8 +64,9 @@ QImage *mat2Image(cv::Mat &mat) {
     // OpenCV Mat gives us access only to beginnings of the rows sow we need to
     // go around that
     for (int r = 0; r < mat.rows; ++r) {
+
         uchar *ptr = mat.ptr(r, 0);
-        uchar *ptr_end = ptr + (int) ((mat.cols) * mat.channels()); // I dont wanna know why that is but it is
+        uchar *ptr_end = ptr + ((mat.cols) * mat.channels()); // I dont wanna know why that is but it is
         for (; ptr != ptr_end; ++ptr) {
             buffer[i++] = *ptr;
         }
@@ -80,7 +81,6 @@ GLWidget::GLWidget(QWidget *parent)
 
     elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
-    setBackgroundRole(QPalette::Base);
     std::string file_in_name = "jpg.jpg";
     cv::Mat input_image(0, 0, CV_8UC3);
 

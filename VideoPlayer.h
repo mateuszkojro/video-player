@@ -2,7 +2,7 @@
 #define VIDEO_PLAYER_H
 
 #include <QMainWindow>
-#include "glwidget.h"
+#include "GLWidget.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
