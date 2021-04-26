@@ -68,13 +68,13 @@ if (WIN32)
                 COMMAND ${CMAKE_COMMAND} -E make_directory
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-                COMMAND ${CMAKE_COMMAND} -E copy
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
     endif ()
     foreach (QT_LIB ${REQUIRED_LIBS})
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-                COMMAND ${CMAKE_COMMAND} -E copy
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different
                 "${QT_INSTALL_PATH}/bin/Qt${QT_VERSION}${QT_LIB}${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
