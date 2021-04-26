@@ -56,7 +56,7 @@ QImage *mat2Image(cv::Mat &mat) {
 
     std::clog << "Matrix type: " << type2str(type) << std::endl;
 
-    const unsigned size = mat.rows * mat.cols  * mat.channels();
+    const unsigned size = mat.rows * mat.cols * mat.channels();
     auto buffer = new uchar[size];
 
     int i = 0;
@@ -81,12 +81,8 @@ GLWidget::GLWidget(QWidget *parent)
 
     elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
-    std::string file_in_name = "jpg.jpg";
-    cv::Mat input_image(0, 0, CV_8UC3);
-
-    input_image = cv::imread(file_in_name);
-    image_ = mat2Image(input_image);
-
+    std::string input_file_path = "jpg.jpg";
+    change_image(input_file_path);
     // That should make it resizable
     // setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
@@ -101,6 +97,8 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     painter.setRenderHint(QPainter::LosslessImageRendering);
     /// Paint on widget from QImage
     auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
+        // todo that should be done only once not on every render
+        std::lock_guard<std::mutex> lock(image_mutex_);
         QPixmap pixmap = QPixmap::fromImage(*this->image_);
         pixmap.scaled(1000, 1000);
         painter->drawPixmap(QPoint(0, 0), pixmap);
@@ -108,4 +106,12 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
     paint(&painter, event, elapsed_);
     painter.end();
+}
+
+void GLWidget::change_image(const std::string &path) {
+    std::lock_guard<std::mutex> lock(image_mutex_);
+    delete image_;
+    cv::Mat input_image(0, 0, CV_8UC3);
+    input_image = cv::imread(path);
+    image_ = mat2Image(input_image);
 }

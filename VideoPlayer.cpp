@@ -147,6 +147,7 @@ void VideoPlayer::open_handler() {
     auto fileName = QFileDialog::getOpenFileName(this,
                                                  tr("Open Image"), "/home/jana", tr("Image Files (*.png *.jpg *.bmp)"));
     std::cout << "filename: " << fileName.toStdString() << std::endl;
+    opengl_widget_->change_image(fileName.toStdString());
 }
 
 /// show dialog confirming a window closing then act accordingly
