@@ -18,8 +18,8 @@ set(PROJECT_SOURCES
         main.cpp
         VideoPlayer.cpp
         VideoPlayer.h
-        glwidget.h
-        glwidget.cpp
+        GLWidget.h
+        GLWidget.cpp
         OpenGlWidget.cc
         OpenGlWidget.h
         )
@@ -27,8 +27,10 @@ set(PROJECT_SOURCES
 add_executable(${PROJECT_NAME}
         main.cpp
         VideoPlayer.cpp VideoPlayer.h
-        glwidget.h glwidget.cpp
+        GLWidget.h GLWidget.cpp
         SettingsWindow.cc SettingsWindow.h
+        Switch.h Switch.cpp
+        Style.h
         )
 
 if (NOT CMAKE_PREFIX_PATH)

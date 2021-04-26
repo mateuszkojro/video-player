@@ -1,17 +1,18 @@
 #include "SettingsWindow.h"
 
+
 SettingsWindow::SettingsWindow(QWidget *parent) {
 
     parent_ = parent;
 
     /// Create buttons assign it to current window ans set its text
-    effect_one_button_ = new QPushButton(this);
-    effect_one_button_->setText(QString("Add effect \"hsv\""));
-    effect_one_button_->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    effect_one_button_ = new Switch("first");
+    //effect_one_button_->setText(QString("Add effect \"hsv\""));
+  //  effect_one_button_->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    effect_two_button_ = new QPushButton(this);
-    effect_two_button_->setText(QString("Add effect \"sobel\""));
-    effect_two_button_->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    effect_two_button_ = new Switch("second");
+    //effect_two_button_->setText(QString("Add effect \"sobel\""));
+  //  effect_two_button_->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
     //effect_two_button_->setStyleSheet("border-image:url(:/Icons/images/myImage.png);");
 

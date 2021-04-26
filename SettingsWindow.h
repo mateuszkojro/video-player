@@ -13,6 +13,8 @@
 #include <QAction>
 #include <QMessageBox>
 
+#include "Switch.h"
+
 class SettingsWindow : public QDialog {
 public:
     explicit SettingsWindow(QWidget *parent);
@@ -29,8 +31,8 @@ private:
 
     void effect2_handler();
 
-    QPushButton *effect_one_button_;
-    QPushButton *effect_two_button_;
+    Switch  *effect_one_button_;
+    Switch *effect_two_button_;
 };
 
 
