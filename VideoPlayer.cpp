@@ -40,6 +40,8 @@ VideoPlayer::VideoPlayer() {
     /// Set layout as the central widget
     central_widget_->setLayout(layout_);
 
+    this->setMinimumSize(500, 500);
+
     /// Run helpers for the actions and menus
     createActions();
     createMenus();

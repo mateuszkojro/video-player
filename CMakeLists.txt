@@ -32,7 +32,7 @@ add_executable(${PROJECT_NAME}
         glwidget.h glwidget.cpp
         helper.h helper.cpp
         SettingsWindow.cc SettingsWindow.h
-        OpenGlWidget.h OpenGlWidget.cc)
+        )
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
