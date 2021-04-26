@@ -43,13 +43,23 @@ private:
 
     void flip_effect_blue_shift();
 
+
+    /// 0 in effect array
     Switch *effect_grey_cale_;
+    /// 1 in effect array
     Switch *effect_hsv_;
+    /// 2 in effect array
     Switch *effect_blur_r_;
+    /// 3 in effect array
     Switch *effect_sobel_;
+    /// 4 in effect array
     Switch *effect_canny_;
+    /// 5 in effect array
     Switch *effect_noise_;
+    /// 6 in effect array
     Switch *effect_gauss_;
+    /// there is no need for it to be in effect array
+    /// i's kinda a joke anyway
     Switch *effect_blue_shift_;
 };
 
