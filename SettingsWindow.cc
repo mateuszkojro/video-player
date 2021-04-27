@@ -91,18 +91,9 @@ void SettingsWindow::flip_effect_grey_scale() {
 
 
 void SettingsWindow::flip_effect_hsv() {
-    if (effect_hsv_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
-
+    /// Function called after effect 1 button was pressed
+    auto setting = effect_hsv_->isChecked() ? new HSVEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_hsv_), setting);
 }
 
 void SettingsWindow::flip_effect_blur_r() {
@@ -121,18 +112,8 @@ void SettingsWindow::flip_effect_blur_r() {
 }
 
 void SettingsWindow::flip_effect_sobel() {
-    if (effect_sobel_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
-
+    auto setting = effect_sobel_->isChecked() ? new SobelEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_sobel_), setting);
 }
 
 void SettingsWindow::flip_effect_canny() {

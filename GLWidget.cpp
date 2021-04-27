@@ -71,7 +71,7 @@ QImage *mat2Image(cv::Mat &mat) {
         }
     }
 
-    auto *image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+    auto image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
     return image;
 }
 
@@ -101,7 +101,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
         std::lock_guard <std::mutex> lock(image_mutex_);
         // todo here! the SIEGSEGV happens date: 27.04
         QPixmap pixmap = QPixmap::fromImage(*this->image_);
-        pixmap.scaled(1000, 1000);
+        pixmap = pixmap.scaled(width(), height());
         painter->drawPixmap(QPoint(0, 0), pixmap);
     };
 
@@ -143,5 +143,5 @@ void GLWidget::change_effect(int idx, Effect *new_effect) {
         // todo we are leaking memory here
         effects_.at(idx) = new_effect;
     }
-    apply_effects(current_image_);
+    apply_effects(current_image_.clone());
 }
