@@ -5,7 +5,7 @@
 #ifndef VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 #define VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 
-enum effect_nr {
+enum class effect_nr {
 
     effect_grey_cale_,
     effect_hsv_,
@@ -27,14 +27,17 @@ enum effect_nr {
 #include <QMessageBox>
 
 #include "Switch.h"
+#include "GLWidget.h"
 
 class SettingsWindow : public QDialog {
 public:
-    explicit SettingsWindow(QWidget *parent);
+    explicit SettingsWindow(QWidget *parent, GLWidget *opengl_widget);
 
     ~SettingsWindow() override;
 
 private:
+
+    GLWidget *opengl_widget_;
 
     QWidget *parent_;
 

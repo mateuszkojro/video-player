@@ -1,9 +1,11 @@
 #include "SettingsWindow.h"
 
 
-SettingsWindow::SettingsWindow(QWidget *parent) {
+SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     parent_ = parent;
+
+    opengl_widget_ = opengl_widget;
 
     /// Create buttons assign it to current window ans set its text
     effect_grey_cale_ = new Switch("Grey cale");
@@ -81,21 +83,10 @@ SettingsWindow::~SettingsWindow() {
     delete layout_;
 }
 
-
-/// Function called after effect 1 button was pressed
 void SettingsWindow::flip_effect_grey_scale() {
-    if (effect_grey_cale_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
-
+    /// Function called after effect 1 button was pressed
+    auto setting = effect_grey_cale_->isChecked() ? new GrayscaleEffect() : nullptr;
+    opengl_widget_->set_effect(effecct_nr::effect_grey_cale_, setting);
 }
 
 
@@ -106,6 +97,8 @@ void SettingsWindow::flip_effect_hsv() {
         /// and effect should be applied
         ;
     } else {
+
+
 
         /// this one makes effect disappear
 
