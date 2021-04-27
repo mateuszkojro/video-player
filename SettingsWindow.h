@@ -5,7 +5,7 @@
 #ifndef VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 #define VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 
-enum class effect_nr {
+enum class EffectNr {
 
     effect_grey_cale_,
     effect_hsv_,
