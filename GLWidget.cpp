@@ -7,6 +7,8 @@
 #include <iostream>
 #include <opencv2/core.hpp>
 #include <opencv2/imgcodecs.hpp>
+#include <exception>
+#include <stdexcept>
 
 // from: https://stackoverflow.com/questions/10167534/how-to-find-out-what-type-of-a-mat-object-is-with-mattype-in-opencv
 std::string type2str(int type) {
@@ -71,7 +73,20 @@ QImage *mat2Image(cv::Mat &mat) {
         }
     }
 
-    auto image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+    QImage *image;
+    switch (type) {
+        case CV_8UC3: {
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+            break;;
+        }
+        case CV_8UC1: {
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8);
+            break;
+        }
+        default:
+            throw "cv::Mat format not supported";
+    }
+
     return image;
 }
 
@@ -98,7 +113,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     /// Paint on widget from QImage
     auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
         // todo that should be done only once not on every render
-        std::lock_guard <std::mutex> lock(image_mutex_);
+        std::lock_guard<std::mutex> lock(image_mutex_);
         // todo here! the SIEGSEGV happens date: 27.04
         QPixmap pixmap = QPixmap::fromImage(*this->image_);
         pixmap = pixmap.scaled(width(), height());
