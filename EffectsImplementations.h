@@ -21,8 +21,8 @@ public:
     void operator()(cv::Mat &frame) override {
 // todo test if it changes 8UC1 to 8UC3
  // coz it's easy to do down but not to go up
-        cv::Mat img_src = frame.clone();
-        cv::cvtColor(img_src, frame, CV_RGB2GRAY);
+    //    cv::Mat img_src = frame.clone();
+        cv::cvtColor(frame, frame, CV_RGB2GRAY); // heavy optimisations
 
     }
 };
@@ -34,8 +34,8 @@ public:
     /// \note the type of pixel inside frame will be changed to ??? <- something i belive it's 8UC3
     void operator()(cv::Mat &frame) override {
 
-        cv::Mat frame_copy = frame.clone();
-        cvtColor(frame_copy, frame, CV_BGR2HSV);
+      //  cv::Mat frame_copy = frame.clone();
+        cvtColor(frame, frame, CV_BGR2HSV); // heavy optimisations
 
     }
 };
