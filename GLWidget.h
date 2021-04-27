@@ -18,7 +18,7 @@ public slots:
 
     void change_image(const std::string &path);
 
-    void apply_effects(cv::Mat& frame);
+    void apply_effects(cv::Mat frame);
 
     void change_effect(int idx, Effect* effect);
 
@@ -28,6 +28,9 @@ protected:
 
 private:
     int elapsed_;
+
+    std::mutex mat_mutex_;
+    cv::Mat current_image_;
 
     std::mutex image_mutex_;
     QImage *image_;

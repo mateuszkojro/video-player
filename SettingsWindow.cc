@@ -1,5 +1,5 @@
 #include "SettingsWindow.h"
-
+#include "EffectsImplementations.h"
 
 SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
@@ -85,8 +85,8 @@ SettingsWindow::~SettingsWindow() {
 
 void SettingsWindow::flip_effect_grey_scale() {
     /// Function called after effect 1 button was pressed
-    auto setting = effect_grey_cale_->isChecked() ? new GrayscaleEffect() : nullptr;
-    opengl_widget_->set_effect(effecct_nr::effect_grey_cale_, setting);
+    auto setting = effect_grey_cale_->isChecked() ? new GrayScaleEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(effect_nr::effect_grey_cale_), setting);
 }
 
 
