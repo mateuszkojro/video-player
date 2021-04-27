@@ -10,13 +10,13 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     /// Create buttons assign it to current window ans set its text
   
     effect_hsv_ = new Switch("Hsv");
-    effect_blur_r_ = new Switch("Blur r");
+    effect_blur_r_ = new Switch("Blur");
     effect_sobel_ = new Switch("Sobel");
     effect_blue_shift_ = new Switch("Blue Shift");
     effect_canny_ = new Switch("Canny");
     effect_noise_ = new Switch("Noise");
     effect_gauss_ = new Switch("Gauss");
-    effect_grey_scale_ = new Switch("Grey cale");
+    effect_grey_scale_ = new Switch("Grey Sale");
 
     effect_blue_shift_->setChecked(true);
 
