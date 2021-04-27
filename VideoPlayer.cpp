@@ -193,6 +193,6 @@ void VideoPlayer::show_info_handler() {
 
 /// Create the second window
 void VideoPlayer::second_window_create() {
-    second_window_ = new SettingsWindow(this);
+    second_window_ = new SettingsWindow(this,opengl_widget_);
 }
 
