@@ -128,10 +128,10 @@ void GLWidget::change_image(const std::string &path) {
     cv::Mat input_image(0, 0, CV_8UC3);
     input_image = cv::imread(path);
     {
-        std::lock_guard<std::mutex> lock(mat_mutex_);
+        std::lock_guard <std::mutex> lock(mat_mutex_);
         current_image_ = input_image.clone();
     }
-    std::lock_guard<std::mutex> lock(image_mutex_);
+    std::lock_guard <std::mutex> lock(image_mutex_);
     // todo this delete segfaults
     //delete image_;
     image_ = mat2Image(input_image);
@@ -139,7 +139,7 @@ void GLWidget::change_image(const std::string &path) {
 
 void GLWidget::apply_effects(cv::Mat frame) {
     {
-        std::lock_guard<std::mutex> lock(effects_mutex_);
+        std::lock_guard <std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(frame);
@@ -147,14 +147,14 @@ void GLWidget::apply_effects(cv::Mat frame) {
         }
     }
     {
-        std::lock_guard<std::mutex> lock(image_mutex_);
+        std::lock_guard <std::mutex> lock(image_mutex_);
         image_ = mat2Image(frame);
     }
 }
 
 void GLWidget::change_effect(int idx, Effect *new_effect) {
     {
-        std::lock_guard<std::mutex> lock(effects_mutex_);
+        std::lock_guard <std::mutex> lock(effects_mutex_);
         // todo we are leaking memory here
         effects_.at(idx) = new_effect;
     }

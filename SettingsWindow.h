@@ -7,13 +7,14 @@
 
 enum class EffectNr {
 
-    effect_grey_cale_,
+
     effect_hsv_,
     effect_blur_r_,
     effect_sobel_,
     effect_canny_,
     effect_noise_,
-    effect_gauss_
+    effect_gauss_,
+    effect_grey_scale_
 
 };
 
@@ -61,7 +62,7 @@ private:
 
 
     /// 0 in effect array
-    Switch *effect_grey_cale_;
+    Switch *effect_gauss_;
     /// 1 in effect array
     Switch *effect_hsv_;
     /// 2 in effect array
@@ -73,7 +74,7 @@ private:
     /// 5 in effect array
     Switch *effect_noise_;
     /// 6 in effect array
-    Switch *effect_gauss_;
+    Switch *effect_grey_scale_;
     /// there is no need for it to be in effect array
     /// i's kinda a joke anyway
     Switch *effect_blue_shift_;
