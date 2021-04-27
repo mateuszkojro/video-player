@@ -9,7 +9,7 @@
 
 class Effect {
 public:
-    virtual void operator()(const cv::Mat &frame) = 0;
+    virtual void operator()(cv::Mat &frame) = 0;
 };
 
 #endif //VIDEO_PLAYER_EFFECT_H

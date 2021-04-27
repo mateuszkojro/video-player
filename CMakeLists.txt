@@ -22,6 +22,7 @@ add_executable(${PROJECT_NAME}
         Switch.h Switch.cpp
         Style.h
         Effect.h
+        EffectsImplementations.h
         )
 
 if (NOT CMAKE_PREFIX_PATH)
