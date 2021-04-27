@@ -86,7 +86,7 @@ SettingsWindow::~SettingsWindow() {
 void SettingsWindow::flip_effect_grey_scale() {
     /// Function called after effect 1 button was pressed
     auto setting = effect_grey_cale_->isChecked() ? new GrayScaleEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(effect_nr::effect_grey_cale_), setting);
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_grey_cale_), setting);
 }
 
 
@@ -97,8 +97,6 @@ void SettingsWindow::flip_effect_hsv() {
         /// and effect should be applied
         ;
     } else {
-
-
 
         /// this one makes effect disappear
 

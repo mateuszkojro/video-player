@@ -98,7 +98,8 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     /// Paint on widget from QImage
     auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
         // todo that should be done only once not on every render
-        std::lock_guard<std::mutex> lock(image_mutex_);
+        std::lock_guard <std::mutex> lock(image_mutex_);
+        // todo here! the SIEGSEGV happens date: 27.04
         QPixmap pixmap = QPixmap::fromImage(*this->image_);
         pixmap.scaled(1000, 1000);
         painter->drawPixmap(QPoint(0, 0), pixmap);
@@ -124,7 +125,7 @@ void GLWidget::change_image(const std::string &path) {
 void GLWidget::apply_effects(cv::Mat frame) {
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
-        for (Effect* effect : effects_) {
+        for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(frame);
             }
