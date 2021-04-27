@@ -64,7 +64,6 @@ QImage *mat2Image(cv::Mat &mat) {
     // OpenCV Mat gives us access only to beginnings of the rows sow we need to
     // go around that
     for (int r = 0; r < mat.rows; ++r) {
-
         uchar *ptr = mat.ptr(r, 0);
         uchar *ptr_end = ptr + ((mat.cols) * mat.channels()); // I dont wanna know why that is but it is
         for (; ptr != ptr_end; ++ptr) {
@@ -79,6 +78,7 @@ QImage *mat2Image(cv::Mat &mat) {
 GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
+    effects_.fill(nullptr);
     elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
     std::string input_file_path = "jpg.jpg";
@@ -109,26 +109,38 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 }
 
 void GLWidget::change_image(const std::string &path) {
+    cv::Mat input_image(0, 0, CV_8UC3);
+    input_image = cv::imread(path);
+    {
+        std::lock_guard<std::mutex> lock(mat_mutex_);
+        current_image_ = input_image.clone();
+    }
     std::lock_guard<std::mutex> lock(image_mutex_);
     // todo this delete segfaults
     //delete image_;
-    cv::Mat input_image(0, 0, CV_8UC3);
-    input_image = cv::imread(path);
     image_ = mat2Image(input_image);
-    apply_effects(input_image);
 }
 
-void GLWidget::apply_effects(cv::Mat &frame) {
-    std::lock_guard<std::mutex> lock(effects_mutex_);
-    for (auto effect : effects_) {
-        if (effect) {
-            (*effect)(frame);
+void GLWidget::apply_effects(cv::Mat frame) {
+    {
+        std::lock_guard<std::mutex> lock(effects_mutex_);
+        for (Effect* effect : effects_) {
+            if (effect != nullptr) {
+                effect->operator()(frame);
+            }
         }
+    }
+    {
+        std::lock_guard<std::mutex> lock(image_mutex_);
+        image_ = mat2Image(frame);
     }
 }
 
-void GLWidget::change_effect_(int idx, Effect *new_effect) {
-    std::lock_guard<std::mutex> lock(effects_mutex_);
-    // todo we are leaking memory here
-    effects_.at(idx) = new_effect;
+void GLWidget::change_effect(int idx, Effect *new_effect) {
+    {
+        std::lock_guard<std::mutex> lock(effects_mutex_);
+        // todo we are leaking memory here
+        effects_.at(idx) = new_effect;
+    }
+    apply_effects(current_image_);
 }
