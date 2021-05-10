@@ -25,6 +25,7 @@ public:
         cv::cvtColor(frame, frame, CV_RGB2GRAY); // heavy optimisations
 
     }
+    virtual ~GrayScaleEffect() = default;
 };
 
 /// apply HSV effect
@@ -39,6 +40,7 @@ public:
         cvtColor(frame, frame, CV_BGR2HSV); // heavy optimisations
 
     }
+    virtual ~HSVEffect() = default;
 };
 
 /// apply Sobel effect
@@ -56,6 +58,7 @@ public:
         frame = abs(img_1) + abs(img_2);
 
     }
+    virtual ~SobelEffect() = default;
 };
 
 

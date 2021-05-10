@@ -10,6 +10,8 @@
 class Effect {
 public:
     virtual void operator()(cv::Mat &frame) = 0;
+
+    virtual ~Effect() = default;
 };
 
 #endif //VIDEO_PLAYER_EFFECT_H
