@@ -23,7 +23,7 @@ add_executable(${PROJECT_NAME}
         Style.h
         Effect.h
         EffectsImplementations.h
-        )
+        VideoPlayback.cpp VideoPlayback.h)
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
