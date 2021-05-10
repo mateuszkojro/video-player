@@ -6,6 +6,7 @@ set(WITH_OPENCV ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
 set(OpenCV_DIR "C:\\opencv\\install")
+set(Lua_DIR lib/lua)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
@@ -24,6 +25,8 @@ add_executable(${PROJECT_NAME}
         Effect.h
         EffectsImplementations.h
         VideoPlayback.cpp VideoPlayback.h)
+
+
 
 if (NOT CMAKE_PREFIX_PATH)
     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
@@ -78,3 +81,8 @@ if (WIN32)
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
 endif ()
+
+add_subdirectory(${Lua_DIR})
+message(${Lua_DIR}/src/lua.hpp)
+include_directories(${Lua_DIR}/src/)
+target_link_libraries(${PROJECT_NAME} liblua)
