@@ -4,9 +4,9 @@
 #include <QOpenGLWidget>
 #include <mutex>
 #include <array>
+#include <opencv2/highgui.hpp>
 #include "Effect.h"
 
-class Helper;
 
 class GLWidget : public QOpenGLWidget {
 public:
@@ -28,6 +28,8 @@ protected:
 
 private:
     int elapsed_;
+
+    cv::VideoCapture* video_capture_;
 
     std::mutex mat_mutex_;
     cv::Mat current_image_;

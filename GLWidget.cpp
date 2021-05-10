@@ -6,6 +6,7 @@
 #include <QPaintEvent>
 #include <iostream>
 #include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <exception>
 #include <stdexcept>
@@ -15,7 +16,7 @@ std::string type2str(int type) {
     std::string r;
 
     uchar depth = type & CV_MAT_DEPTH_MASK;
-    uchar chans = 1 + (type >> CV_CN_SHIFT);
+    uchar chanels = 1 + (type >> CV_CN_SHIFT);
 
     switch (depth) {
         case CV_8U:
@@ -45,18 +46,16 @@ std::string type2str(int type) {
     }
 
     r += "C";
-    r += (chans + '0');
+    r += (chanels + '0');
 
     return r;
 }
 
 QImage *mat2Image(cv::Mat &mat) {
 
-    // todo We should act differently for different cv::Mat formats
-
     auto type = mat.type();
 
-    std::clog << "Matrix type: " << type2str(type) << std::endl;
+//    std::clog << "Matrix type: " << type2str(type) << std::endl;
 
     const unsigned size = mat.rows * mat.cols * mat.channels();
     auto buffer = new uchar[size];
@@ -93,11 +92,13 @@ QImage *mat2Image(cv::Mat &mat) {
 GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
+    video_capture_ = new cv::VideoCapture("file.avi");
     effects_.fill(nullptr);
     elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
     std::string input_file_path = "jpg.jpg";
     change_image(input_file_path);
+
     // That should make it resizable
     // setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
@@ -111,6 +112,19 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::LosslessImageRendering);
     /// Paint on widget from QImage
+
+    cv::Mat frame;
+    (*video_capture_) >> frame;
+    if (!frame.empty()) {
+        apply_effects(frame);
+        std::lock_guard<std::mutex> lock(image_mutex_);
+        delete image_;
+        this->image_ = mat2Image(frame);
+    } else {
+        video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);
+    }
+
+
     auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
         // todo that should be done only once not on every render
         std::lock_guard<std::mutex> lock(image_mutex_);
@@ -126,12 +140,13 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 void GLWidget::change_image(const std::string &path) {
     cv::Mat input_image(0, 0, CV_8UC3);
+    // todo - this may fail we need to inform about that
     input_image = cv::imread(path);
     {
-        std::lock_guard <std::mutex> lock(mat_mutex_);
+        std::lock_guard<std::mutex> lock(mat_mutex_);
         current_image_ = input_image.clone();
     }
-    std::lock_guard <std::mutex> lock(image_mutex_);
+    std::lock_guard<std::mutex> lock(image_mutex_);
     // todo this delete segfaults
     //delete image_;
     image_ = mat2Image(input_image);
@@ -139,7 +154,7 @@ void GLWidget::change_image(const std::string &path) {
 
 void GLWidget::apply_effects(cv::Mat frame) {
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(frame);
@@ -147,16 +162,17 @@ void GLWidget::apply_effects(cv::Mat frame) {
         }
     }
     {
-        std::lock_guard <std::mutex> lock(image_mutex_);
+        std::lock_guard<std::mutex> lock(image_mutex_);
         image_ = mat2Image(frame);
     }
 }
 
 void GLWidget::change_effect(int idx, Effect *new_effect) {
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         // todo we are leaking memory here
+        delete effects_.at(idx);
         effects_.at(idx) = new_effect;
     }
-    apply_effects(current_image_.clone());
+    apply_effects(current_image_);
 }
