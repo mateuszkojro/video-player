@@ -2,10 +2,13 @@
 
 Project is CMake based so the only think that is neded to change is directory containing Qt libraries
 
-This line needs to be changed:
+You need to setup the path to Qt and OpenCV
 
 ```CMake
+# For Qt
 set(CMAKE_PREFIX_PATH "C://Qt//5.15.2//mingw81_64//")
+# For opencv
+set(OpenCV_DIR "C:\\opencv\\install")
 ```
 
 This program contains Lua 5.3.6
@@ -15,3 +18,16 @@ This program contains Lua 5.3.6
 Cmake for Lua sourced from
 
 <https://gist.github.com/squeek502/0706332efb18edd0601a4074762b0b9a>
+
+# Todos
+
+## Engine
+
+    - [ ] pause / resume
+    - [ ] skip 10s next / prev
+
+## UI
+
+    - [ ] pause, resume, skip UI
+    - [ ] Additional settings for effects
+
