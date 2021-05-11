@@ -11,6 +11,8 @@
 #include <exception>
 #include <stdexcept>
 
+#define EMPTY_IMAGE "empty.png"
+
 // from: https://stackoverflow.com/questions/10167534/how-to-find-out-what-type-of-a-mat-object-is-with-mattype-in-opencv
 std::string type2str(int type) {
     std::string r;
@@ -51,7 +53,7 @@ std::string type2str(int type) {
     return r;
 }
 
-QImage *mat2Image(cv::Mat &mat) {
+static QImage *mat2Image(cv::Mat &mat) {
 
     auto type = mat.type();
 
@@ -89,16 +91,30 @@ QImage *mat2Image(cv::Mat &mat) {
     return image;
 }
 
+void GLWidget::set_image(const std::string &path) {
+    current_mode_ = Mode::Image;
+
+    cv::Mat input_image(0, 0, CV_8UC3);
+    // todo - this may fail we need to inform about that
+    input_image = cv::imread(path);
+    {
+        std::lock_guard<std::mutex> lock(in_mat_mutex_);
+        input_matrix_ = input_image.clone();
+        output_matrix_ = input_image.clone();
+    }
+    std::lock_guard<std::mutex> lock(image_mutex_);
+    // todo this delete segfaults
+    //delete image_;
+    image_ = mat2Image(input_image);
+}
+
 GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
-    video_capture_ = new cv::VideoCapture("file.avi");
     effects_.fill(nullptr);
-    elapsed_ = 0;
     setFixedSize(parent->width(), parent->height());
-    std::string input_file_path = "jpg.jpg";
-    change_image(input_file_path);
 
+    set_image(EMPTY_IMAGE);
     // That should make it resizable
     // setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
@@ -108,48 +124,60 @@ void GLWidget::animate() {
     update();
 }
 
+
+void GLWidget::paint_image(QPainter *painter) {
+    // todo that should be done only once not on every render
+    std::lock_guard<std::mutex> lock(image_mutex_);
+    // todo here! the SIEGSEGV happens date: 27.04
+    QPixmap pixmap = QPixmap::fromImage(*this->image_);
+    pixmap = pixmap.scaled(width(), height());
+    painter->drawPixmap(QPoint(0, 0), pixmap);
+}
+
 void GLWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::LosslessImageRendering);
-    /// Paint on widget from QImage
 
-    cv::Mat frame;
-    (*video_capture_) >> frame;
-    if (!frame.empty()) {
-        apply_effects(frame);
-        std::lock_guard<std::mutex> lock(image_mutex_);
-        delete image_;
-        this->image_ = mat2Image(frame);
-    } else {
-        video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);
+    switch (current_mode_) {
+        case Mode::Image: {
+//            delete image_;
+//            image_ = mat2Image(output_matrix_);
+            break;
+        }
+        case Mode::Video: {
+            // This needs to go out
+            (*video_capture_) >> input_matrix_;
+            output_matrix_ = input_matrix_.clone();
+            if (!input_matrix_.empty()) {
+                apply_effects(output_matrix_);
+                std::lock_guard<std::mutex> lock(image_mutex_);
+                delete image_;
+//                input_matrix_ = frame.clone();
+                this->image_ = mat2Image(output_matrix_);
+            } else {
+                video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);
+            }
+            break;
+        }
     }
+    paint_image(&painter);
 
-
-    auto paint = [this](QPainter *painter, QPaintEvent *event, int elapsed) {
-        // todo that should be done only once not on every render
-        std::lock_guard<std::mutex> lock(image_mutex_);
-        // todo here! the SIEGSEGV happens date: 27.04
-        QPixmap pixmap = QPixmap::fromImage(*this->image_);
-        pixmap = pixmap.scaled(width(), height());
-        painter->drawPixmap(QPoint(0, 0), pixmap);
-    };
-
-    paint(&painter, event, elapsed_);
     painter.end();
 }
 
-void GLWidget::change_image(const std::string &path) {
-    cv::Mat input_image(0, 0, CV_8UC3);
-    // todo - this may fail we need to inform about that
-    input_image = cv::imread(path);
-    {
-        std::lock_guard<std::mutex> lock(mat_mutex_);
-        current_image_ = input_image.clone();
+void GLWidget::change_file(const std::string &path, Mode mode) {
+    bool is_video = false;
+    current_mode_ = mode;
+    switch (mode) {
+        case Mode::Image: {
+            set_image(path);
+            break;
+        }
+        case Mode::Video: {
+            delete video_capture_;
+            video_capture_ = new cv::VideoCapture(path);
+        }
     }
-    std::lock_guard<std::mutex> lock(image_mutex_);
-    // todo this delete segfaults
-    //delete image_;
-    image_ = mat2Image(input_image);
 }
 
 void GLWidget::apply_effects(cv::Mat frame) {
@@ -174,5 +202,6 @@ void GLWidget::change_effect(int idx, Effect *new_effect) {
         delete effects_.at(idx);
         effects_.at(idx) = new_effect;
     }
-    apply_effects(current_image_);
+    output_matrix_ = input_matrix_.clone();
+    apply_effects(output_matrix_);
 }

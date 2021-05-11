@@ -88,7 +88,12 @@ void VideoPlayer::createActions() {
     open_action_ = new QAction(tr("&Open..."), this);
     open_action_->setShortcuts(QKeySequence::Open);
     open_action_->setStatusTip(tr("Open an existing file"));
-    connect(open_action_, &QAction::triggered, this, &VideoPlayer::open_handler);
+    connect(open_action_, &QAction::triggered, this, &VideoPlayer::open_file_handler);
+
+    open_script_action_ = new QAction(tr("&Open script file"), this);
+//    open_script_action_->setShortcut(QKeySequence::)
+    open_script_action_->setStatusTip(tr("Open file with lua script"));
+    connect(open_script_action_, &QAction::triggered, this, &VideoPlayer::open_script_handler);
 
     quit_action_ = new QAction(tr("Close application"), this);
     quit_action_->setShortcut(QKeySequence::Close);
@@ -113,6 +118,7 @@ void VideoPlayer::createMenus() {
     /// Add diferent actions to the menu bar
     action_menu_->addAction(new_action_);
     action_menu_->addAction(open_action_);
+
     action_menu_->addAction(quit_action_);
     action_menu_->addAction(open_settings_action_);
 
@@ -141,13 +147,49 @@ void VideoPlayer::new_file_handler() {
 }
 
 /// \brief What happens when open is clicked
-void VideoPlayer::open_handler() {
+void VideoPlayer::open_file_handler() {
     /// Show message in status bar
     statusBar()->showMessage(QString("File->OpenFile hit"));
     auto fileName = QFileDialog::getOpenFileName(this,
-                                                 tr("Open Image"), "/home/jana", tr("Image Files (*.png *.jpg *.bmp)"));
+                                                 tr("Open File"));
     std::cout << "filename: " << fileName.toStdString() << std::endl;
-    opengl_widget_->change_image(fileName.toStdString());
+
+    /// Ask the user a question and handle the responses
+    switch (QMessageBox::question(
+            this,
+            tr("Video Player"),
+            tr("Is this file a video?"),
+            QMessageBox::Yes |
+            QMessageBox::No |
+            QMessageBox::Cancel,
+            QMessageBox::Cancel)) {
+        case QMessageBox::Yes: {
+            /// Print to console
+            qDebug("Video");
+            /// Exit the application
+            opengl_widget_->change_file(fileName.toStdString(), GLWidget::Video);
+            break;
+        }
+        case QMessageBox::No: {
+            /// Print to console
+            qDebug("Image");
+            /// Exit the application
+            opengl_widget_->change_file(fileName.toStdString(), GLWidget::Image);
+            break;
+        }
+        case QMessageBox::Cancel: {
+            /// Print to the console
+            qDebug("cancel");
+            break;
+        }
+        default:
+            /// Print to the console
+            qDebug("close");
+            break;
+    }
+
+
+
 }
 
 /// show dialog confirming a window closing then act accordingly
@@ -193,6 +235,14 @@ void VideoPlayer::show_info_handler() {
 
 /// Create the second window
 void VideoPlayer::second_window_create() {
-    second_window_ = new SettingsWindow(this,opengl_widget_);
+    second_window_ = new SettingsWindow(this, opengl_widget_);
+}
+
+void VideoPlayer::open_script_handler() {
+    statusBar()->showMessage(QString("File->OpenScript hit"));
+    auto fileName = QFileDialog::getOpenFileName(this,
+                                                 tr("Open Image"), "/home/jana", tr("All files"));
+    std::cout << "Script name: " << fileName.toStdString() << std::endl;
+    opengl_widget_->change_file(fileName.toStdString(), GLWidget::Mode::Script);
 }
 

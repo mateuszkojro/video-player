@@ -24,7 +24,7 @@ add_executable(${PROJECT_NAME}
         Style.h
         Effect.h
         EffectsImplementations.h
-        VideoPlayback.cpp VideoPlayback.h)
+        VideoPlayback.cpp VideoPlayback.h ScriptHandler.cpp ScriptHandler.h)
 
 
 if (NOT CMAKE_PREFIX_PATH)
@@ -91,3 +91,8 @@ add_subdirectory(${Lua_DIR})
 message(${Lua_DIR}/src/lua.hpp)
 include_directories(${Lua_DIR}/src/)
 target_link_libraries(${PROJECT_NAME} liblua)
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_SOURCE_DIR}/files/empty.png"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>")

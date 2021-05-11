@@ -34,7 +34,9 @@ private slots:
 
     void new_file_handler();
 
-    void open_handler();
+    void open_file_handler();
+
+    void open_script_handler();
 
     void close_handler();
 
@@ -53,6 +55,7 @@ private:
     QAction *show_info_action_;
     QAction *new_action_;
     QAction *open_action_;
+    QAction *open_script_action_;
     QAction *quit_action_;
     QAction *open_settings_action_;
 
