@@ -77,7 +77,7 @@ static QImage *mat2Image(cv::Mat &mat) {
     QImage *image;
     switch (type) {
         case CV_8UC3: {
-            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_RGB888);
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888);
             break;;
         }
         case CV_8UC1: {
