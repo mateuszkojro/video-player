@@ -11,11 +11,11 @@ enum class EffectNr {
     effect_hsv_,
     effect_blur_r_,
     effect_sobel_,
-    effect_canny_,
     effect_noise_,
     effect_gauss_,
-    effect_grey_scale_
-
+    effect_neon_,
+    effect_grey_scale_,
+    effect_canny_
 };
 
 
@@ -58,7 +58,7 @@ private:
 
     void flip_effect_gauss();
 
-    void flip_effect_blue_shift();
+    void flip_effect_neon();
 
 
     /// 0 in effect array
@@ -70,14 +70,14 @@ private:
     /// 3 in effect array
     Switch *effect_sobel_;
     /// 4 in effect array
-    Switch *effect_canny_;
-    /// 5 in effect array
     Switch *effect_noise_;
+    /// 5
+    Switch *effect_neon_;
     /// 6 in effect array
+    Switch *effect_canny_;
+    /// 7 in effect array
     Switch *effect_grey_scale_;
-    /// there is no need for it to be in effect array
-    /// i's kinda a joke anyway
-    Switch *effect_blue_shift_;
+
 };
 
 

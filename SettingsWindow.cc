@@ -8,28 +8,31 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     opengl_widget_ = opengl_widget;
 
     /// Create buttons assign it to current window ans set its text
-  
+
     effect_hsv_ = new Switch("Hsv");
     effect_blur_r_ = new Switch("Blur");
     effect_sobel_ = new Switch("Sobel");
-    effect_blue_shift_ = new Switch("Blue Shift");
     effect_canny_ = new Switch("Canny");
+    effect_neon_ = new Switch("Neon");
+
     effect_noise_ = new Switch("Noise");
     effect_gauss_ = new Switch("Gauss");
     effect_grey_scale_ = new Switch("Grey Sale");
 
-    effect_blue_shift_->setChecked(true);
+
 
     /// Show the buttons
 
- 
+
     effect_hsv_->show();
     effect_blur_r_->show();
     effect_sobel_->show();
-    effect_blue_shift_->show();
     effect_canny_->show();
+    effect_neon_->show();
     effect_noise_->show();
     effect_gauss_->show();
+
+
     effect_grey_scale_->show();
 
     /// Create a vertical layout
@@ -40,11 +43,11 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->setContentsMargins(5, 5, 15, 5);
 
     /// Add buttons to layout
-    
+
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(effect_sobel_);
-    layout_->addWidget(effect_blue_shift_);
+    layout_->addWidget(effect_neon_);
     layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
     layout_->addWidget(effect_gauss_);
@@ -57,8 +60,9 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(effect_sobel_, &QPushButton::released, this, &SettingsWindow::flip_effect_sobel);
     connect(effect_canny_, &QPushButton::released, this, &SettingsWindow::flip_effect_canny);
     connect(effect_noise_, &QPushButton::released, this, &SettingsWindow::flip_effect_noise);
+    connect(effect_neon_, &QPushButton::released, this, &SettingsWindow::flip_effect_neon);
     connect(effect_gauss_, &QPushButton::released, this, &SettingsWindow::flip_effect_gauss);
-    connect(effect_blue_shift_, &QPushButton::released, this, &SettingsWindow::flip_effect_blue_shift);
+
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
 
 
@@ -72,14 +76,14 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 }
 
 SettingsWindow::~SettingsWindow() {
-    
+
     delete effect_hsv_;
     delete effect_blur_r_;
     delete effect_sobel_;
     delete effect_canny_;
     delete effect_noise_;
     delete effect_gauss_;
-    delete effect_blue_shift_;
+    delete effect_neon_;
     delete effect_grey_scale_;
     delete layout_;
 }
@@ -98,17 +102,8 @@ void SettingsWindow::flip_effect_hsv() {
 }
 
 void SettingsWindow::flip_effect_blur_r() {
-    if (effect_blur_r_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
+    auto setting = effect_blur_r_->isChecked() ? new Blur_rEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_blur_r_), setting);
 
 }
 
@@ -118,57 +113,26 @@ void SettingsWindow::flip_effect_sobel() {
 }
 
 void SettingsWindow::flip_effect_canny() {
-    if (effect_canny_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
+    auto setting = effect_canny_->isChecked() ? new CannyEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_canny_), setting);
 
 }
 
 void SettingsWindow::flip_effect_noise() {
-    if (effect_noise_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
+    auto setting = effect_noise_->isChecked() ? new NoiseEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
 
 }
 
 void SettingsWindow::flip_effect_gauss() {
-    if (effect_gauss_->isChecked()) {
-        /// here add to vector or some shiet
-        /// If i'm not mistaken ths is true after clicking meaning button is blue
-        /// and effect should be applied
-        ;
-    } else {
-
-        /// this one makes effect disappear
-
-        ;
-    }
+    auto setting = effect_gauss_->isChecked() ? new GaussianBlurEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_gauss_), setting);
 
 }
 
-void SettingsWindow::flip_effect_blue_shift() {
 
-    if (effect_blue_shift_->isChecked()) {
-
-    } else {
-        effect_blue_shift_->setChecked(true);
-
-    }
+void SettingsWindow::flip_effect_neon() {
+    auto setting = effect_neon_->isChecked() ? new NeonEffect() : nullptr;
+    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 
 }
