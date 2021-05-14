@@ -27,6 +27,8 @@ public slots:
 
     void change_effect(int idx, Effect* effect);
 
+    void change_state(int idx,std::string info);
+
 protected:
 
 
@@ -53,6 +55,7 @@ private:
 
     std::mutex effects_mutex_;
     std::array<Effect*, 8> effects_;
+
 };
 
 #endif // GLWIDGET_H

@@ -14,15 +14,15 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     effect_sobel_ = new Switch("Sobel");
     effect_canny_ = new Switch("Canny");
     effect_neon_ = new Switch("Neon");
-
     effect_noise_ = new Switch("Noise");
     effect_gauss_ = new Switch("Gauss");
     effect_grey_scale_ = new Switch("Grey Sale");
 
-
+    pause_ = new QPushButton("Pause");
+    skip_10_l_ = new QPushButton("Skip -10");
+    skip_10_r_ = new QPushButton("Skip +10");
 
     /// Show the buttons
-
 
     effect_hsv_->show();
     effect_blur_r_->show();
@@ -31,19 +31,36 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     effect_neon_->show();
     effect_noise_->show();
     effect_gauss_->show();
-
-
     effect_grey_scale_->show();
+    pause_->show();
+    skip_10_r_->show();
+    skip_10_l_->show();
 
     /// Create a vertical layout
-    layout_ = new QVBoxLayout;
-    setSizeGripEnabled(layout_);
+    /// layout_ = new QVBoxLayout;
+    ///setSizeGripEnabled(layout_);
+
+    layout_ = new QGridLayout(parent_);
 
     /// Set the margins
-    layout_->setContentsMargins(5, 5, 15, 5);
+    layout_->setContentsMargins(5, 5, 5, 5);
 
     /// Add buttons to layout
-
+    layout_->addWidget(skip_10_l_, 0, 0);
+    layout_->addWidget(pause_, 0, 1);
+    layout_->addWidget(skip_10_r_, 0, 2);
+    layout_->addWidget(effect_hsv_, 1, 0, 1, 2);
+    layout_->addWidget(effect_blur_r_, 2, 0, 1, 2);
+    layout_->addWidget(effect_sobel_, 3, 0, 1, 2);
+    layout_->addWidget(effect_neon_, 4, 0, 1, 2);
+    layout_->addWidget(effect_canny_, 5, 0, 1, 2);
+    layout_->addWidget(effect_noise_, 6, 0, 1, 2);
+    layout_->addWidget(effect_gauss_, 7, 0, 1, 2);
+    layout_->addWidget(effect_grey_scale_, 8, 0, 1, 2);
+    /*
+    layout_->addWidget(skip_10_l_);
+    layout_->addWidget(pause_);
+    layout_->addWidget(skip_10_r_);
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(effect_sobel_);
@@ -51,7 +68,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
     layout_->addWidget(effect_gauss_);
-    layout_->addWidget(effect_grey_scale_);
+    layout_->addWidget(effect_grey_scale_); */
+
 
     /// Add handlers to the buttons
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
@@ -62,8 +80,11 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(effect_noise_, &QPushButton::released, this, &SettingsWindow::flip_effect_noise);
     connect(effect_neon_, &QPushButton::released, this, &SettingsWindow::flip_effect_neon);
     connect(effect_gauss_, &QPushButton::released, this, &SettingsWindow::flip_effect_gauss);
-
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
+
+    connect(pause_, &QPushButton::released, this, &SettingsWindow::flip_pause_);
+    connect(skip_10_l_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_l);
+    connect(skip_10_r_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_r);
 
 
 
@@ -85,6 +106,9 @@ SettingsWindow::~SettingsWindow() {
     delete effect_gauss_;
     delete effect_neon_;
     delete effect_grey_scale_;
+    delete pause_;
+    delete skip_10_l_;
+    delete skip_10_r_;
     delete layout_;
 }
 
@@ -136,3 +160,29 @@ void SettingsWindow::flip_effect_neon() {
     opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 
 }
+
+void SettingsWindow::flip_pause_() {
+    //auto setting = pause_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i returned only some info now
+    auto setting = pause_->isChecked() ? "clicked" : "no";
+    opengl_widget_->change_state(static_cast<int>(StateNr::pause_), setting);
+
+}
+
+void SettingsWindow::flip_skip_10_l() {
+    //auto setting = skip_10_l_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i return only some info now
+    auto setting = skip_10_l_->isChecked() ? "clicked" : "no";
+    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_l_), setting);
+
+}
+
+void SettingsWindow::flip_skip_10_r() {
+    //auto setting = skip_10_r_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i return only some info now
+    auto setting = skip_10_r_->isChecked() ? "clicked" : "no";
+    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_r_), setting);
+
+}
+
+

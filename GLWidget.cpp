@@ -205,3 +205,7 @@ void GLWidget::change_effect(int idx, Effect *new_effect) {
     output_matrix_ = input_matrix_.clone();
     apply_effects(output_matrix_);
 }
+
+void GLWidget::change_state(int idx, std::string info){
+    ///
+}

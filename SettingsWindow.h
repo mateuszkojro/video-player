@@ -18,12 +18,19 @@ enum class EffectNr {
     effect_canny_
 };
 
+enum class StateNr {
+    pause_,
+    skip_10_l_,
+    skip_10_r_
+};
+
 
 #include <QWindow>
 #include <QWidget>
 #include <QPushButton>
 #include <QDialog>
 #include <QVBoxLayout>
+#include <QGridLayout>
 #include <QAction>
 #include <QMessageBox>
 
@@ -42,7 +49,9 @@ private:
 
     QWidget *parent_;
 
-    QLayout *layout_;
+    ///QLayout *layout_;
+    /// i change typ of layout (QLayout -> QGridLayout) to add buttons in horizontal and vertical way - if it's wrong - my apologize
+    QGridLayout *layout_;
 
     void flip_effect_grey_scale();
 
@@ -60,6 +69,11 @@ private:
 
     void flip_effect_neon();
 
+    void flip_pause_();
+
+    void flip_skip_10_l();
+
+    void flip_skip_10_r();
 
     /// 0 in effect array
     Switch *effect_gauss_;
@@ -77,6 +91,10 @@ private:
     Switch *effect_canny_;
     /// 7 in effect array
     Switch *effect_grey_scale_;
+
+    QPushButton *pause_;
+    QPushButton *skip_10_l_;
+    QPushButton *skip_10_r_;
 
 };
 
