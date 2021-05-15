@@ -26,6 +26,7 @@ public slots:
     void apply_effects(cv::Mat frame);
 
     void change_effect(int idx, Effect* effect);
+    
 
 protected:
 

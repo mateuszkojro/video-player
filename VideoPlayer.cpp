@@ -92,13 +92,14 @@ void VideoPlayer::createActions() {
 
     open_script_action_ = new QAction(tr("&Open script file"), this);
 //    open_script_action_->setShortcut(QKeySequence::)
+
     open_script_action_->setStatusTip(tr("Open file with lua script"));
     connect(open_script_action_, &QAction::triggered, this, &VideoPlayer::open_script_handler);
 
     quit_action_ = new QAction(tr("Close application"), this);
     quit_action_->setShortcut(QKeySequence::Close);
     quit_action_->setStatusTip("Quit application");
-    connect(quit_action_, &QAction::triggered, this, &VideoPlayer::close);
+    connect(quit_action_, &QAction::triggered, this, &VideoPlayer::close_handler);
 
     show_info_action_ = new QAction(tr("Info"), this);
     show_info_action_->setShortcut(QKeySequence::HelpContents);
@@ -118,7 +119,6 @@ void VideoPlayer::createMenus() {
     /// Add diferent actions to the menu bar
     action_menu_->addAction(new_action_);
     action_menu_->addAction(open_action_);
-
     action_menu_->addAction(quit_action_);
     action_menu_->addAction(open_settings_action_);
 
@@ -187,7 +187,6 @@ void VideoPlayer::open_file_handler() {
             qDebug("close");
             break;
     }
-
 
 
 }

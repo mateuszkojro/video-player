@@ -140,8 +140,6 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
     switch (current_mode_) {
         case Mode::Image: {
-//            delete image_;
-//            image_ = mat2Image(output_matrix_);
             break;
         }
         case Mode::Video: {
