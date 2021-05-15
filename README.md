@@ -19,19 +19,6 @@ Cmake for Lua sourced from
 
 <https://gist.github.com/squeek502/0706332efb18edd0601a4074762b0b9a>
 
-# Todos
-
-## Engine
-
-- [ ] pause / resume
-- [ ] skip 10s next / prev
-
-## UI
-
-- [ ] pause, resume, skip UI
-- [ ] Additional settings for effects
-
-
 ## Engine
 
 - [ ] pause / resume
