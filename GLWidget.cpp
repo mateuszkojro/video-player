@@ -117,7 +117,7 @@ GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
 #if NEW_PIPELINE
-    playback_ = new VideoPlayback("");
+    playback_ = new VideoPlayback("C:\\Users\\studio25\\Downloads\\Rick");
 #else
 
     effects_.fill(nullptr);
@@ -166,7 +166,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
-        change_current_pixmap(playback_->next_frame());
+        change_current_pixmap(&playback_->next_frame());
     }
 #else
     switch (current_mode_) {

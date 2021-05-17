@@ -149,6 +149,44 @@ private:
         uchar B_;
     };
 
+    Color gen_rainbow(unsigned height, unsigned max_height) {
+        // sine wave algorithm
+        // 3 parts
+        // 1 :
+        // r = cos(i) , g = sin(i), b =0
+        // 2 :
+        // r = 0 , g = cos(i), b = sin(x)
+        // 3:
+        // r = sin(i) , g = 0, b = cos(x)
+        // every part is max_height / 3 translates into 0, PI/2
+
+        // so for example in point 1/3 * max_height
+        // r = cos(PI/2) = 0, g = sin(PI/2) = 1, b = 0
+
+        char witch_third = height / (max_height / 3);
+
+        double height_in_radians;
+        switch (witch_third) {
+            case 0:
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+
+                return Color(cos(height_in_radians) * 255, sin(height_in_radians) * 255, 0);
+            case 1:
+                height -= max_height / 3;
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+                return Color(0, cos(height_in_radians) * 255, sin(height_in_radians) * 255);
+
+            case 2:
+                height -= 2 * max_height / 3;
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+                return Color(sin(height_in_radians) * 255, 0, cos(height_in_radians) * 255);
+
+        }
+
+        return {255, 0, 0};
+    }
+
+
     void apply_color(int x, int y, cv::Mat &frame) {
 
         frame.at<cv::Vec3b>(x, y)[0] = effect_color.R_;
@@ -162,6 +200,9 @@ public:
     /// \param frame the pixel matrix that will be replaced with contours of itself (cool)
     /// \note the type of pixel inside frame will be changed to ??? <- something i belive it's 8UC3
     void operator()(cv::Mat &frame) override {
+        effect_color = gen_rainbow(frame_counter,450);
+        frame_counter++;
+        if(frame_counter>450) frame_counter=0;
 
         cv::Mat output;
 
@@ -179,6 +220,7 @@ public:
     }
 
 private :
+    unsigned frame_counter =0;
 Color effect_color = {178,250,40};
 };
 

@@ -25,22 +25,26 @@ class VideoPlayback {
 
 
     std::mutex analyzed_frames_mutex_;
-    std::queue<QImage*> analyzed_frames_;
+    std::queue<QPixmap*> analyzed_frames_;
 
-
-
+//    std::thread read_thread;
+//    std::thread effect_thread;
 
     bool read_next_frame();
-    void th_frame_reader();
+
     void add_effect();
-    void th_effect_adder();
+
 
 public:
+
+    void th_frame_reader();
+    void th_effect_adder();
+
     VideoPlayback(const std::string &path);
 
     /// @brief Get the next frame in the queue
     /// @return
-    const QPixmap &next_frame();
+    QPixmap & next_frame();
 
     // but like yt  so we need to clean our buffor
     // move in file in reverse
@@ -53,6 +57,11 @@ public:
     // read new file
     void change_file(const std::string &path);
 
+
+    ~VideoPlayback(){
+//        read_thread.join();
+//        effect_thread.join();
+    }
 
     /// @brief Jump to specified frame clean queue (maybe not all of it if we want to be fast)
     /// @param index the frame to skip to

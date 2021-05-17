@@ -4,12 +4,13 @@
 
 #include <thread>
 #include "VideoPlayback.h"
-static QImage *mat2Image(cv::Mat &mat);
-void VideoPlayback::change_file(const std::string &path) {
 
-    delete video_capture_;
+static QImage *mat2Image(cv::Mat &mat);
+
+void VideoPlayback::change_file(const std::string &path) {
+    std::lock_guard<std::mutex> lock(video_capture_mutex_);
+   if(video_capture_ != nullptr) delete video_capture_;
     video_capture_ = new cv::VideoCapture(path);
-    std::thread(th_frame_reader);
 }
 
 bool VideoPlayback::read_next_frame() {
@@ -47,9 +48,14 @@ void VideoPlayback::th_frame_reader() {
 
         /// if  read next frame returns false, the file ended
         /// so we
-        if (!read_next_frame()) return;
+        if (!read_next_frame()) {
+            std::lock_guard<std::mutex> lock(raw_frames_mutex_);
+            raw_frames_.push(nullptr);
+            return;
+        }
 
     }
+
 }
 
 void VideoPlayback::add_effect() {
@@ -64,7 +70,7 @@ void VideoPlayback::add_effect() {
         int assert_size = raw_frames_.size();
 
         temp_frame = raw_frames_.front()->clone();
-
+        raw_frames_.pop();
         assert(raw_frames_.size() == assert_size - 1);
 
     }
@@ -78,30 +84,53 @@ void VideoPlayback::add_effect() {
 
     {
         std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        analyzed_frames_.push(mat2Image(temp_frame));
+        analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*mat2Image(temp_frame))));
 
     }
-
 
 }
 
 void VideoPlayback::th_effect_adder() {
-while(2>1){
-    {
-        std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-        /// if the buffor is filled with next 300 frames that is 10s video 30fps
-        /// wait a bit, stop, get some help
-        if (raw_frames_.size() <=0 ){
+    while (2 > 1) {
+        {
+            {
+                std::lock_guard<std::mutex> lock(raw_frames_mutex_);
+                /// if the buffor is filled with next 300 frames that is 10s video 30fps
+                /// wait a bit, stop, get some help
+                if (raw_frames_.front() == nullptr) return;
+                if (raw_frames_.size() <= 0) {
 
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-            continue;
+                    std::this_thread::sleep_for(std::chrono::seconds(1));
+                    continue;
+                }
+            }
+            add_effect();
         }
-        add_effect();
     }
+}
 
+QPixmap &VideoPlayback::next_frame() {
+
+    std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
+    //todo std::move? here but i'll play safe for now
+    QPixmap temp = *analyzed_frames_.front();
+    analyzed_frames_.pop();
+    return temp;
+}
+
+void VideoPlayback::change_effect(int index, Effect *effect) {
+
+    std::lock_guard<std::mutex> lock(effects_mutex_);
+    effects_[index] = effect;
 
 }
 
+VideoPlayback::VideoPlayback(const std::string &path) {
+    video_capture_ = nullptr;
+    change_file(path);
+
+    std::thread read_thread(&VideoPlayback::th_frame_reader, this);
+    std::thread effect_thread(&VideoPlayback::th_effect_adder, this);
 
 }
 
