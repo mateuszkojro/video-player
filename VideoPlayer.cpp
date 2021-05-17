@@ -167,14 +167,14 @@ void VideoPlayer::open_file_handler() {
             /// Print to console
             qDebug("Video");
             /// Exit the application
-            opengl_widget_->change_file(fileName.toStdString(), GLWidget::Video);
+            opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Video);
             break;
         }
         case QMessageBox::No: {
             /// Print to console
             qDebug("Image");
             /// Exit the application
-            opengl_widget_->change_file(fileName.toStdString(), GLWidget::Image);
+            opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Image);
             break;
         }
         case QMessageBox::Cancel: {
@@ -242,6 +242,6 @@ void VideoPlayer::open_script_handler() {
     auto fileName = QFileDialog::getOpenFileName(this,
                                                  tr("Open Image"), "/home/jana", tr("All files"));
     std::cout << "Script name: " << fileName.toStdString() << std::endl;
-    opengl_widget_->change_file(fileName.toStdString(), GLWidget::Mode::Script);
+    opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Mode::Script);
 }
 

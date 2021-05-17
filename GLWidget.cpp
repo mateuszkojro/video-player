@@ -2,12 +2,7 @@
 
 #include <QPainter>
 #include <QTimer>
-#include <QPainter>
 #include <QPaintEvent>
-#include <iostream>
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgcodecs.hpp>
 #include <exception>
 #include <stdexcept>
 
@@ -60,6 +55,7 @@ static QImage *mat2Image(cv::Mat &mat) {
 //    std::clog << "Matrix type: " << type2str(type) << std::endl;
 
     const unsigned size = mat.rows * mat.cols * mat.channels();
+    // todo there is the famous memory leak
     auto buffer = new uchar[size];
 
     int i = 0;
@@ -92,6 +88,14 @@ static QImage *mat2Image(cv::Mat &mat) {
 }
 
 void GLWidget::set_image(const std::string &path) {
+#if NEW_PIPELINE
+    current_mode_ = Mode::Image;
+    cv::Mat input_image(0, 0, CV_8UC3);
+    // todo - this may fail we need to inform about that
+    input_image = cv::imread(path);
+    QImage *image = mat2Image(input_image);
+    change_current_pixmap(new QPixmap(QPixmap::fromImage(*image)));
+#else
     current_mode_ = Mode::Image;
 
     cv::Mat input_image(0, 0, CV_8UC3);
@@ -106,12 +110,19 @@ void GLWidget::set_image(const std::string &path) {
     // todo this delete segfaults
     //delete image_;
     image_ = mat2Image(input_image);
+#endif
 }
 
 GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
+#if NEW_PIPELINE
+    playback_ = new VideoPlayback("");
+#else
+
     effects_.fill(nullptr);
+#endif
+
     setFixedSize(parent->width(), parent->height());
 
     set_image(EMPTY_IMAGE);
@@ -124,20 +135,40 @@ void GLWidget::animate() {
     update();
 }
 
+#if NEW_PIPELINE
 
 void GLWidget::paint_image(QPainter *painter) {
+    // todo fix those copies
+    change_current_pixmap(new QPixmap(current_pixmap_->scaled(width(), height())));
+
+    LOCK(current_pixmap_mutex_);
+    painter->drawPixmap(QPoint(0, 0), *current_pixmap_);
+}
+
+#else
+
+void GLWidget::paint_image(QPainter *painter) {
+
     // todo that should be done only once not on every render
     std::lock_guard<std::mutex> lock(image_mutex_);
     // todo here! the SIEGSEGV happens date: 27.04
     QPixmap pixmap = QPixmap::fromImage(*this->image_);
     pixmap = pixmap.scaled(width(), height());
     painter->drawPixmap(QPoint(0, 0), pixmap);
+
 }
+
+#endif
 
 void GLWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::LosslessImageRendering);
 
+#if NEW_PIPELINE
+    if (current_mode_ == Mode::Video) {
+        change_current_pixmap(playback_->next_frame());
+    }
+#else
     switch (current_mode_) {
         case Mode::Image: {
             break;
@@ -147,7 +178,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
             (*video_capture_) >> input_matrix_;
             output_matrix_ = input_matrix_.clone();
             if (!input_matrix_.empty()) {
-                apply_effects(output_matrix_);
+                request_apply_effects(output_matrix_);
                 std::lock_guard<std::mutex> lock(image_mutex_);
                 delete image_;
 //                input_matrix_ = frame.clone();
@@ -158,13 +189,25 @@ void GLWidget::paintEvent(QPaintEvent *event) {
             break;
         }
     }
+#endif
     paint_image(&painter);
-
     painter.end();
 }
 
-void GLWidget::change_file(const std::string &path, Mode mode) {
-    bool is_video = false;
+void GLWidget::request_change_file(const std::string &path, Mode mode) {
+#if NEW_PIPELINE
+    current_mode_ = mode;
+    switch (mode) {
+        case Mode::Image:
+            set_image(path);
+            break;
+        case Mode::Video:
+            playback_->change_file(path);
+            break;
+        default:
+            throw "Bad mode";
+    }
+#else
     current_mode_ = mode;
     switch (mode) {
         case Mode::Image: {
@@ -176,9 +219,12 @@ void GLWidget::change_file(const std::string &path, Mode mode) {
             video_capture_ = new cv::VideoCapture(path);
         }
     }
+#endif
 }
 
-void GLWidget::apply_effects(cv::Mat frame) {
+#if !NEW_PIPELINE
+void GLWidget::request_apply_effects(cv::Mat frame) {
+
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
@@ -193,13 +239,18 @@ void GLWidget::apply_effects(cv::Mat frame) {
     }
 }
 
-void GLWidget::change_effect(int idx, Effect *new_effect) {
+#endif
+
+void GLWidget::request_change_effect(int idx, Effect *effect) {
+#if NEW_PIPELINE
+    playback_->change_effect(idx, effect);
+#else
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
-        // todo we are leaking memory here
         delete effects_.at(idx);
-        effects_.at(idx) = new_effect;
+        effects_.at(idx) = effect;
     }
     output_matrix_ = input_matrix_.clone();
-    apply_effects(output_matrix_);
+    request_apply_effects(output_matrix_);
+#endif
 }
