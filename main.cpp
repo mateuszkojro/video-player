@@ -1,11 +1,11 @@
-#include <QApplication>
+#define WITH_LUA false
 
+#include <QApplication>
 #include "VideoPlayer.h"
 #include "lua.hpp"
+
 #include "ScriptHandler.h"
 #include <iostream>
-
-#define WITH_LUA false
 
 struct Pair {
     int a;
