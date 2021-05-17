@@ -17,7 +17,7 @@ class VideoPlayback {
     std::mutex video_capture_mutex_;
     cv::VideoCapture* video_capture_;
 
-
+    std::mutex effects_mutex_;
     std::array<Effect *, 8> effects_;
 
     std::mutex raw_frames_mutex_;
@@ -25,13 +25,15 @@ class VideoPlayback {
 
 
     std::mutex analyzed_frames_mutex_;
-    std::queue<QPixmap> analyzed_frames_;
+    std::queue<QImage*> analyzed_frames_;
 
 
 
 
     bool read_next_frame();
     void th_frame_reader();
+    void add_effect();
+    void th_effect_adder();
 
 public:
     VideoPlayback(const std::string &path);
