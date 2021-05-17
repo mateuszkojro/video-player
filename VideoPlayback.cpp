@@ -9,8 +9,10 @@ static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
     std::lock_guard<std::mutex> lock(video_capture_mutex_);
-   if(video_capture_ != nullptr) delete video_capture_;
+    delete video_capture_;
+
     video_capture_ = new cv::VideoCapture(path);
+    assert(video_capture_->isOpened());
 }
 
 bool VideoPlayback::read_next_frame() {
@@ -23,7 +25,7 @@ bool VideoPlayback::read_next_frame() {
     }
     if (one_frame_buffor.empty()) {
 
-        video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);
+        // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
         /// if frame is empty return false
         /// it stops everything
         return false;
@@ -115,6 +117,7 @@ QPixmap &VideoPlayback::next_frame() {
     //todo std::move? here but i'll play safe for now
     QPixmap temp = *analyzed_frames_.front();
     analyzed_frames_.pop();
+    current_completed_frame++;
     return temp;
 }
 
@@ -128,10 +131,16 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
 VideoPlayback::VideoPlayback(const std::string &path) {
     video_capture_ = nullptr;
     change_file(path);
+    raw_frames_ = {};
+    analyzed_frames_ = {};
 
     std::thread read_thread(&VideoPlayback::th_frame_reader, this);
     std::thread effect_thread(&VideoPlayback::th_effect_adder, this);
 
+}
+
+unsigned VideoPlayback::current_frame() {
+    return current_completed_frame;
 }
 
 static QImage *mat2Image(cv::Mat &mat) {

@@ -27,6 +27,8 @@ class VideoPlayback {
     std::mutex analyzed_frames_mutex_;
     std::queue<QPixmap*> analyzed_frames_;
 
+    unsigned current_completed_frame = 0;
+
 //    std::thread read_thread;
 //    std::thread effect_thread;
 
