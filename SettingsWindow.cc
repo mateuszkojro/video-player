@@ -19,6 +19,12 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     effect_gauss_ = new Switch("Gauss");
     effect_grey_scale_ = new Switch("Grey Sale");
 
+    noise_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
+    noise_level_slider_->setMaximum(99);
+    noise_level_slider_->setMinimum(1);
+    noise_level_slider_->setTickInterval(5);
+    noise_level_slider_->show();
+
 
 
     /// Show the buttons
@@ -50,6 +56,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_neon_);
     layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
+    layout_->addWidget(noise_level_slider_);
     layout_->addWidget(effect_gauss_);
     layout_->addWidget(effect_grey_scale_);
 
@@ -62,6 +69,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(effect_noise_, &QPushButton::released, this, &SettingsWindow::flip_effect_noise);
     connect(effect_neon_, &QPushButton::released, this, &SettingsWindow::flip_effect_neon);
     connect(effect_gauss_, &QPushButton::released, this, &SettingsWindow::flip_effect_gauss);
+
+    connect(noise_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_noise_level);
 
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
 
@@ -118,9 +127,9 @@ void SettingsWindow::flip_effect_canny() {
 }
 
 void SettingsWindow::flip_effect_noise() {
-    auto setting = effect_noise_->isChecked() ? new NoiseEffect() : nullptr;
-    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
-
+//    auto setting = effect_noise_->isChecked() ? new NoiseEffect() : nullptr;
+//    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
+    change_noise_level();
 }
 
 void SettingsWindow::flip_effect_gauss() {
@@ -133,4 +142,10 @@ void SettingsWindow::flip_effect_neon() {
     auto setting = effect_neon_->isChecked() ? new NeonEffect() : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 
+}
+
+void SettingsWindow::change_noise_level() {
+    int level = noise_level_slider_->value();
+    auto setting = effect_noise_->isChecked() ? new NoiseEffect(level) : nullptr;
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
 }

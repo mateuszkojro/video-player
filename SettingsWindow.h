@@ -26,6 +26,7 @@ enum class EffectNr {
 #include <QVBoxLayout>
 #include <QAction>
 #include <QMessageBox>
+#include <QSlider>
 
 #include "Switch.h"
 #include "GLWidget.h"
@@ -60,6 +61,7 @@ private:
 
     void flip_effect_neon();
 
+    void change_noise_level();
 
     /// 0 in effect array
     Switch *effect_gauss_;
@@ -77,6 +79,9 @@ private:
     Switch *effect_canny_;
     /// 7 in effect array
     Switch *effect_grey_scale_;
+
+    QSlider *noise_level_slider_;
+
 
 };
 
