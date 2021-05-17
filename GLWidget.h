@@ -8,7 +8,7 @@
 #include <opencv2/highgui.hpp>
 #include "Effect.h"
 
-#define NEW_PIPELINE true
+#define NEW_PIPELINE false
 
 #if NEW_PIPELINE
 #include "VideoPlayback.h"
