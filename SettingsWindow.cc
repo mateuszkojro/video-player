@@ -91,48 +91,46 @@ SettingsWindow::~SettingsWindow() {
 void SettingsWindow::flip_effect_grey_scale() {
     /// Function called after effect 1 button was pressed
     auto setting = effect_grey_scale_->isChecked() ? new GrayScaleEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_grey_scale_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_grey_scale_), setting);
 }
-
 
 void SettingsWindow::flip_effect_hsv() {
     /// Function called after effect 1 button was pressed
     auto setting = effect_hsv_->isChecked() ? new HSVEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_hsv_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_hsv_), setting);
 }
 
 void SettingsWindow::flip_effect_blur_r() {
     auto setting = effect_blur_r_->isChecked() ? new Blur_rEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_blur_r_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_blur_r_), setting);
 
 }
 
 void SettingsWindow::flip_effect_sobel() {
     auto setting = effect_sobel_->isChecked() ? new SobelEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_sobel_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_sobel_), setting);
 }
 
 void SettingsWindow::flip_effect_canny() {
     auto setting = effect_canny_->isChecked() ? new CannyEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_canny_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_canny_), setting);
 
 }
 
 void SettingsWindow::flip_effect_noise() {
     auto setting = effect_noise_->isChecked() ? new NoiseEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
 
 }
 
 void SettingsWindow::flip_effect_gauss() {
     auto setting = effect_gauss_->isChecked() ? new GaussianBlurEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_gauss_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_gauss_), setting);
 
 }
 
-
 void SettingsWindow::flip_effect_neon() {
     auto setting = effect_neon_->isChecked() ? new NeonEffect() : nullptr;
-    opengl_widget_->change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 
 }

@@ -60,6 +60,7 @@ static QImage *mat2Image(cv::Mat &mat) {
 //    std::clog << "Matrix type: " << type2str(type) << std::endl;
 
     const unsigned size = mat.rows * mat.cols * mat.channels();
+    // todo there is the famous memory leak
     auto buffer = new uchar[size];
 
     int i = 0;
@@ -147,7 +148,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
             (*video_capture_) >> input_matrix_;
             output_matrix_ = input_matrix_.clone();
             if (!input_matrix_.empty()) {
-                apply_effects(output_matrix_);
+                request_apply_effects(output_matrix_);
                 std::lock_guard<std::mutex> lock(image_mutex_);
                 delete image_;
 //                input_matrix_ = frame.clone();
@@ -163,8 +164,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     painter.end();
 }
 
-void GLWidget::change_file(const std::string &path, Mode mode) {
-    bool is_video = false;
+void GLWidget::request_change_file(const std::string &path, Mode mode) {
     current_mode_ = mode;
     switch (mode) {
         case Mode::Image: {
@@ -178,7 +178,7 @@ void GLWidget::change_file(const std::string &path, Mode mode) {
     }
 }
 
-void GLWidget::apply_effects(cv::Mat frame) {
+void GLWidget::request_apply_effects(cv::Mat frame) {
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
@@ -193,13 +193,12 @@ void GLWidget::apply_effects(cv::Mat frame) {
     }
 }
 
-void GLWidget::change_effect(int idx, Effect *new_effect) {
+void GLWidget::request_change_effect(int idx, Effect *effect) {
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
-        // todo we are leaking memory here
         delete effects_.at(idx);
-        effects_.at(idx) = new_effect;
+        effects_.at(idx) = effect;
     }
     output_matrix_ = input_matrix_.clone();
-    apply_effects(output_matrix_);
+    request_apply_effects(output_matrix_);
 }

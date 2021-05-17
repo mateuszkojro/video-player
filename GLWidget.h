@@ -10,30 +10,31 @@
 
 class GLWidget : public QOpenGLWidget {
 public:
-    GLWidget(QWidget *parent);
     enum Mode {
         Video,
         Image,
         Script
-    } ;
+    };
 
-public slots:
+    GLWidget(QWidget *parent);
 
     void animate();
 
-    void change_file(const std::string &, Mode);
+    void request_change_file(const std::string &path, Mode mode);
 
-    void apply_effects(cv::Mat frame);
+    void request_apply_effects(cv::Mat frame);
 
-    void change_effect(int idx, Effect* effect);
-    
+    void request_change_effect(int idx, Effect *effect);
+
 
 protected:
 
 
     void paintEvent(QPaintEvent *event) override;
-    void paint_image(QPainter* painter);
-    void set_image(const std::string&);
+
+    void paint_image(QPainter *painter);
+
+    void set_image(const std::string &);
 
 
 private:
@@ -41,7 +42,7 @@ private:
 
     int elapsed_;
 
-    cv::VideoCapture* video_capture_;
+    cv::VideoCapture *video_capture_;
 
     std::mutex in_mat_mutex_;
     cv::Mat input_matrix_;
@@ -53,7 +54,7 @@ private:
     QImage *image_;
 
     std::mutex effects_mutex_;
-    std::array<Effect*, 8> effects_;
+    std::array<Effect *, 8> effects_;
 };
 
 #endif // GLWIDGET_H
