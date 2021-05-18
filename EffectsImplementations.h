@@ -98,12 +98,16 @@ public:
 class NoiseEffect : public Effect {
 public:
 
+    explicit NoiseEffect(int value = 50)
+            : noise_percentage(value) {};
+
+    double noise_percentage;
+
     /// \return the matrix under frame will be overwritten with contours of itself (cool)
     /// \param frame the pixel matrix that will be replaced with contours of itself (cool)
     /// \note the type of pixel inside frame will be changed to ??? <- something i belive it's 8UC3
     void operator()(cv::Mat &frame) override {
 
-        double noise_percentage = 10.0;
         int img_rows = frame.rows;
         int img_columns = frame.cols;
         int img_channels = frame.channels();

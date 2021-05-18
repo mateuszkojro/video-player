@@ -242,6 +242,7 @@ void VideoPlayer::open_script_handler() {
     auto fileName = QFileDialog::getOpenFileName(this,
                                                  tr("Open Image"), "/home/jana", tr("All files"));
     std::cout << "Script name: " << fileName.toStdString() << std::endl;
-    opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Mode::Script);
+    throw "Not implemented";
+//    opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Mode::Script);
 }
 
