@@ -36,7 +36,7 @@ class VideoPlayback {
 
     void add_effect();
 
-
+    void buck_up_reading(int number_of_frames);
 public:
 
     void th_frame_reader();
