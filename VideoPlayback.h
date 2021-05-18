@@ -29,8 +29,8 @@ class VideoPlayback {
 
     unsigned current_completed_frame = 0;
 
-//    std::thread read_thread;
-//    std::thread effect_thread;
+    std::thread *read_thread;
+    std::thread *effect_thread;
 
     bool read_next_frame();
 
@@ -42,7 +42,7 @@ public:
     void th_frame_reader();
     void th_effect_adder();
 
-    VideoPlayback(const std::string &path);
+    VideoPlayback();
 
     /// @brief Get the next frame in the queue
     /// @return
@@ -61,8 +61,8 @@ public:
 
 
     ~VideoPlayback(){
-//        read_thread.join();
-//        effect_thread.join();
+        read_thread->join();
+        effect_thread->join();
     }
 
     /// @brief Jump to specified frame clean queue (maybe not all of it if we want to be fast)

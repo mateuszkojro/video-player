@@ -8,12 +8,16 @@
 static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
+    {
+        std::lock_guard<std::mutex> lock(video_capture_mutex_);
+        delete video_capture_;
 
-    std::lock_guard<std::mutex> lock(video_capture_mutex_);
-    delete video_capture_;
+        video_capture_ = new cv::VideoCapture(path);
+        assert(video_capture_->isOpened());
+    }
 
-    video_capture_ = new cv::VideoCapture(path);
-    assert(video_capture_->isOpened());
+    read_thread = new std::thread(&VideoPlayback::th_frame_reader, this);
+    effect_thread= new std::thread(&VideoPlayback::th_effect_adder, this);
 
 }
 
@@ -158,15 +162,11 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
     //void buck_up_reading(number_of_loaded_frames);
 }
 
-VideoPlayback::VideoPlayback(const std::string &path) {
+VideoPlayback::VideoPlayback() {
     video_capture_ = nullptr;
-    //change_file(path);
     raw_frames_ = {};
     analyzed_frames_ = {};
     effects_.fill(nullptr);
-
-    std::thread read_thread(&VideoPlayback::th_frame_reader, this);
-    std::thread effect_thread(&VideoPlayback::th_effect_adder, this);
 
 }
 
@@ -175,8 +175,7 @@ unsigned VideoPlayback::current_frame() {
 }
 
 void VideoPlayback::buck_up_reading(int number_of_frames) {
-    video_capture_->set(CV_CAP_PROP_POS_MSEC, number_of_frames);
-
+   // video_capture_->set(CV_CAP_PROP_POS_MSEC, number_of_frames);
 }
 
 static QImage *mat2Image(cv::Mat &mat) {
