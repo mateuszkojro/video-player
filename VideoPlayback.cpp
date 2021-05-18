@@ -8,11 +8,13 @@
 static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
-    std::lock_guard<std::mutex> lock(video_capture_mutex_);
-    delete video_capture_;
 
-    video_capture_ = new cv::VideoCapture(path);
-    assert(video_capture_->isOpened());
+        std::lock_guard<std::mutex> lock(video_capture_mutex_);
+        delete video_capture_;
+
+        video_capture_ = new cv::VideoCapture(path);
+        assert(video_capture_->isOpened());
+
 }
 
 bool VideoPlayback::read_next_frame() {
@@ -49,10 +51,10 @@ void VideoPlayback::th_frame_reader() {
         }
 
         /// if  read next frame returns false, the file ended
-        /// so we
+        /// so we fill war_frames with nullptrs than we quit thread
         if (!read_next_frame()) {
             std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-            raw_frames_.push(nullptr);
+            for (int i = 0; i < 5; ++i)raw_frames_.push(nullptr);
             return;
         }
 
@@ -70,8 +72,8 @@ void VideoPlayback::add_effect() {
         std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
         int assert_size = raw_frames_.size();
-
         temp_frame = raw_frames_.front()->clone();
+
         raw_frames_.pop();
         assert(raw_frames_.size() == assert_size - 1);
 
@@ -95,16 +97,20 @@ void VideoPlayback::add_effect() {
 void VideoPlayback::th_effect_adder() {
     while (2 > 1) {
         {
+            bool wait_for_frames = false;
             {
                 std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-                /// if the buffor is filled with next 300 frames that is 10s video 30fps
-                /// wait a bit, stop, get some help
+                /// if pushed frames are nullptrs that means wideo capture closed
+                /// so we shut down effect adding thread as well
                 if (raw_frames_.front() == nullptr) return;
-                if (raw_frames_.size() <= 0) {
+                /// if there are no incoming frames we wait
+                if (raw_frames_.empty()) wait_for_frames = true;
+                else wait_for_frames = false;
+            }
 
-                    std::this_thread::sleep_for(std::chrono::seconds(1));
-                    continue;
-                }
+            if (wait_for_frames) {
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                continue;
             }
             add_effect();
         }
@@ -113,8 +119,18 @@ void VideoPlayback::th_effect_adder() {
 
 QPixmap &VideoPlayback::next_frame() {
 
-    std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-    //todo std::move? here but i'll play safe for now
+  bool   wait_for_frames = false;
+    do {
+        {
+            std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
+            if (analyzed_frames_.empty()) wait_for_frames = true;
+        }
+        // here we will probably spend the most of the time, because if i'm not mistaken
+        // here we wait if lag accrues
+        if(wait_for_frames) std::this_thread::sleep_for(std::chrono::milliseconds (16));
+
+    }while(wait_for_frames);
+        //todo std::move? here but i'll play safe for now
     QPixmap temp = *analyzed_frames_.front();
     analyzed_frames_.pop();
     current_completed_frame++;
@@ -126,11 +142,12 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
     std::lock_guard<std::mutex> lock(effects_mutex_);
     effects_[index] = effect;
 
+
 }
 
 VideoPlayback::VideoPlayback(const std::string &path) {
     video_capture_ = nullptr;
-    change_file(path);
+    //change_file(path);
     raw_frames_ = {};
     analyzed_frames_ = {};
 
