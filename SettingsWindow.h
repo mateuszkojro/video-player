@@ -18,21 +18,15 @@ enum class EffectNr {
     effect_canny_
 };
 
-enum class StateNr {
-    pause_,
-    skip_10_l_,
-    skip_10_r_
-};
-
 
 #include <QWindow>
 #include <QWidget>
 #include <QPushButton>
 #include <QDialog>
 #include <QVBoxLayout>
-#include <QGridLayout>
 #include <QAction>
 #include <QMessageBox>
+#include <QSlider>
 
 #include "Switch.h"
 #include "GLWidget.h"
@@ -49,9 +43,7 @@ private:
 
     QWidget *parent_;
 
-    ///QLayout *layout_;
-    /// i change typ of layout (QLayout -> QGridLayout) to add buttons in horizontal and vertical way - if it's wrong - my apologize
-    QGridLayout *layout_;
+    QLayout *layout_;
 
     void flip_effect_grey_scale();
 
@@ -69,11 +61,20 @@ private:
 
     void flip_effect_neon();
 
-    void flip_pause_();
+    void change_noise_level();
 
-    void flip_skip_10_l();
+    void change_sobel_level();
 
-    void flip_skip_10_r();
+    void change_blur_level();
+
+    void change_gauss_level();
+
+    void change_neon_r_level();
+
+    void change_neon_g_level();
+
+    void change_neon_b_level();
+
 
     /// 0 in effect array
     Switch *effect_gauss_;
@@ -92,9 +93,14 @@ private:
     /// 7 in effect array
     Switch *effect_grey_scale_;
 
-    QPushButton *pause_;
-    QPushButton *skip_10_l_;
-    QPushButton *skip_10_r_;
+    QSlider *noise_level_slider_;
+    QSlider *sobel_level_slider_;
+    QSlider *blur_level_slider_;
+    QSlider *gauss_level_slider_;
+    QSlider *neon_r_level_slider_;
+    QSlider *neon_g_level_slider_;
+    QSlider *neon_b_level_slider_;
+
 
 };
 
