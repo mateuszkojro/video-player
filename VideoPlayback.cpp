@@ -17,7 +17,7 @@ void VideoPlayback::change_file(const std::string &path) {
     }
 
     read_thread = new std::thread(&VideoPlayback::th_frame_reader, this);
-    effect_thread= new std::thread(&VideoPlayback::th_effect_adder, this);
+    effect_thread = new std::thread(&VideoPlayback::th_effect_adder, this);
 
 }
 

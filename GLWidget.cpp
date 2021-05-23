@@ -117,7 +117,7 @@ GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
 #if NEW_PIPELINE
-    playback_ = new VideoPlayback("C:\\Users\\studio25\\Downloads\\Rick");
+    playback_ = new VideoPlayback();
 #else
 
     effects_.fill(nullptr);
