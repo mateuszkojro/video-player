@@ -54,7 +54,7 @@ public:
 
     /// @brief Get the next frame in the queue
     /// @return
-    QPixmap &next_frame();
+    QPixmap next_frame();
 
     // but like yt  so we need to clean our buffor
     // move in file in reverse

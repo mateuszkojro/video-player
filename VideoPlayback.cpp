@@ -54,31 +54,32 @@ void VideoPlayback::change_file(const std::string &path) {
 
 bool VideoPlayback::read_next_frame() {
 
-    cv::Mat one_frame_buffor;
+    cv::Mat one_frame_buffer;
     {
         std::lock_guard<std::mutex> lock(video_capture_mutex_);
-        (*video_capture_) >> one_frame_buffor;
+        (*video_capture_) >> one_frame_buffer;
 
     }
-    if (one_frame_buffor.empty()) {
+    if (one_frame_buffer.empty()) {
 
         // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
-        /// if frame is empty return false
-        /// it stops everything
+        /// if frame is empty, function returns false
+        /// it will stop thread
         return false;
     }
 
     std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-    raw_frames_.push(new cv::Mat(one_frame_buffor));
+    raw_frames_.push(new cv::Mat(one_frame_buffer));
     return true;
 }
 
 void VideoPlayback::th_frame_reader() {
     while (2 > 1) {
+        /// check whether the thread should be stopped
+        if (disable_r_thread) return;
         {
-            if (disable_r_thread) return;
             std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-            /// if the buffor is filled with next 300 frames that is 10s video 30fps
+            /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
             if (raw_frames_.size() > 30 * 10) {
                 std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -94,20 +95,20 @@ void VideoPlayback::th_frame_reader() {
 
 void VideoPlayback::add_effect() {
 
-    // we .clone() frames anyway so we dont need to use move
-    // if i'm not mistaken ofc
+    /// we .clone() frames anyway so we dont need to use move
+    /// if i'm not mistaken ofc
     cv::Mat temp_frame;
+    /// get raw frame form queue
     {
 
         std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
-        int assert_size = raw_frames_.size();
         temp_frame = raw_frames_.front()->clone();
 
         raw_frames_.pop();
-        assert(raw_frames_.size() == assert_size - 1);
 
     }
+    /// analyze it using effect table
     {
         std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
@@ -116,6 +117,8 @@ void VideoPlayback::add_effect() {
             }
         }
     }
+
+    /// place analyzed therefore changed frame on top of analyzed_queue
     {
         std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*mat2Image(temp_frame))));
@@ -127,18 +130,21 @@ void VideoPlayback::add_effect() {
 void VideoPlayback::th_effect_adder() {
     while (2 > 1) {
         {
+            /// check whether we need to stop thread
+            if (disable_e_thread) return;
+            /// we declare
             bool wait_for_frames = false;
             {
-                if (disable_e_thread) return;
                 std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
                 /// if there are no incoming frames we wait
                 if (raw_frames_.empty()) wait_for_frames = true;
-                else wait_for_frames = false;
             }
 
             if (wait_for_frames) {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                /// if we waited there's possibility that we need to wait some more,
+                /// so we skip add_effect part
                 continue;
             }
             add_effect();
@@ -146,22 +152,36 @@ void VideoPlayback::th_effect_adder() {
     }
 }
 
-QPixmap &VideoPlayback::next_frame() {
+QPixmap VideoPlayback::next_frame() {
+    /// let's check whether threads are running
+    assert(!disable_e_thread);
+    assert(!disable_r_thread);
 
     bool wait_for_frames = false;
     do {
         {
             std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
+            /// check whether we should wait for frames
             if (analyzed_frames_.empty()) wait_for_frames = true;
         }
-        // here we will probably spend the most of the time, because if i'm not mistaken
-        // here we wait if lag accrues
-        if (wait_for_frames) std::this_thread::sleep_for(std::chrono::milliseconds(16));
+        /// here we will probably spend the most of the time
+        /// here we wait if lag accrues
+        if (wait_for_frames)
+            std::this_thread::sleep_for(std::chrono::milliseconds(16)); /// 16 milliseconds == 1/60 s
 
     } while (wait_for_frames);
-    //todo std::move? here but i'll play safe for now
-    QPixmap temp = *analyzed_frames_.front();
-    analyzed_frames_.pop();
+
+    /// we need to make copy here, well we could simply pass the pointer
+    /// but in that case we would need rewrite some code,
+    /// so for now it's a copy and fixme next_frame should return QPixmap*
+    /// for now i leave it as is
+    QPixmap temp;
+    {
+        std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
+        temp = *analyzed_frames_.front();
+        /// delete frame from
+        analyzed_frames_.pop();
+    }
     current_completed_frame++;
     return temp;
 }
