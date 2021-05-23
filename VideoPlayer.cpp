@@ -55,6 +55,7 @@ VideoPlayer::VideoPlayer() {
 }
 
 VideoPlayer::~VideoPlayer() {
+    second_window_->close();
     delete action_menu_;
     delete info_menu_;
     delete show_info_action_;
