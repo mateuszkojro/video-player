@@ -8,14 +8,45 @@
 static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
-    {
-        std::lock_guard<std::mutex> lock(video_capture_mutex_);
-        delete video_capture_;
-
-        video_capture_ = new cv::VideoCapture(path);
-        assert(video_capture_->isOpened());
+    /// if read thread is active
+    if (read_thread) {
+        /// tell him to shut off
+        disable_r_thread = true;
+        /// and join thread
+        read_thread->join();
+        /// clean up, probably not necessary but hey
+        delete read_thread;
     }
+    /// as above so below
+    if (effect_thread) {
+        disable_e_thread = true;
+        effect_thread->join();
+        delete effect_thread;
+    }
+    /// all of those steps are always made with threads offline, so we don't need locks
 
+    /// for some reason queue does not have .clear() but i may be dumb
+    /// this looks fine tho
+    while (raw_frames_.empty()) raw_frames_.pop();
+    while (analyzed_frames_.empty()) analyzed_frames_.pop();
+
+    /// prepare threads to run again, but with different file,
+    /// again we probably could skip whole "stop threads step" but kojro insisted
+    disable_e_thread = false;
+    disable_r_thread = false;
+
+    /// delete last video handle
+    /// i thing we could simply override the existing one,
+    /// but this whole function will be run fev times in our video player live spam so there's no need to be fast here
+    delete video_capture_;
+    video_capture_ = new cv::VideoCapture(path);
+    assert(video_capture_->isOpened());
+
+    /// clear frame counter
+    current_completed_frame = 0;
+
+
+    /// reboot threads
     read_thread = new std::thread(&VideoPlayback::th_frame_reader, this);
     effect_thread = new std::thread(&VideoPlayback::th_effect_adder, this);
 
@@ -45,6 +76,7 @@ bool VideoPlayback::read_next_frame() {
 void VideoPlayback::th_frame_reader() {
     while (2 > 1) {
         {
+            if (disable_r_thread) return;
             std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffor is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
@@ -55,13 +87,7 @@ void VideoPlayback::th_frame_reader() {
         }
 
         /// if  read next frame returns false, the file ended
-        /// so we fill war_frames with nullptrs than we quit thread
-        if (!read_next_frame()) {
-            std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-            for (int i = 0; i < 5; ++i)raw_frames_.push(nullptr);
-            return;
-        }
-
+        if (!read_next_frame()) return;
     }
 
 }
@@ -103,10 +129,9 @@ void VideoPlayback::th_effect_adder() {
         {
             bool wait_for_frames = false;
             {
+                if (disable_e_thread) return;
                 std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-                /// if pushed frames are nullptrs that means wideo capture closed
-                /// so we shut down effect adding thread as well
-                if (raw_frames_.front() == nullptr) return;
+
                 /// if there are no incoming frames we wait
                 if (raw_frames_.empty()) wait_for_frames = true;
                 else wait_for_frames = false;
@@ -167,6 +192,8 @@ VideoPlayback::VideoPlayback() {
     raw_frames_ = {};
     analyzed_frames_ = {};
     effects_.fill(nullptr);
+    disable_r_thread = true;
+    disable_e_thread = true;
 
 }
 
@@ -175,7 +202,7 @@ unsigned VideoPlayback::current_frame() {
 }
 
 void VideoPlayback::buck_up_reading(int number_of_frames) {
-   // video_capture_->set(CV_CAP_PROP_POS_MSEC, number_of_frames);
+    // video_capture_->set(CV_CAP_PROP_POS_MSEC, number_of_frames);
 }
 
 static QImage *mat2Image(cv::Mat &mat) {

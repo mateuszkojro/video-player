@@ -10,26 +10,32 @@
 #include <opencv2/highgui.hpp>
 #include <QPixmap>
 #include <queue>
+#include <thread>
 #include "Effect.h"
 
 
 class VideoPlayback {
     std::mutex video_capture_mutex_;
-    cv::VideoCapture* video_capture_;
+    cv::VideoCapture *video_capture_;
 
     std::mutex effects_mutex_;
     std::array<Effect *, 8> effects_;
 
     std::mutex raw_frames_mutex_;
-    std::queue<cv::Mat*> raw_frames_;
+    std::queue<cv::Mat *> raw_frames_;
 
 
     std::mutex analyzed_frames_mutex_;
-    std::queue<QPixmap*> analyzed_frames_;
+    std::queue<QPixmap *> analyzed_frames_;
 
     unsigned current_completed_frame = 0;
 
+/// disable thread booleans
+/// if set true threads will turn inactive
+/// if false they remain active
+    bool disable_r_thread;
     std::thread *read_thread;
+    bool disable_e_thread;
     std::thread *effect_thread;
 
     bool read_next_frame();
@@ -37,16 +43,18 @@ class VideoPlayback {
     void add_effect();
 
     void buck_up_reading(int number_of_frames);
+
 public:
 
     void th_frame_reader();
+
     void th_effect_adder();
 
     VideoPlayback();
 
     /// @brief Get the next frame in the queue
     /// @return
-    QPixmap & next_frame();
+    QPixmap &next_frame();
 
     // but like yt  so we need to clean our buffor
     // move in file in reverse
@@ -60,7 +68,7 @@ public:
     void change_file(const std::string &path);
 
 
-    ~VideoPlayback(){
+    ~VideoPlayback() {
         read_thread->join();
         effect_thread->join();
     }
@@ -85,8 +93,6 @@ public:
     cv::Mat get_frame_raw(int index);
 
 };
-
-
 
 
 #endif //VIDEO_PLAYER_VIDEOPLAYBACK_H
