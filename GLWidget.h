@@ -8,7 +8,7 @@
 #include <opencv2/highgui.hpp>
 #include "Effect.h"
 
-#define NEW_PIPELINE false
+#define NEW_PIPELINE true
 
 
 #if NEW_PIPELINE
@@ -50,6 +50,8 @@ protected:
 #if NEW_PIPELINE
     void change_current_pixmap(QPixmap* new_pixmap){
         LOCK(current_pixmap_mutex_);
+       /// fixme here SIGSEGV happens
+       /// and I don't believe it's my fault
         delete current_pixmap_;
         current_pixmap_ = new_pixmap;
     }
