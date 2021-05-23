@@ -166,7 +166,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
-        change_current_pixmap(&playback_->next_frame());
+        change_current_pixmap(new QPixmap(playback_->next_frame()));
     }
 #else
     switch (current_mode_) {
