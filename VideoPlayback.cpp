@@ -9,19 +9,19 @@ static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
     /// if read thread is active
-    if (read_thread) {
+    if (read_thread_) {
         /// tell him to shut off
-        disable_r_thread = true;
+        disable_r_thread_ = true;
         /// and join thread
-        read_thread->join();
+        read_thread_->join();
         /// clean up, probably not necessary but hey
-        delete read_thread;
+        delete read_thread_;
     }
     /// as above so below
-    if (effect_thread) {
-        disable_e_thread = true;
-        effect_thread->join();
-        delete effect_thread;
+    if (effect_thread_) {
+        disable_e_thread_ = true;
+        effect_thread_->join();
+        delete effect_thread_;
     }
     /// all of those steps are always made with threads offline, so we don't need locks
 
@@ -32,8 +32,8 @@ void VideoPlayback::change_file(const std::string &path) {
 
     /// prepare threads to run again, but with different file,
     /// again we probably could skip whole "stop threads step" but kojro insisted
-    disable_e_thread = false;
-    disable_r_thread = false;
+    disable_e_thread_ = false;
+    disable_r_thread_ = false;
 
     /// delete last video handle
     /// i thing we could simply override the existing one,
@@ -43,12 +43,12 @@ void VideoPlayback::change_file(const std::string &path) {
     assert(video_capture_->isOpened());
 
     /// clear frame counter
-    current_completed_frame = 0;
+    current_completed_frame_ = 0;
 
 
     /// reboot threads
-    read_thread = new std::thread(&VideoPlayback::th_frame_reader, this);
-    effect_thread = new std::thread(&VideoPlayback::th_effect_adder, this);
+    read_thread_ = new std::thread(&VideoPlayback::th_frame_reader, this);
+    effect_thread_ = new std::thread(&VideoPlayback::th_effect_adder, this);
 
 }
 
@@ -76,7 +76,7 @@ bool VideoPlayback::read_next_frame() {
 void VideoPlayback::th_frame_reader() {
     while (2 > 1) {
         /// check whether the thread should be stopped
-        if (disable_r_thread) return;
+        if (disable_r_thread_) return;
         {
             std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
@@ -131,7 +131,7 @@ void VideoPlayback::th_effect_adder() {
     while (2 > 1) {
         {
             /// check whether we need to stop thread
-            if (disable_e_thread) return;
+            if (disable_e_thread_) return;
             /// we declare
             bool wait_for_frames = false;
             {
@@ -154,8 +154,8 @@ void VideoPlayback::th_effect_adder() {
 
 QPixmap VideoPlayback::next_frame() {
     /// let's check whether threads are running
-    assert(!disable_e_thread);
-    assert(!disable_r_thread);
+    assert(!disable_e_thread_);
+    assert(!disable_r_thread_);
 
     bool wait_for_frames = false;
     do {
@@ -182,7 +182,7 @@ QPixmap VideoPlayback::next_frame() {
         /// delete frame from
         analyzed_frames_.pop();
     }
-    current_completed_frame++;
+    current_completed_frame_++;
     return temp;
 }
 
@@ -212,13 +212,13 @@ VideoPlayback::VideoPlayback() {
     raw_frames_ = {};
     analyzed_frames_ = {};
     effects_.fill(nullptr);
-    disable_r_thread = true;
-    disable_e_thread = true;
+    disable_r_thread_ = true;
+    disable_e_thread_ = true;
 
 }
 
 unsigned VideoPlayback::current_frame() {
-    return current_completed_frame;
+    return current_completed_frame_;
 }
 
 void VideoPlayback::buck_up_reading(int number_of_frames) {

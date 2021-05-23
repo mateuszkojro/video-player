@@ -28,15 +28,15 @@ class VideoPlayback {
     std::mutex analyzed_frames_mutex_;
     std::queue<QPixmap *> analyzed_frames_;
 
-    unsigned current_completed_frame = 0;
+    unsigned current_completed_frame_ = 0;
 
 /// disable thread booleans
 /// if set true threads will turn inactive
 /// if false they remain active
-    bool disable_r_thread;
-    std::thread *read_thread;
-    bool disable_e_thread;
-    std::thread *effect_thread;
+    bool disable_r_thread_;
+    std::thread *read_thread_;
+    bool disable_e_thread_;
+    std::thread *effect_thread_;
 
     bool read_next_frame();
 
@@ -69,8 +69,8 @@ public:
 
 
     ~VideoPlayback() {
-        read_thread->join();
-        effect_thread->join();
+        read_thread_->join();
+        effect_thread_->join();
     }
 
     /// @brief Jump to specified frame clean queue (maybe not all of it if we want to be fast)
