@@ -27,6 +27,7 @@ enum class EffectNr {
 #include <QAction>
 #include <QMessageBox>
 #include <QSlider>
+#include <QLabel>
 
 #include "Switch.h"
 #include "GLWidget.h"
@@ -100,6 +101,14 @@ private:
     QSlider *neon_r_level_slider_;
     QSlider *neon_g_level_slider_;
     QSlider *neon_b_level_slider_;
+
+    QLabel *text_noise;
+    QLabel *text_sobel;
+    QLabel *text_gauss;
+    QLabel *text_blur;
+    QLabel *text_r;
+    QLabel *text_g;
+    QLabel *text_b;
 
 
 };

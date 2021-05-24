@@ -14,10 +14,18 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     effect_sobel_ = new Switch("Sobel");
     effect_canny_ = new Switch("Canny");
     effect_neon_ = new Switch("Neon");
-
     effect_noise_ = new Switch("Noise");
     effect_gauss_ = new Switch("Gauss");
     effect_grey_scale_ = new Switch("Grey Sale");
+
+    text_noise = new QLabel("Noise percentage", this);
+    ///text_noise->set;
+    text_sobel = new QLabel("Scale factor for the derivative values", this);
+    text_gauss = new QLabel("Gauss standard deviation", this);
+    text_r = new QLabel("Saturation of the red color", this);
+    text_g = new QLabel("Saturation of the green color", this);
+    text_b = new QLabel("Saturation of the blue color", this);
+    text_blur = new QLabel("Value specifying the size of kernel", this);
 
     noise_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     noise_level_slider_->setMaximum(99);
@@ -75,9 +83,17 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     effect_neon_->show();
     effect_noise_->show();
     effect_gauss_->show();
-
-
     effect_grey_scale_->show();
+
+    text_noise->show();
+    text_sobel->show();
+    text_gauss->show();
+    text_r->show();
+    text_g->show();
+    text_b->show();
+    text_blur->show();
+
+
 
     /// Create a vertical layout
     layout_ = new QVBoxLayout;
@@ -91,17 +107,24 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(blur_level_slider_);
+    layout_->addWidget(text_blur);
     layout_->addWidget(effect_sobel_);
     layout_->addWidget(sobel_level_slider_);
+    layout_->addWidget(text_sobel);
     layout_->addWidget(effect_neon_);
     layout_->addWidget(neon_r_level_slider_);
+    layout_->addWidget(text_r);
     layout_->addWidget(neon_g_level_slider_);
+    layout_->addWidget(text_g);
     layout_->addWidget(neon_b_level_slider_);
+    layout_->addWidget(text_b);
     layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
     layout_->addWidget(noise_level_slider_);
+    layout_->addWidget(text_noise);
     layout_->addWidget(effect_gauss_);
     layout_->addWidget(gauss_level_slider_);
+    layout_->addWidget(text_gauss);
     layout_->addWidget(effect_grey_scale_);
 
     /// Add handlers to the buttons
@@ -128,7 +151,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     /// Create the window, set the layout and show it
     this->create();
     // this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-    this->setFixedSize(220, 500);
+    this->setFixedSize(220, 700);
     this->setLayout(layout_);
     this->show();
 }

@@ -82,7 +82,7 @@ public:
     explicit Blur_rEffect(int value = 2)
             : sigma(value) {};
 
-    int sigma;   //skalowanie obliczonych wartości pochodnych
+    int sigma;
 
     void operator()(cv::Mat &frame) override {
 
@@ -156,7 +156,7 @@ public:
 
     void operator()(cv::Mat &frame) override {
 
-        for (int i = 1; i < 10; i++) {              // ? ? ? ? ? ? ?
+        for (int i = 1; i < 10; i++) {
             GaussianBlur(frame, frame, cv::Size(2 * i + 1, 2 * i + 1), n);
         }
     }
