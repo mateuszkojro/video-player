@@ -122,6 +122,7 @@ GLWidget::GLWidget(QWidget *parent)
 
     effects_.fill(nullptr);
 #endif
+    current_pixmap_ = nullptr;
 
     setFixedSize(parent->width(), parent->height());
 
