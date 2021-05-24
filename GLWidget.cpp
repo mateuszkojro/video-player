@@ -118,11 +118,12 @@ GLWidget::GLWidget(QWidget *parent)
 
 #if NEW_PIPELINE
     playback_ = new VideoPlayback();
+    current_pixmap_ = nullptr;
 #else
 
     effects_.fill(nullptr);
 #endif
-    current_pixmap_ = nullptr;
+
 
     setFixedSize(parent->width(), parent->height());
 
