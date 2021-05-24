@@ -3,6 +3,7 @@
 //
 
 #include <thread>
+#include <iostream>
 #include "VideoPlayback.h"
 
 static QImage *mat2Image(cv::Mat &mat);
@@ -18,7 +19,7 @@ void VideoPlayback::change_file(const std::string &path) {
         delete read_thread_;
     }
     /// as above so below
-    if (effect_thread_ != nullptr ) {
+    if (effect_thread_ != nullptr) {
         disable_e_thread_ = true;
         effect_thread_->join();
         delete effect_thread_;
@@ -27,8 +28,8 @@ void VideoPlayback::change_file(const std::string &path) {
 
     /// for some reason queue does not have .clear() but i may be dumb
     /// this looks fine tho
-    while (raw_frames_.empty()) raw_frames_.pop();
-    while (analyzed_frames_.empty()) analyzed_frames_.pop();
+    while (!raw_frames_.empty()) raw_frames_.pop();
+    while (!analyzed_frames_.empty()) analyzed_frames_.pop();
 
     /// prepare threads to run again, but with different file,
     /// again we probably could skip whole "stop threads step" but kojro insisted
@@ -55,11 +56,12 @@ void VideoPlayback::change_file(const std::string &path) {
 bool VideoPlayback::read_next_frame() {
 
     cv::Mat one_frame_buffer;
+    cv::Mat input_buffer;
     {
         std::lock_guard<std::mutex> lock(video_capture_mutex_);
-        *video_capture_ >> one_frame_buffer;
-
+        *video_capture_ >> input_buffer;
     }
+    one_frame_buffer = input_buffer.clone();
 
     if (one_frame_buffer.empty()) {
 
@@ -83,8 +85,9 @@ void VideoPlayback::th_frame_reader() {
             std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
-            if (raw_frames_.size() > 30 * 10) {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+            if (raw_frames_.size() > 10) {
+
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
                 continue;
             }
         }
@@ -96,13 +99,11 @@ void VideoPlayback::th_frame_reader() {
 }
 
 void VideoPlayback::add_effect() {
-
     /// we .clone() frames anyway so we dont need to use move
     /// if i'm not mistaken ofc
     cv::Mat temp_frame;
     /// get raw frame form queue
     {
-
         std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
         temp_frame = raw_frames_.front()->clone();
@@ -141,6 +142,7 @@ void VideoPlayback::th_effect_adder() {
 
                 /// if there are no incoming frames we wait
                 if (raw_frames_.empty()) wait_for_frames = true;
+                else wait_for_frames = false;
             }
 
             if (wait_for_frames) {
@@ -149,6 +151,7 @@ void VideoPlayback::th_effect_adder() {
                 /// so we skip add_effect part
                 continue;
             }
+
             add_effect();
         }
     }
@@ -159,16 +162,17 @@ QPixmap VideoPlayback::next_frame() {
     assert(!disable_e_thread_);
     assert(!disable_r_thread_);
 
-    const bool wait_for_frames = true;
+    bool wait_for_frames = false;
     do {
         {
             std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
             /// check whether we should wait for frames
-            if (analyzed_frames_.empty()) break;
+            if (analyzed_frames_.empty()) wait_for_frames = true;
         }
         /// here we will probably spend the most of the time
         /// here we wait if lag accrues
-        std::this_thread::sleep_for(std::chrono::milliseconds(16)); /// 16 milliseconds == 1/60 s
+        if (wait_for_frames)
+            std::this_thread::sleep_for(std::chrono::milliseconds(16)); /// 16 milliseconds == 1/60 s
 
     } while (wait_for_frames);
 
