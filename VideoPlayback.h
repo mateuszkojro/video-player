@@ -69,8 +69,12 @@ public:
 
 
     ~VideoPlayback() {
+        disable_r_thread_ = true;
         read_thread_->join();
+        delete read_thread_;
+        disable_e_thread_ = true;
         effect_thread_->join();
+        delete effect_thread_;
     }
 
     /// @brief Jump to specified frame clean queue (maybe not all of it if we want to be fast)

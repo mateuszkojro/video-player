@@ -9,7 +9,7 @@ static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
     /// if read thread is active
-    if (read_thread_) {
+    if (read_thread_ != nullptr) {
         /// tell him to shut off
         disable_r_thread_ = true;
         /// and join thread
@@ -18,7 +18,7 @@ void VideoPlayback::change_file(const std::string &path) {
         delete read_thread_;
     }
     /// as above so below
-    if (effect_thread_) {
+    if (effect_thread_ != nullptr ) {
         disable_e_thread_ = true;
         effect_thread_->join();
         delete effect_thread_;
@@ -60,6 +60,7 @@ bool VideoPlayback::read_next_frame() {
         (*video_capture_) >> one_frame_buffer;
 
     }
+
     if (one_frame_buffer.empty()) {
 
         // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
@@ -70,6 +71,7 @@ bool VideoPlayback::read_next_frame() {
 
     std::lock_guard<std::mutex> lock(raw_frames_mutex_);
     raw_frames_.push(new cv::Mat(one_frame_buffer));
+
     return true;
 }
 
@@ -104,7 +106,7 @@ void VideoPlayback::add_effect() {
         std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
         temp_frame = raw_frames_.front()->clone();
-
+        raw_frames_.front() = nullptr;
         raw_frames_.pop();
 
     }
@@ -178,7 +180,7 @@ QPixmap VideoPlayback::next_frame() {
     QPixmap temp;
     {
         std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        temp = *analyzed_frames_.front();
+        temp = *(analyzed_frames_.front());
         /// delete frame from
         analyzed_frames_.pop();
     }
@@ -214,7 +216,8 @@ VideoPlayback::VideoPlayback() {
     effects_.fill(nullptr);
     disable_r_thread_ = true;
     disable_e_thread_ = true;
-
+    read_thread_ = nullptr;
+    effect_thread_ = nullptr;
 }
 
 unsigned VideoPlayback::current_frame() {
