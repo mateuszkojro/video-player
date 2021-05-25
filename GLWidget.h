@@ -31,7 +31,7 @@ public:
 
 #if !NEW_PIPELINE
     void request_apply_effects(cv::Mat frame);
-
+#endif
     void request_change_effect(int idx, Effect *effect);
 
 

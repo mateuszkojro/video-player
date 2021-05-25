@@ -264,9 +264,6 @@ public:
     Color effect_color{r_,g_,b_};
 
     void operator()(cv::Mat &frame) override {
-        effect_color = gen_rainbow(frame_counter, 450);
-        frame_counter++;
-        if (frame_counter > 450) frame_counter = 0;
 
         cv::Mat output;
 

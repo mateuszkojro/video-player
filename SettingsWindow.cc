@@ -265,13 +265,6 @@ void SettingsWindow::change_neon_g_level() {
 
 void SettingsWindow::change_neon_r_level() {
     int level = neon_r_level_slider_->value();
-    auto setting = effect_neon_->isChecked() ? new NeonEffect(0,0,level) : nullptr;
+    auto setting = effect_neon_->isChecked() ? new NeonEffect(0, 0, level) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
-
-
-void SettingsWindow::change_noise_level() {
-    int level = noise_level_slider_->value();
-    auto setting = effect_noise_->isChecked() ? new NoiseEffect(level) : nullptr;
-    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
-
 }
