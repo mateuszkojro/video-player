@@ -117,13 +117,14 @@ GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
 #if NEW_PIPELINE
+
     playback_ = new VideoPlayback();
     current_pixmap_ = nullptr;
+
 #else
 
     effects_.fill(nullptr);
 #endif
-
 
     setFixedSize(parent->width(), parent->height());
 
@@ -256,3 +257,4 @@ void GLWidget::request_change_effect(int idx, Effect *effect) {
     request_apply_effects(output_matrix_);
 #endif
 }
+

@@ -10,7 +10,6 @@
 
 #define NEW_PIPELINE false
 
-
 #if NEW_PIPELINE
 #include "VideoPlayback.h"
 #endif
@@ -33,8 +32,6 @@ public:
 #if !NEW_PIPELINE
     void request_apply_effects(cv::Mat frame);
 
-#endif
-
     void request_change_effect(int idx, Effect *effect);
 
 
@@ -50,8 +47,6 @@ protected:
 #if NEW_PIPELINE
     void change_current_pixmap(QPixmap* new_pixmap){
         LOCK(current_pixmap_mutex_);
-       /// fixme here SIGSEGV happens
-       /// and I don't believe it's my fault
         delete current_pixmap_;
         current_pixmap_ = new_pixmap;
     }
@@ -80,6 +75,7 @@ private:
     QImage *image_;
 
     std::mutex effects_mutex_;
+
     std::array<Effect *, 9> effects_;
 
 #endif

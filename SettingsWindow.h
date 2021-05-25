@@ -26,6 +26,8 @@ enum class EffectNr {
 #include <QAction>
 #include <QMessageBox>
 #include <QSlider>
+#include <QLabel>
+
 
 #include "Switch.h"
 #include "GLWidget.h"
@@ -64,6 +66,19 @@ private:
 
     void change_noise_level();
 
+    void change_sobel_level();
+
+    void change_blur_level();
+
+    void change_gauss_level();
+
+    void change_neon_r_level();
+
+    void change_neon_g_level();
+
+    void change_neon_b_level();
+
+
     Switch *effect_script_;
     /// 0 in effect array
     Switch *effect_gauss_;
@@ -83,6 +98,20 @@ private:
     Switch *effect_grey_scale_;
 
     QSlider *noise_level_slider_;
+    QSlider *sobel_level_slider_;
+    QSlider *blur_level_slider_;
+    QSlider *gauss_level_slider_;
+    QSlider *neon_r_level_slider_;
+    QSlider *neon_g_level_slider_;
+    QSlider *neon_b_level_slider_;
+
+    QLabel *text_noise;
+    QLabel *text_sobel;
+    QLabel *text_gauss;
+    QLabel *text_blur;
+    QLabel *text_r;
+    QLabel *text_g;
+    QLabel *text_b;
 
 
 };
