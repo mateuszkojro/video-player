@@ -11,6 +11,36 @@
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core.hpp>
+#include <QWidget>
+
+#include <utility>
+
+#include "ScriptHandler.h"
+
+#include <iostream>
+#include <QWidget>
+
+class LuaEffect : public Effect {
+public:
+
+    explicit LuaEffect(std::string path) : path_(std::move(path)) {}
+
+    std::string path_;
+
+    void operator()(cv::Mat &frame) override {
+        ScriptHandler::update_current_frame(frame);
+        if (ScriptHandler::run_script(path_) == ScriptHandler::Error) {
+            QMessageBox::warning(
+                    nullptr,
+                    QString("Script error"),
+                    QString(ScriptHandler::get_last_error().c_str()));
+            std::cout << ScriptHandler::get_last_error() << std::endl;
+        }
+        frame = ScriptHandler::get_current_frame();
+    }
+
+    ~LuaEffect() override = default;
+};
 
 /// apply gray scale effect
 class GrayScaleEffect : public Effect {
@@ -26,7 +56,7 @@ public:
 
     }
 
-    virtual ~GrayScaleEffect() = default;
+    ~GrayScaleEffect() override = default;
 };
 
 /// apply HSV effect
@@ -42,7 +72,7 @@ public:
 
     }
 
-    virtual ~HSVEffect() = default;
+    ~HSVEffect() override = default;
 };
 
 /// apply Sobel effect
@@ -61,7 +91,7 @@ public:
 
     }
 
-    virtual ~SobelEffect() = default;
+    ~SobelEffect() override = default;
 };
 
 /// apply Blur_r effect
@@ -204,9 +234,9 @@ public:
     /// \param frame the pixel matrix that will be replaced with contours of itself (cool)
     /// \note the type of pixel inside frame will be changed to ??? <- something i belive it's 8UC3
     void operator()(cv::Mat &frame) override {
-        effect_color = gen_rainbow(frame_counter,450);
+        effect_color = gen_rainbow(frame_counter, 450);
         frame_counter++;
-        if(frame_counter>450) frame_counter=0;
+        if (frame_counter > 450) frame_counter = 0;
 
         cv::Mat output;
 
@@ -224,8 +254,8 @@ public:
     }
 
 private :
-    unsigned frame_counter =0;
-Color effect_color = {178,250,40};
+    unsigned frame_counter = 0;
+    Color effect_color = {178, 250, 40};
 };
 
 #endif //VIDEO_PLAYER_EFFECTSIMPLEMENTATIONS_H
