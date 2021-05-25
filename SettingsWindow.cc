@@ -9,6 +9,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Create buttons assign it to current window ans set its text
 
+    effect_script_ = new Switch("Script");
+
     effect_hsv_ = new Switch("Hsv");
     effect_blur_r_ = new Switch("Blur");
     effect_sobel_ = new Switch("Sobel");
@@ -29,7 +31,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Show the buttons
 
-
+    effect_script_->show();
     effect_hsv_->show();
     effect_blur_r_->show();
     effect_sobel_->show();
@@ -50,6 +52,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Add buttons to layout
 
+    layout_->addWidget(effect_script_);
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(effect_sobel_);
@@ -61,6 +64,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_grey_scale_);
 
     /// Add handlers to the buttons
+    connect(effect_script_, &QPushButton::released, this, &SettingsWindow::flip_effect_script);
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
     connect(effect_hsv_, &QPushButton::released, this, &SettingsWindow::flip_effect_hsv);
     connect(effect_blur_r_, &QPushButton::released, this, &SettingsWindow::flip_effect_blur_r);
@@ -95,6 +99,11 @@ SettingsWindow::~SettingsWindow() {
     delete effect_neon_;
     delete effect_grey_scale_;
     delete layout_;
+}
+
+void SettingsWindow::flip_effect_script() {
+    auto setting = effect_script_->isChecked() ? new LuaEffect("./script.lua") : nullptr;
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 
 void SettingsWindow::flip_effect_grey_scale() {

@@ -80,7 +80,7 @@ private:
     QImage *image_;
 
     std::mutex effects_mutex_;
-    std::array<Effect *, 8> effects_;
+    std::array<Effect *, 9> effects_;
 
 #endif
 };
