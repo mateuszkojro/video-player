@@ -11,6 +11,36 @@
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/core.hpp>
+#include <QWidget>
+
+#include <utility>
+
+#include "ScriptHandler.h"
+
+#include <iostream>
+#include <QWidget>
+
+class LuaEffect : public Effect {
+public:
+
+    explicit LuaEffect(std::string path) : path_(std::move(path)) {}
+
+    std::string path_;
+
+    void operator()(cv::Mat &frame) override {
+        ScriptHandler::update_current_frame(frame);
+        if (ScriptHandler::run_script(path_) == ScriptHandler::Error) {
+            QMessageBox::warning(
+                    nullptr,
+                    QString("Script error"),
+                    QString(ScriptHandler::get_last_error().c_str()));
+            std::cout << ScriptHandler::get_last_error() << std::endl;
+        }
+        frame = ScriptHandler::get_current_frame();
+    }
+
+    ~LuaEffect() override = default;
+};
 
 /// apply gray scale effect
 class GrayScaleEffect : public Effect {
@@ -26,7 +56,7 @@ public:
 
     }
 
-    virtual ~GrayScaleEffect() = default;
+    ~GrayScaleEffect() override = default;
 };
 
 /// apply HSV effect
@@ -42,7 +72,7 @@ public:
 
     }
 
-    virtual ~HSVEffect() = default;
+    ~HSVEffect() override = default;
 };
 
 /// apply Sobel effect
@@ -68,7 +98,7 @@ public:
 
     }
 
-    virtual ~SobelEffect() = default;
+    ~SobelEffect() override = default;
 };
 
 /// apply Blur_r effect
@@ -121,7 +151,6 @@ public:
 
     void operator()(cv::Mat &frame) override {
 
-        //double noise_percentage = 10.0;
         int img_rows = frame.rows;
         int img_columns = frame.cols;
         int img_channels = frame.channels();
@@ -174,6 +203,44 @@ private:
         uchar B_;
     };
 
+    Color gen_rainbow(unsigned height, unsigned max_height) {
+        // sine wave algorithm
+        // 3 parts
+        // 1 :
+        // r = cos(i) , g = sin(i), b =0
+        // 2 :
+        // r = 0 , g = cos(i), b = sin(x)
+        // 3:
+        // r = sin(i) , g = 0, b = cos(x)
+        // every part is max_height / 3 translates into 0, PI/2
+
+        // so for example in point 1/3 * max_height
+        // r = cos(PI/2) = 0, g = sin(PI/2) = 1, b = 0
+
+        char witch_third = height / (max_height / 3);
+
+        double height_in_radians;
+        switch (witch_third) {
+            case 0:
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+
+                return Color(cos(height_in_radians) * 255, sin(height_in_radians) * 255, 0);
+            case 1:
+                height -= max_height / 3;
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+                return Color(0, cos(height_in_radians) * 255, sin(height_in_radians) * 255);
+
+            case 2:
+                height -= 2 * max_height / 3;
+                height_in_radians = height * M_PI / (max_height / 3) / 2;
+                return Color(sin(height_in_radians) * 255, 0, cos(height_in_radians) * 255);
+
+        }
+
+        return {255, 0, 0};
+    }
+
+
     void apply_color(int x, int y, cv::Mat &frame) {
 
         frame.at<cv::Vec3b>(x, y)[0] = effect_color.R_;
@@ -197,6 +264,9 @@ public:
     Color effect_color{r_,g_,b_};
 
     void operator()(cv::Mat &frame) override {
+        effect_color = gen_rainbow(frame_counter, 450);
+        frame_counter++;
+        if (frame_counter > 450) frame_counter = 0;
 
         cv::Mat output;
 
@@ -213,12 +283,6 @@ public:
 
     }
 
-    ///NeonEffect(uchar r_, uchar g_, uchar b_){
-        ///Color effect_color = {r_,g_,b_};
-    ///}
-
-//private :
-//Color effect_color = {178,250,40};
 };
 
 #endif //VIDEO_PLAYER_EFFECTSIMPLEMENTATIONS_H

@@ -117,7 +117,10 @@ GLWidget::GLWidget(QWidget *parent)
         : QOpenGLWidget(parent) {
 
 #if NEW_PIPELINE
-    playback_ = new VideoPlayback("C:\\Users\\studio25\\Downloads\\Rick");
+
+    playback_ = new VideoPlayback();
+    current_pixmap_ = nullptr;
+
 #else
 
     effects_.fill(nullptr);
@@ -166,7 +169,7 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
-        change_current_pixmap(&playback_->next_frame());
+        change_current_pixmap(new QPixmap(playback_->next_frame()));
     }
 #else
     switch (current_mode_) {
@@ -254,3 +257,4 @@ void GLWidget::request_change_effect(int idx, Effect *effect) {
     request_apply_effects(output_matrix_);
 #endif
 }
+

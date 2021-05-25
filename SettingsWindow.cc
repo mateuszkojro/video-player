@@ -9,6 +9,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Create buttons assign it to current window ans set its text
 
+    effect_script_ = new Switch("Script");
+
     effect_hsv_ = new Switch("Hsv");
     effect_blur_r_ = new Switch("Blur");
     effect_sobel_ = new Switch("Sobel");
@@ -32,6 +34,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     noise_level_slider_->setMinimum(1);
     noise_level_slider_->setTickInterval(5);
     noise_level_slider_->show();
+
 
     sobel_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     sobel_level_slider_->setMaximum(100);
@@ -70,12 +73,9 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     neon_r_level_slider_->show();
 
 
-
-
-
     /// Show the buttons
 
-
+    effect_script_->show();
     effect_hsv_->show();
     effect_blur_r_->show();
     effect_sobel_->show();
@@ -104,6 +104,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Add buttons to layout
 
+    layout_->addWidget(effect_script_);
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(blur_level_slider_);
@@ -121,13 +122,16 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
     layout_->addWidget(noise_level_slider_);
+
     layout_->addWidget(text_noise);
+
     layout_->addWidget(effect_gauss_);
     layout_->addWidget(gauss_level_slider_);
     layout_->addWidget(text_gauss);
     layout_->addWidget(effect_grey_scale_);
 
     /// Add handlers to the buttons
+    connect(effect_script_, &QPushButton::released, this, &SettingsWindow::flip_effect_script);
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
     connect(effect_hsv_, &QPushButton::released, this, &SettingsWindow::flip_effect_hsv);
     connect(effect_blur_r_, &QPushButton::released, this, &SettingsWindow::flip_effect_blur_r);
@@ -143,6 +147,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(neon_b_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_neon_b_level);
     connect(effect_gauss_, &QPushButton::released, this, &SettingsWindow::flip_effect_gauss);
     connect(gauss_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_gauss_level);
+
+    connect(noise_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_noise_level);
 
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
 
@@ -167,6 +173,11 @@ SettingsWindow::~SettingsWindow() {
     delete effect_neon_;
     delete effect_grey_scale_;
     delete layout_;
+}
+
+void SettingsWindow::flip_effect_script() {
+    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script.lua") : nullptr;
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 
 void SettingsWindow::flip_effect_grey_scale() {
@@ -256,4 +267,11 @@ void SettingsWindow::change_neon_r_level() {
     int level = neon_r_level_slider_->value();
     auto setting = effect_neon_->isChecked() ? new NeonEffect(0,0,level) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
+
+
+void SettingsWindow::change_noise_level() {
+    int level = noise_level_slider_->value();
+    auto setting = effect_noise_->isChecked() ? new NoiseEffect(level) : nullptr;
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_noise_), setting);
+
 }

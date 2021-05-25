@@ -32,8 +32,6 @@ public:
 #if !NEW_PIPELINE
     void request_apply_effects(cv::Mat frame);
 
-#endif
-
     void request_change_effect(int idx, Effect *effect);
 
 
@@ -77,7 +75,8 @@ private:
     QImage *image_;
 
     std::mutex effects_mutex_;
-    std::array<Effect *, 8> effects_;
+
+    std::array<Effect *, 9> effects_;
 
 #endif
 };

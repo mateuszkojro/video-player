@@ -24,7 +24,9 @@ add_executable(${PROJECT_NAME}
         Style.h
         Effect.h
         EffectsImplementations.h
-        VideoPlayback.cpp VideoPlayback.h ScriptHandler.cpp ScriptHandler.h)
+        VideoPlayback.cpp VideoPlayback.h
+        ScriptHandler.cpp ScriptHandler.h
+        )
 
 
 if (NOT CMAKE_PREFIX_PATH)

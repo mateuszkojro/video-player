@@ -6,8 +6,7 @@
 #define VIDEO_PLAYER_QT_SETTINGSWINDOW_H
 
 enum class EffectNr {
-
-
+    effect_script_,
     effect_hsv_,
     effect_blur_r_,
     effect_sobel_,
@@ -29,6 +28,7 @@ enum class EffectNr {
 #include <QSlider>
 #include <QLabel>
 
+
 #include "Switch.h"
 #include "GLWidget.h"
 
@@ -45,6 +45,8 @@ private:
     QWidget *parent_;
 
     QLayout *layout_;
+
+    void flip_effect_script();
 
     void flip_effect_grey_scale();
 
@@ -77,6 +79,7 @@ private:
     void change_neon_b_level();
 
 
+    Switch *effect_script_;
     /// 0 in effect array
     Switch *effect_gauss_;
     /// 1 in effect array
