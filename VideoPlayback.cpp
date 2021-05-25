@@ -162,17 +162,20 @@ QPixmap VideoPlayback::next_frame() {
     assert(!disable_e_thread_);
     assert(!disable_r_thread_);
 
+    std::cout << "next frame requested";
+
     bool wait_for_frames = false;
     do {
         {
             std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
             /// check whether we should wait for frames
             if (analyzed_frames_.empty()) wait_for_frames = true;
+            else wait_for_frames = false;
         }
         /// here we will probably spend the most of the time
         /// here we wait if lag accrues
         if (wait_for_frames)
-            std::this_thread::sleep_for(std::chrono::milliseconds(16)); /// 16 milliseconds == 1/60 s
+            std::this_thread::sleep_for(std::chrono::milliseconds(32)); /// 16 milliseconds == 1/60 s
 
     } while (wait_for_frames);
 
