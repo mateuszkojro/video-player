@@ -113,7 +113,7 @@ void VideoPlayback::add_effect() {
     }
     /// analyze it using effect table
     {
-       // std::lock_guard<std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(temp_frame);
@@ -161,8 +161,6 @@ QPixmap VideoPlayback::next_frame() {
     /// let's check whether threads are running
     assert(!disable_e_thread_);
     assert(!disable_r_thread_);
-
-    std::cout << "next frame requested";
 
     bool wait_for_frames = false;
     do {

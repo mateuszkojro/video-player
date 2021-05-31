@@ -126,6 +126,7 @@ GLWidget::GLWidget(QWidget *parent)
     effects_.fill(nullptr);
 #endif
 
+
     setFixedSize(parent->width(), parent->height());
 
     set_image(EMPTY_IMAGE);
@@ -257,4 +258,3 @@ void GLWidget::request_change_effect(int idx, Effect *effect) {
     request_apply_effects(output_matrix_);
 #endif
 }
-
