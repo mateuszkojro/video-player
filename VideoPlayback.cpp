@@ -6,7 +6,7 @@
 #include <iostream>
 #include "VideoPlayback.h"
 
-std::string VideoPlayback::last_error  = "Video stream offline";
+std::string VideoPlayback::last_error = "Video stream offline";
 
 static QImage *mat2Image(cv::Mat &mat);
 
@@ -121,7 +121,7 @@ void VideoPlayback::add_effect() {
     }
     /// analyze it using effect table
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(temp_frame);
@@ -201,7 +201,7 @@ QPixmap *VideoPlayback::next_frame() {
 void VideoPlayback::change_effect(int index, Effect *effect) {
 
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         if (index >= effects_.size()) {
             last_error = "Adding effect failed";
             return;
@@ -212,13 +212,13 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
     int number_of_loaded_frames = 0;
 
     {
-        std::lock_guard <std::mutex> lock(analyzed_frames_mutex_);
+        std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
         number_of_loaded_frames += analyzed_frames_.size();
         while (!analyzed_frames_.empty()) analyzed_frames_.pop();
     }
 
     {
-        std::lock_guard <std::mutex> lock(raw_frames_mutex_);
+        std::lock_guard<std::mutex> lock(raw_frames_mutex_);
         number_of_loaded_frames += raw_frames_.size();
         while (!raw_frames_.empty()) raw_frames_.pop();
     }
@@ -256,12 +256,16 @@ static QImage *mat2Image(cv::Mat &mat) {
 //    std::clog << "Matrix type: " << type2str(type) << std::endl;
 
     const unsigned size = mat.rows * mat.cols * mat.channels();
+
     // todo there is the famous memory leak
+
+    auto now = std::chrono::high_resolution_clock::now();
+
     auto buffer = new uchar[size];
 
     int i = 0;
 
-    auto now = std::chrono::high_resolution_clock::now();
+
 
     // OpenCV Mat gives us access only to beginnings of the rows sow we need to
     // go around that
@@ -278,17 +282,23 @@ static QImage *mat2Image(cv::Mat &mat) {
     std::cout << "mat2im: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - now).count() << "(ms)"
               << std::endl;
 
+    auto cleanup_func = [](void *ptr) {
+        std::cout << "usuwam image" << std::endl;
+        delete (uchar *) ptr;
+    };
+
     QImage *image;
     switch (type) {
         case CV_8UC3: {
-            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888);
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888, cleanup_func, buffer);
             break;
         }
         case CV_8UC1: {
-            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8);
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8, cleanup_func, buffer);
             break;
         }
         default:
+            std::cout << "format not suported" << std::endl;
             throw "cv::Mat format not supported";
     }
 
