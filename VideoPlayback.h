@@ -45,12 +45,12 @@ class VideoPlayback {
     void buck_up_reading(int number_of_frames);
 
 public:
+    VideoPlayback();
 
     void th_frame_reader();
 
     void th_effect_adder();
 
-    VideoPlayback();
 
     /// @brief Get the next frame in the queue
     /// @return
@@ -67,6 +67,8 @@ public:
     // read new file
     void change_file(const std::string &path);
 
+
+    static std::string get_last_error();
 
     ~VideoPlayback() {
         disable_r_thread_ = true;

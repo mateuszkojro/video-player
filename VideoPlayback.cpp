@@ -244,6 +244,8 @@ static QImage *mat2Image(cv::Mat &mat) {
 
     int i = 0;
 
+    auto now = std::chrono::high_resolution_clock::now();
+
     // OpenCV Mat gives us access only to beginnings of the rows sow we need to
     // go around that
     for (int r = 0; r < mat.rows; ++r) {
@@ -253,6 +255,11 @@ static QImage *mat2Image(cv::Mat &mat) {
             buffer[i++] = *ptr;
         }
     }
+
+    auto end = std::chrono::high_resolution_clock::now();
+
+    std::cout << "mat2im: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - now).count() << "(ms)"
+              << std::endl;
 
     QImage *image;
     switch (type) {

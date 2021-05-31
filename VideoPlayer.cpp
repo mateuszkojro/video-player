@@ -12,8 +12,8 @@ VideoPlayer::VideoPlayer() {
     setCentralWidget(central_widget_);
 
     /// Make filler on top
-    top_filler_ = new QWidget;
-    top_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+//    top_filler_ = new QWidget;
+//    top_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     /// Make a filler on the bottom
     bottom_filler_ = new QWidget;
@@ -33,7 +33,7 @@ VideoPlayer::VideoPlayer() {
     layout_->setContentsMargins(5, 5, 5, 5);
 
     /// Configure widgets in the layout
-    layout_->addWidget(top_filler_);
+//    layout_->addWidget(top_filler_);
     layout_->addWidget(bottom_filler_);
     layout_->addWidget(opengl_widget_);
 
@@ -65,11 +65,11 @@ VideoPlayer::~VideoPlayer() {
     delete open_settings_action_;
     delete second_window_;
     delete central_widget_;
-    delete top_filler_;
-    delete bottom_filler_;
-    delete opengl_widget_;
-    delete layout_;
-    delete timer_;
+//    delete top_filler_;
+//    delete bottom_filler_;
+//    delete opengl_widget_;
+//    delete layout_;
+//    delete timer_;
 }
 
 /// \brief helpers to make actions
@@ -207,7 +207,7 @@ void VideoPlayer::close_handler() {
             /// Print to console
             qDebug("yes");
             /// Exit the application
-            QCoreApplication::quit();
+            QCoreApplication::exit(0);
             break;
         }
         case QMessageBox::Cancel: {
@@ -247,3 +247,6 @@ void VideoPlayer::open_script_handler() {
 //    opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Mode::Script);
 }
 
+void VideoPlayer::closeEvent(QCloseEvent *event) {
+    VideoPlayer::close_handler();
+}
