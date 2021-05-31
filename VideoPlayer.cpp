@@ -250,3 +250,9 @@ void VideoPlayer::open_script_handler() {
 void VideoPlayer::closeEvent(QCloseEvent *event) {
     VideoPlayer::close_handler();
 }
+
+void VideoPlayer::resizeEvent(QResizeEvent *event) {
+    std::cout << "resize main window" << std::endl;
+    opengl_widget_->setFixedSize(event->size().width() - 10, event->size().height());
+    QWidget::resizeEvent(event);
+}
