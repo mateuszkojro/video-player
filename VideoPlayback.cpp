@@ -86,7 +86,7 @@ void VideoPlayback::add_effect() {
         // std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
         temp_frame = raw_frames_.front()->clone();
-        raw_frames_.front() = nullptr;
+        raw_frames_.front()->deallocate();
         raw_frames_.pop();
 
     }
@@ -103,7 +103,9 @@ void VideoPlayback::add_effect() {
     /// place analyzed therefore changed frame on top of analyzed_queue
     {
         //  std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*mat2Image(temp_frame))));
+        QImage* temp_image = mat2Image(temp_frame);
+        analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
+        delete temp_image;
 
     }
 
@@ -259,7 +261,7 @@ void VideoPlayback::close() {
 }
 
 void VideoPlayback::change_position(int index) {
-    if(index < 0)
+    if (index < 0)
         index = 0;
     video_capture_->set(cv::CAP_PROP_POS_FRAMES, index);
 
