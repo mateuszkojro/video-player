@@ -5,9 +5,13 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     parent_ = parent;
 
+//    this->setWindowFlags(Qt::WindowStaysOnTopHint);
+
     opengl_widget_ = opengl_widget;
 
     /// Create buttons assign it to current window ans set its text
+
+    always_on_top_ = new Switch("Always on top");
 
     effect_script_ = new Switch("Script");
 
@@ -75,6 +79,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Show the buttons
 
+    always_on_top_->show();
     effect_script_->show();
     effect_hsv_->show();
     effect_blur_r_->show();
@@ -104,6 +109,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     /// Add buttons to layout
 
+    layout_->addWidget(always_on_top_);
     layout_->addWidget(effect_script_);
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
@@ -131,6 +137,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(effect_grey_scale_);
 
     /// Add handlers to the buttons
+    connect(always_on_top_, &QPushButton::released, this, &SettingsWindow::flip_always_on_top);
     connect(effect_script_, &QPushButton::released, this, &SettingsWindow::flip_effect_script);
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
     connect(effect_hsv_, &QPushButton::released, this, &SettingsWindow::flip_effect_hsv);
@@ -253,13 +260,13 @@ void SettingsWindow::change_gauss_level() {
 
 void SettingsWindow::change_neon_b_level() {
     int level = neon_b_level_slider_->value();
-    auto setting = effect_neon_->isChecked() ? new NeonEffect(level,0,0) : nullptr;
+    auto setting = effect_neon_->isChecked() ? new NeonEffect(level, 0, 0) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 }
 
 void SettingsWindow::change_neon_g_level() {
     int level = neon_g_level_slider_->value();
-    auto setting = effect_neon_->isChecked() ? new NeonEffect(0,level,0) : nullptr;
+    auto setting = effect_neon_->isChecked() ? new NeonEffect(0, level, 0) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
 }
 
@@ -267,4 +274,10 @@ void SettingsWindow::change_neon_r_level() {
     int level = neon_r_level_slider_->value();
     auto setting = effect_neon_->isChecked() ? new NeonEffect(0, 0, level) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_neon_), setting);
+}
+
+void SettingsWindow::flip_always_on_top() {
+    is_always_on_top_ = always_on_top_->isChecked();
+    std::cout << "is always on top is: " << is_always_on_top_ << std::endl;
+    this->setWindowFlag(Qt::WindowStaysOnTopHint, is_always_on_top_);
 }

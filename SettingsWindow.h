@@ -78,7 +78,11 @@ private:
 
     void change_neon_b_level();
 
+    void flip_always_on_top();
 
+    bool is_always_on_top_ = false;
+
+    Switch *always_on_top_;
     Switch *effect_script_;
     /// 0 in effect array
     Switch *effect_gauss_;
