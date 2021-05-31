@@ -30,6 +30,8 @@ protected:
 
     void closeEvent(QCloseEvent *event) override;
 
+    void resizeEvent(QResizeEvent *event) override;
+
 #endif // QT_NO_CONTEXTMENU
 
 private slots:

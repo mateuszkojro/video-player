@@ -34,15 +34,12 @@ void VideoPlayback::change_file(const std::string &path) {
 
 bool VideoPlayback::read_next_frame() {
 
-    cv::Mat one_frame_buffer;
-    cv::Mat input_buffer;
+    cv::Mat *input_buffer = new cv::Mat;
     {
         // std::lock_guard<std::mutex> lock(video_capture_mutex_);
-        *video_capture_ >> input_buffer;
+        *video_capture_ >> *input_buffer;
     }
-    one_frame_buffer = input_buffer.clone();
-
-    if (one_frame_buffer.empty()) {
+    if (input_buffer->empty()) {
 
         // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
         /// if frame is empty, function returns false
@@ -51,7 +48,7 @@ bool VideoPlayback::read_next_frame() {
     }
 
     //std::lock_guard<std::mutex> lock(raw_frames_mutex_);
-    raw_frames_.push(new cv::Mat(one_frame_buffer));
+    raw_frames_.push(input_buffer);
 
     return true;
 }
@@ -64,7 +61,7 @@ void VideoPlayback::th_frame_reader() {
             //     std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
-            if (raw_frames_.size() > 10) {
+            if (raw_frames_.size() > 50) {
 
                 std::this_thread::sleep_for(std::chrono::milliseconds(500));
                 continue;
@@ -87,6 +84,7 @@ void VideoPlayback::add_effect() {
 
         temp_frame = raw_frames_.front()->clone();
         raw_frames_.front()->deallocate();
+        delete raw_frames_.front();
         raw_frames_.pop();
 
     }
@@ -299,12 +297,16 @@ static QImage *mat2Image(cv::Mat &mat) {
 //    std::clog << "Matrix type: " << type2str(type) << std::endl;
 
     const unsigned size = mat.rows * mat.cols * mat.channels();
+
     // todo there is the famous memory leak
+
+    auto now = std::chrono::high_resolution_clock::now();
+
     auto buffer = new uchar[size];
 
     int i = 0;
 
-    auto now = std::chrono::high_resolution_clock::now();
+
 
     // OpenCV Mat gives us access only to beginnings of the rows sow we need to
     // go around that
@@ -321,17 +323,23 @@ static QImage *mat2Image(cv::Mat &mat) {
     std::cout << "mat2im: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - now).count() << "(ms)"
               << std::endl;
 
+    auto cleanup_func = [](void *ptr) {
+        std::cout << "usuwam image" << std::endl;
+        delete (uchar *) ptr;
+    };
+
     QImage *image;
     switch (type) {
         case CV_8UC3: {
-            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888);
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888, cleanup_func, buffer);
             break;
         }
         case CV_8UC1: {
-            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8);
+            image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8, cleanup_func, buffer);
             break;
         }
         default:
+            std::cout << "format not suported" << std::endl;
             throw "cv::Mat format not supported";
     }
 

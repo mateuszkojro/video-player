@@ -143,9 +143,6 @@ void GLWidget::animate() {
 #if NEW_PIPELINE
 
 void GLWidget::paint_image(QPainter *painter) {
-    // todo fix those copies
-    change_current_pixmap(new QPixmap(current_pixmap_->scaled(width(), height())));
-
     LOCK(current_pixmap_mutex_);
     painter->drawPixmap(QPoint(0, 0), *current_pixmap_);
 }
@@ -171,8 +168,9 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
-        QPixmap* frame = playback_->next_frame();
+        QPixmap *frame = playback_->next_frame();
         if (frame) {
+            *frame = frame->scaled(width(), height());
             change_current_pixmap(frame);
 
         } else {
