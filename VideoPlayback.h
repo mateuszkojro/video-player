@@ -38,15 +38,21 @@ class VideoPlayback {
     /// <li> "Video stream offline"
     /// <li> "Video stream online"
     /// </ol>
-    static std::string last_error ;
+    static std::string last_error;
 
 
-/// disable thread booleans
-/// if set true threads will turn inactive
-/// if false they remain active
+    /// disable thread booleans
+    /// if set true threads will turn inactive
+    /// if false they remain active
     bool disable_r_thread_;
+
     std::thread *read_thread_;
+
+    /// disable thread booleans
+    /// if set true threads will turn inactive
+    /// if false they remain active
     bool disable_e_thread_;
+
     std::thread *effect_thread_;
 
     bool read_next_frame();
@@ -57,8 +63,6 @@ class VideoPlayback {
 
 
 public:
-
-
 
 
     VideoPlayback();
@@ -107,6 +111,11 @@ public:
     /// @brief Index of the current frame
     /// @return
     unsigned current_frame();
+
+    /// \brief a.k.a. shut me up<br>
+    /// closes every thread opened for VideoPlayback purposes<br>
+    /// cleans whole data stream
+    void close();
 
     // in frames i guess
     unsigned file_size();
