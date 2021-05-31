@@ -30,6 +30,17 @@ class VideoPlayback {
 
     unsigned current_completed_frame_ = 0;
 
+    /// last action that has occurred
+    /// list of already defined
+    /// <ol>
+    /// <li> "The video file is malformed"
+    /// <li> "Adding effect failed"
+    /// <li> "Video stream offline"
+    /// <li> "Video stream online"
+    /// </ol>
+    static std::string last_error ;
+
+
 /// disable thread booleans
 /// if set true threads will turn inactive
 /// if false they remain active
@@ -44,7 +55,12 @@ class VideoPlayback {
 
     void buck_up_reading(int number_of_frames);
 
+
 public:
+
+
+
+
     VideoPlayback();
 
     void th_frame_reader();
@@ -54,7 +70,7 @@ public:
 
     /// @brief Get the next frame in the queue
     /// @return
-    QPixmap next_frame();
+    QPixmap *next_frame();
 
     // but like yt  so we need to clean our buffor
     // move in file in reverse

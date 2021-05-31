@@ -171,18 +171,17 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
-//        QPixmap* frame = playback_->next_frame();
-//        if (frame) {
-//            change_current_pixmap(new QPixmap(playback_->next_frame()));
-//
-//        } else {
-//            set_image(EMPTY_IMAGE);
-//            QMessageBox::warning(
-//                    this,
-//                    QString("Video error"),
-//                    QString(VideoPlayback::get_last_error().c_str()));
-//        }
-    change_current_pixmap(new QPixmap(playback_->next_frame()));
+        QPixmap* frame = playback_->next_frame();
+        if (frame) {
+            change_current_pixmap(frame);
+
+        } else {
+            set_image(EMPTY_IMAGE);
+            QMessageBox::warning(
+                    this,
+                    QString("Video error"),
+                    QString(VideoPlayback::get_last_error().c_str()));
+        }
 
     }
 #else
