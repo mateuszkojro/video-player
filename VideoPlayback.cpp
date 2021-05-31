@@ -6,21 +6,22 @@
 #include <iostream>
 #include "VideoPlayback.h"
 
-std::string VideoPlayback::last_error  = "Video stream offline";
+std::string VideoPlayback::last_error = "Video stream offline";
 
 static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
     close();
-
     video_capture_ = new cv::VideoCapture(path);
+    /// look into it:
+    //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
     assert(video_capture_->isOpened());
 
     if (!video_capture_->isOpened()) {
         last_error = "The video file is malformed";
         return;
     }
-
+    // video_capture_->set(cv::VIDEO_ACCELERATION_ANY)
     /// clear frame counter
     current_completed_frame_ = 0;
 
@@ -91,7 +92,7 @@ void VideoPlayback::add_effect() {
     }
     /// analyze it using effect table
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
                 effect->operator()(temp_frame);
@@ -171,7 +172,7 @@ QPixmap *VideoPlayback::next_frame() {
 void VideoPlayback::change_effect(int index, Effect *effect) {
 
     {
-        std::lock_guard <std::mutex> lock(effects_mutex_);
+        std::lock_guard<std::mutex> lock(effects_mutex_);
         if (index >= effects_.size()) {
             last_error = "Adding effect failed";
             return;
@@ -182,13 +183,13 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
     int number_of_loaded_frames = 0;
 
     {
-        std::lock_guard <std::mutex> lock(analyzed_frames_mutex_);
+        std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
         number_of_loaded_frames += analyzed_frames_.size();
         while (!analyzed_frames_.empty()) analyzed_frames_.pop();
     }
 
     {
-        std::lock_guard <std::mutex> lock(raw_frames_mutex_);
+        std::lock_guard<std::mutex> lock(raw_frames_mutex_);
         number_of_loaded_frames += raw_frames_.size();
         while (!raw_frames_.empty()) raw_frames_.pop();
     }
@@ -255,6 +256,38 @@ void VideoPlayback::close() {
 
     last_error = "Video stream offline";
 
+}
+
+void VideoPlayback::change_position(int index) {
+    if(index < 0)
+        index = 0;
+    video_capture_->set(cv::CAP_PROP_POS_FRAMES, index);
+
+}
+
+void VideoPlayback::skip_10s() {
+    /// current_position is in milliseconds
+    double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
+    video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position + 10 * 1000);
+
+
+    /// if we went past the file
+    /// snap back to the end
+    /// but this is a guessing game
+    if (video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO) >= 1)
+        video_capture_->set(cv::CAP_PROP_POS_AVI_RATIO, 1);
+}
+
+void VideoPlayback::back_10s() {
+/// current_position is in milliseconds
+    double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
+
+    current_position -= 10 * 1000;
+
+    if (current_position < 0)
+        current_position = 0;
+
+    video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position);
 }
 
 static QImage *mat2Image(cv::Mat &mat) {
