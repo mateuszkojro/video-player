@@ -65,11 +65,11 @@ VideoPlayer::~VideoPlayer() {
     delete open_settings_action_;
     delete second_window_;
     delete central_widget_;
-    delete top_filler_;
-    delete bottom_filler_;
-    delete opengl_widget_;
-    delete layout_;
-    delete timer_;
+//    delete top_filler_;
+//    delete bottom_filler_;
+//    delete opengl_widget_;
+//    delete layout_;
+//    delete timer_;
 }
 
 /// \brief helpers to make actions
