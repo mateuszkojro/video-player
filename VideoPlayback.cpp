@@ -11,37 +11,7 @@ std::string VideoPlayback::last_error  = "Video stream offline";
 static QImage *mat2Image(cv::Mat &mat);
 
 void VideoPlayback::change_file(const std::string &path) {
-    /// if read thread is active
-    if (read_thread_ != nullptr) {
-        /// tell him to shut off
-        disable_r_thread_ = true;
-        /// and join thread
-        read_thread_->join();
-        /// clean up, probably not necessary but hey
-        delete read_thread_;
-    }
-    /// as above so below
-    if (effect_thread_ != nullptr) {
-        disable_e_thread_ = true;
-        effect_thread_->join();
-        delete effect_thread_;
-    }
-    /// all of those steps are always made with threads offline, so we don't need locks
-
-    /// for some reason queue does not have .clear() but i may be dumb
-    /// this looks fine tho
-    while (!raw_frames_.empty()) raw_frames_.pop();
-    while (!analyzed_frames_.empty()) analyzed_frames_.pop();
-
-    /// prepare threads to run again, but with different file,
-    /// again we probably could skip whole "stop threads step" but kojro insisted
-    disable_e_thread_ = false;
-    disable_r_thread_ = false;
-
-    /// delete last video handle
-    /// i thing we could simply override the existing one,
-    /// but this whole function will be run fev times in our video player live spam so there's no need to be fast here
-    delete video_capture_;
+    close();
 
     video_capture_ = new cv::VideoCapture(path);
     assert(video_capture_->isOpened());
