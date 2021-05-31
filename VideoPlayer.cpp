@@ -12,8 +12,8 @@ VideoPlayer::VideoPlayer() {
     setCentralWidget(central_widget_);
 
     /// Make filler on top
-    top_filler_ = new QWidget;
-    top_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+//    top_filler_ = new QWidget;
+//    top_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     /// Make a filler on the bottom
     bottom_filler_ = new QWidget;
@@ -33,7 +33,7 @@ VideoPlayer::VideoPlayer() {
     layout_->setContentsMargins(5, 5, 5, 5);
 
     /// Configure widgets in the layout
-    layout_->addWidget(top_filler_);
+//    layout_->addWidget(top_filler_);
     layout_->addWidget(bottom_filler_);
     layout_->addWidget(opengl_widget_);
 
