@@ -28,6 +28,8 @@ protected:
 
     void contextMenuEvent(QContextMenuEvent *event) override;
 
+    void closeEvent(QCloseEvent *event) override;
+
 #endif // QT_NO_CONTEXTMENU
 
 private slots:

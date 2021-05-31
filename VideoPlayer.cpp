@@ -207,7 +207,7 @@ void VideoPlayer::close_handler() {
             /// Print to console
             qDebug("yes");
             /// Exit the application
-            QCoreApplication::quit();
+            QCoreApplication::exit(0);
             break;
         }
         case QMessageBox::Cancel: {
@@ -247,3 +247,6 @@ void VideoPlayer::open_script_handler() {
 //    opengl_widget_->request_change_file(fileName.toStdString(), GLWidget::Mode::Script);
 }
 
+void VideoPlayer::closeEvent(QCloseEvent *event) {
+    VideoPlayer::close_handler();
+}
