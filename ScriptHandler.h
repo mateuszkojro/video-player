@@ -16,8 +16,7 @@
 class ScriptHandler {
 public:
 
-    enum Result {
-        Ok,
+    enum Result {          Ok,
         Error,
     };
 
@@ -156,6 +155,29 @@ private:
                     cv::Scalar(b, g, r),
                     thickness
         );
+
+        return 1;
+    }
+
+    static int getPixel(lua_State *L) {
+        auto mat = extract_frame(L, CURRENT_FRAME);
+        auto y = luaL_checkinteger(L, 2);
+        auto x = luaL_checkinteger(L, 1);
+
+        auto get_pix = mat->at<uint8_t >(x,y);
+
+        lua_pushinteger(L, get_pix);
+        return 1;
+    }
+
+    static int setPixel(lua_State *L) {
+        auto pix = luaL_checkinteger(L, 3);
+        auto y = luaL_checkinteger(L, 2);
+        auto x = luaL_checkinteger(L, 1);
+
+        auto mat = extract_frame(L, CURRENT_FRAME);
+
+        mat->at<cv::Vec3b>(x, y) = cv::Vec3b(pix);
 
         return 1;
     }

@@ -176,7 +176,7 @@ SettingsWindow::~SettingsWindow() {
 }
 
 void SettingsWindow::flip_effect_script() {
-    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script.lua") : nullptr;
+    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script_bgr.lua") : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 
@@ -190,7 +190,7 @@ void SettingsWindow::flip_effect_hsv() {
     /// Function called after effect 1 button was pressed
     auto setting = effect_hsv_->isChecked() ? new HSVEffect() : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_hsv_), setting);
-}
+}     
 
 void SettingsWindow::flip_effect_blur_r() {
     auto setting = effect_blur_r_->isChecked() ? new Blur_rEffect() : nullptr;
