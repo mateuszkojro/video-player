@@ -111,13 +111,18 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     layout_->addWidget(always_on_top_);
     layout_->addWidget(effect_script_);
+    layout_->addWidget(effect_grey_scale_);
     layout_->addWidget(effect_hsv_);
     layout_->addWidget(effect_blur_r_);
     layout_->addWidget(blur_level_slider_);
     layout_->addWidget(text_blur);
+    layout_->addWidget(effect_gauss_);
+    layout_->addWidget(gauss_level_slider_);
+    layout_->addWidget(text_gauss);
     layout_->addWidget(effect_sobel_);
     layout_->addWidget(sobel_level_slider_);
     layout_->addWidget(text_sobel);
+    layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_neon_);
     layout_->addWidget(neon_r_level_slider_);
     layout_->addWidget(text_r);
@@ -125,16 +130,10 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(text_g);
     layout_->addWidget(neon_b_level_slider_);
     layout_->addWidget(text_b);
-    layout_->addWidget(effect_canny_);
     layout_->addWidget(effect_noise_);
     layout_->addWidget(noise_level_slider_);
-
     layout_->addWidget(text_noise);
 
-    layout_->addWidget(effect_gauss_);
-    layout_->addWidget(gauss_level_slider_);
-    layout_->addWidget(text_gauss);
-    layout_->addWidget(effect_grey_scale_);
 
     /// Add handlers to the buttons
     connect(always_on_top_, &QPushButton::released, this, &SettingsWindow::flip_always_on_top);
@@ -183,7 +182,7 @@ SettingsWindow::~SettingsWindow() {
 }
 
 void SettingsWindow::flip_effect_script() {
-    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script.lua") : nullptr;
+    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script2.lua") : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 

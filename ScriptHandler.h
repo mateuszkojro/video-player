@@ -160,6 +160,17 @@ private:
         return 1;
     }
 
+    static int getPixel(lua_State *L) {
+        auto mat = extract_frame(L, CURRENT_FRAME);
+        auto y = luaL_checkinteger(L, 2);
+        auto x = luaL_checkinteger(L, 1);
+
+        auto get_pix = mat->at<uint8_t >(x,y);
+
+        lua_pushinteger(L, get_pix);
+        return 1;
+    }
+
     static std::string error_msg_;
     static lua_State *lua_state_;
 };
