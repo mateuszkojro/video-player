@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\libluadll.dir/objects.a
-C:\Qt\Tools\mingw810_64\bin\ar.exe cr CMakeFiles\libluadll.dir/objects.a @CMakeFiles\libluadll.dir\objects1.rsp
-C:\Qt\Tools\mingw810_64\bin\g++.exe -g -shared -o liblua53.dll -Wl,--out-implib,liblua53.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\libluadll.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\libluadll.dir\linklibs.rsp
