@@ -13,6 +13,7 @@ static QImage *mat2Image(cv::Mat &mat);
 void VideoPlayback::change_file(const std::string &path) {
     close();
     video_capture_ = new cv::VideoCapture(path);
+    video_capture_->set(cv::CAP_PROP_FPS,30);
     /// look into it:
     //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
     assert(video_capture_->isOpened());
@@ -33,14 +34,15 @@ void VideoPlayback::change_file(const std::string &path) {
 }
 
 bool VideoPlayback::read_next_frame() {
-
     cv::Mat *input_buffer = new cv::Mat;
     {
         // std::lock_guard<std::mutex> lock(video_capture_mutex_);
         *video_capture_ >> *input_buffer;
+
     }
     if (input_buffer->empty()) {
-
+        raw_frames_.push(nullptr);
+        last_error = "The video file is malformed" ;
         // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
         /// if frame is empty, function returns false
         /// it will stop thread
@@ -77,14 +79,22 @@ void VideoPlayback::th_frame_reader() {
 void VideoPlayback::add_effect() {
     /// we .clone() frames anyway so we dont need to use move
     /// if i'm not mistaken ofc
-    cv::Mat temp_frame;
+    cv::Mat* temp_frame ;
+
+    /// check if raw_frames_.front() is nullptr
+    if(!raw_frames_.front()){
+        analyzed_frames_.push(nullptr);
+        return ;
+    }
+
+
     /// get raw frame form queue
     {
         // std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
-        temp_frame = raw_frames_.front()->clone();
-        raw_frames_.front()->deallocate();
-        delete raw_frames_.front();
+        temp_frame = raw_frames_.front();
+      //  raw_frames_.front()->deallocate();
+        //delete raw_frames_.front();
         raw_frames_.pop();
 
     }
@@ -93,7 +103,7 @@ void VideoPlayback::add_effect() {
         std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
-                effect->operator()(temp_frame);
+                effect->operator()(*temp_frame);
             }
         }
     }
@@ -101,10 +111,10 @@ void VideoPlayback::add_effect() {
     /// place analyzed therefore changed frame on top of analyzed_queue
     {
         //  std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        QImage* temp_image = mat2Image(temp_frame);
+        QImage* temp_image = mat2Image(*temp_frame);
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
         delete temp_image;
-
+        delete temp_frame;
     }
 
 }
