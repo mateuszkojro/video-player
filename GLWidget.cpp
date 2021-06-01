@@ -211,16 +211,26 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 void GLWidget::request_change_file(const std::string &path, Mode mode) {
 #if NEW_PIPELINE
     current_mode_ = mode;
-    switch (mode) {
-        case Mode::Image:
-            set_image(path);
-            break;
-        case Mode::Video:
-            playback_->change_file(path);
-            break;
-        default:
-            throw "Bad mode";
+    if (path != "") {
+        switch (mode) {
+            case Mode::Image:
+                set_image(path);
+                break;
+            case Mode::Video:
+                if (!playback_->change_file(path)) {
+                    set_image(EMPTY_IMAGE);
+                    QMessageBox::warning(
+                            this,
+                            QString("Video error"),
+                            QString(VideoPlayback::get_last_error().c_str()));
+                    playback_->close();
+                }
+                break;
+            default:
+                throw "Bad mode";
+        }
     }
+
 #else
     current_mode_ = mode;
     switch (mode) {

@@ -10,16 +10,16 @@ std::string VideoPlayback::last_error = "Video stream offline";
 
 static QImage *mat2Image(cv::Mat &mat);
 
-void VideoPlayback::change_file(const std::string &path) {
+bool VideoPlayback::change_file(const std::string &path) {
     close();
     video_capture_ = new cv::VideoCapture(path);
     /// look into it:
     //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
-    assert(video_capture_->isOpened());
+//    assert(video_capture_->isOpened());
 
     if (!video_capture_->isOpened()) {
         last_error = "The video file is malformed";
-        return;
+        return false;
     }
     // video_capture_->set(cv::VIDEO_ACCELERATION_ANY)
     /// clear frame counter
@@ -30,6 +30,7 @@ void VideoPlayback::change_file(const std::string &path) {
     read_thread_ = new std::thread(&VideoPlayback::th_frame_reader, this);
     effect_thread_ = new std::thread(&VideoPlayback::th_effect_adder, this);
     last_error = "Video stream online";
+    return true;
 }
 
 bool VideoPlayback::read_next_frame() {
@@ -101,7 +102,14 @@ void VideoPlayback::add_effect() {
     /// place analyzed therefore changed frame on top of analyzed_queue
     {
         //  std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        QImage* temp_image = mat2Image(temp_frame);
+        QImage *temp_image = mat2Image(temp_frame);
+
+        // todo Think about that
+        if (!temp_image) {
+            last_error = "Bad format";
+            analyzed_frames_.push(nullptr);
+            return;
+        }
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
         delete temp_image;
 
@@ -340,7 +348,7 @@ static QImage *mat2Image(cv::Mat &mat) {
         }
         default:
             std::cout << "format not suported" << std::endl;
-            throw "cv::Mat format not supported";
+            return nullptr;
     }
 
     return image;
