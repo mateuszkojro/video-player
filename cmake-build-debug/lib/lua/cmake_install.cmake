@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Administrator/source/repos/video_player/lib/lua
+# Install script for directory: C:/Users/Administrator/source/repos/video_player2/lib/lua
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

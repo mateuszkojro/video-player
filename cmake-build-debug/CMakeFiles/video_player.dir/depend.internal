@@ -127,10 +127,10 @@ CMakeFiles/video_player.dir/GLWidget.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/GLWidget.cpp
- C:/Users/Administrator/source/repos/video_player/GLWidget.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.cpp
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -170,8 +170,8 @@ CMakeFiles/video_player.dir/ScriptHandler.cpp.obj
  ../lib/lua/src/lua.hpp
  ../lib/lua/src/luaconf.h
  ../lib/lua/src/lualib.h
- C:/Users/Administrator/source/repos/video_player/ScriptHandler.cpp
- C:/Users/Administrator/source/repos/video_player/ScriptHandler.h
+ C:/Users/Administrator/source/repos/video_player2/ScriptHandler.cpp
+ C:/Users/Administrator/source/repos/video_player2/ScriptHandler.h
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -696,15 +696,15 @@ CMakeFiles/video_player.dir/SettingsWindow.cc.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwizard.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/EffectsImplementations.h
- C:/Users/Administrator/source/repos/video_player/GLWidget.h
- C:/Users/Administrator/source/repos/video_player/ScriptHandler.h
- C:/Users/Administrator/source/repos/video_player/SettingsWindow.cc
- C:/Users/Administrator/source/repos/video_player/SettingsWindow.h
- C:/Users/Administrator/source/repos/video_player/Style.h
- C:/Users/Administrator/source/repos/video_player/Switch.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/EffectsImplementations.h
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.h
+ C:/Users/Administrator/source/repos/video_player2/ScriptHandler.h
+ C:/Users/Administrator/source/repos/video_player2/SettingsWindow.cc
+ C:/Users/Administrator/source/repos/video_player2/SettingsWindow.h
+ C:/Users/Administrator/source/repos/video_player2/Style.h
+ C:/Users/Administrator/source/repos/video_player2/Switch.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -1221,9 +1221,9 @@ CMakeFiles/video_player.dir/Switch.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwizard.h
- C:/Users/Administrator/source/repos/video_player/Style.h
- C:/Users/Administrator/source/repos/video_player/Switch.cpp
- C:/Users/Administrator/source/repos/video_player/Switch.h
+ C:/Users/Administrator/source/repos/video_player2/Style.h
+ C:/Users/Administrator/source/repos/video_player2/Switch.cpp
+ C:/Users/Administrator/source/repos/video_player2/Switch.h
 CMakeFiles/video_player.dir/VideoPlayback.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h
  C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h
@@ -1303,9 +1303,9 @@ CMakeFiles/video_player.dir/VideoPlayback.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h
  C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.cpp
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.cpp
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -1823,14 +1823,14 @@ CMakeFiles/video_player.dir/VideoPlayer.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwizard.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/GLWidget.h
- C:/Users/Administrator/source/repos/video_player/SettingsWindow.h
- C:/Users/Administrator/source/repos/video_player/Style.h
- C:/Users/Administrator/source/repos/video_player/Switch.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayer.cpp
- C:/Users/Administrator/source/repos/video_player/VideoPlayer.h
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.h
+ C:/Users/Administrator/source/repos/video_player2/SettingsWindow.h
+ C:/Users/Administrator/source/repos/video_player2/Style.h
+ C:/Users/Administrator/source/repos/video_player2/Switch.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayer.cpp
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayer.h
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -1998,12 +1998,12 @@ CMakeFiles/video_player.dir/main.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/GLWidget.h
- C:/Users/Administrator/source/repos/video_player/ScriptHandler.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayer.h
- C:/Users/Administrator/source/repos/video_player/main.cpp
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.h
+ C:/Users/Administrator/source/repos/video_player2/ScriptHandler.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayer.h
+ C:/Users/Administrator/source/repos/video_player2/main.cpp
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp
@@ -2520,15 +2520,15 @@ CMakeFiles/video_player.dir/video_player_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.15.2/mingw81_64/include/QtWidgets/qwizard.h
- C:/Users/Administrator/source/repos/video_player/Effect.h
- C:/Users/Administrator/source/repos/video_player/GLWidget.h
- C:/Users/Administrator/source/repos/video_player/Style.h
- C:/Users/Administrator/source/repos/video_player/Switch.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayback.h
- C:/Users/Administrator/source/repos/video_player/VideoPlayer.h
- C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_Switch.cpp
- C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_VideoPlayer.cpp
- C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/mocs_compilation.cpp
+ C:/Users/Administrator/source/repos/video_player2/Effect.h
+ C:/Users/Administrator/source/repos/video_player2/GLWidget.h
+ C:/Users/Administrator/source/repos/video_player2/Style.h
+ C:/Users/Administrator/source/repos/video_player2/Switch.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayback.h
+ C:/Users/Administrator/source/repos/video_player2/VideoPlayer.h
+ C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_Switch.cpp
+ C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_VideoPlayer.cpp
+ C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/video_player_autogen/mocs_compilation.cpp
  C:/opencv/install/include/opencv2/core.hpp
  C:/opencv/install/include/opencv2/core/base.hpp
  C:/opencv/install/include/opencv2/core/bufferpool.hpp

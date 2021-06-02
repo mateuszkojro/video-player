@@ -176,7 +176,7 @@ SettingsWindow::~SettingsWindow() {
 }
 
 void SettingsWindow::flip_effect_script() {
-    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script_bgr.lua") : nullptr;
+    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script2.lua") : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 

@@ -61,10 +61,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player
+CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player2\cmake-build-debug
 
 # Utility rule file for libluadll_autogen.
 
@@ -72,8 +72,8 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-
 include lib/lua/CMakeFiles/libluadll_autogen.dir/progress.make
 
 lib/lua/CMakeFiles/libluadll_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target libluadll"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_autogen C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/libluadll_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target libluadll"
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\lib\lua && "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_autogen C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/CMakeFiles/libluadll_autogen.dir/AutogenInfo.json Debug
 
 libluadll_autogen: lib/lua/CMakeFiles/libluadll_autogen
 libluadll_autogen: lib/lua/CMakeFiles/libluadll_autogen.dir/build.make
@@ -86,10 +86,10 @@ lib/lua/CMakeFiles/libluadll_autogen.dir/build: libluadll_autogen
 .PHONY : lib/lua/CMakeFiles/libluadll_autogen.dir/build
 
 lib/lua/CMakeFiles/libluadll_autogen.dir/clean:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\libluadll_autogen.dir\cmake_clean.cmake
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\libluadll_autogen.dir\cmake_clean.cmake
 .PHONY : lib/lua/CMakeFiles/libluadll_autogen.dir/clean
 
 lib/lua/CMakeFiles/libluadll_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player C:\Users\Administrator\source\repos\video_player\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\CMakeFiles\libluadll_autogen.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player2 C:\Users\Administrator\source\repos\video_player2\lib\lua C:\Users\Administrator\source\repos\video_player2\cmake-build-debug C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\lib\lua C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\lib\lua\CMakeFiles\libluadll_autogen.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/lua/CMakeFiles/libluadll_autogen.dir/depend
 

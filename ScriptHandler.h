@@ -170,18 +170,6 @@ private:
         return 1;
     }
 
-    static int setPixel(lua_State *L) {
-        auto pix = luaL_checkinteger(L, 3);
-        auto y = luaL_checkinteger(L, 2);
-        auto x = luaL_checkinteger(L, 1);
-
-        auto mat = extract_frame(L, CURRENT_FRAME);
-
-        mat->at<cv::Vec3b>(x, y) = cv::Vec3b(pix);
-
-        return 1;
-    }
-
     static std::string error_msg_;
     static lua_State *lua_state_;
 };

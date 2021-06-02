@@ -1,20 +1,20 @@
 {
-	"BUILD_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/luac_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player/lib/lua",
+	"BUILD_DIR" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/luac_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player2/lib/lua",
 	"CMAKE_EXECUTABLE" : "C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/Administrator/source/repos/video_player/lib/lua/CMakeLists.txt"
+		"C:/Users/Administrator/source/repos/video_player2/lib/lua/CMakeLists.txt"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player",
+	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player2",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/luac_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/luac_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/luac_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/luac_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -26,8 +26,8 @@
 	"MOC_INCLUDES" : 
 	[
 		"C:/opencv/install/include",
-		"C:/Users/Administrator/source/repos/video_player/lib/lua/src",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua",
+		"C:/Users/Administrator/source/repos/video_player2/lib/lua/src",
+		"C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
@@ -46,21 +46,21 @@
 		"-c",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/luac_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/luac_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/luac_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/CMakeFiles/luac_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/luac_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/CMakeFiles/luac_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/luac.c",
+			"C:/Users/Administrator/source/repos/video_player2/lib/lua/src/luac.c",
 			"MU"
 		]
 	],

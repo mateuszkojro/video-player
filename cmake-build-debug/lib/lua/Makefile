@@ -66,10 +66,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player
+CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player2\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -98,14 +98,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\\CMakeFiles\progress.marks
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\CMakeFiles C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\lib\lua\\CMakeFiles\progress.marks
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/clean
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/clean
 .PHONY : clean
 
 # The main clean target
@@ -115,22 +115,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/preinstall
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/preinstall
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/lua/CMakeFiles/libluadll.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/libluadll.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/libluadll.dir/rule
 .PHONY : lib/lua/CMakeFiles/libluadll.dir/rule
 
 # Convenience name for target.
@@ -140,12 +140,12 @@ libluadll: lib/lua/CMakeFiles/libluadll.dir/rule
 
 # fast build rule for target.
 libluadll/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/build
 .PHONY : libluadll/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/liblua.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/liblua.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/liblua.dir/rule
 .PHONY : lib/lua/CMakeFiles/liblua.dir/rule
 
 # Convenience name for target.
@@ -155,12 +155,12 @@ liblua: lib/lua/CMakeFiles/liblua.dir/rule
 
 # fast build rule for target.
 liblua/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/build
 .PHONY : liblua/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/lua.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/lua.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/lua.dir/rule
 .PHONY : lib/lua/CMakeFiles/lua.dir/rule
 
 # Convenience name for target.
@@ -170,12 +170,12 @@ lua: lib/lua/CMakeFiles/lua.dir/rule
 
 # fast build rule for target.
 lua/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/build
 .PHONY : lua/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/luac.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/luac.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/luac.dir/rule
 .PHONY : lib/lua/CMakeFiles/luac.dir/rule
 
 # Convenience name for target.
@@ -185,12 +185,12 @@ luac: lib/lua/CMakeFiles/luac.dir/rule
 
 # fast build rule for target.
 luac/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/build
 .PHONY : luac/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/libluadll_autogen.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/libluadll_autogen.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/libluadll_autogen.dir/rule
 .PHONY : lib/lua/CMakeFiles/libluadll_autogen.dir/rule
 
 # Convenience name for target.
@@ -200,12 +200,12 @@ libluadll_autogen: lib/lua/CMakeFiles/libluadll_autogen.dir/rule
 
 # fast build rule for target.
 libluadll_autogen/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll_autogen.dir\build.make lib/lua/CMakeFiles/libluadll_autogen.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll_autogen.dir\build.make lib/lua/CMakeFiles/libluadll_autogen.dir/build
 .PHONY : libluadll_autogen/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/liblua_autogen.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/liblua_autogen.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/liblua_autogen.dir/rule
 .PHONY : lib/lua/CMakeFiles/liblua_autogen.dir/rule
 
 # Convenience name for target.
@@ -215,12 +215,12 @@ liblua_autogen: lib/lua/CMakeFiles/liblua_autogen.dir/rule
 
 # fast build rule for target.
 liblua_autogen/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua_autogen.dir\build.make lib/lua/CMakeFiles/liblua_autogen.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua_autogen.dir\build.make lib/lua/CMakeFiles/liblua_autogen.dir/build
 .PHONY : liblua_autogen/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/lua_autogen.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/lua_autogen.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/lua_autogen.dir/rule
 .PHONY : lib/lua/CMakeFiles/lua_autogen.dir/rule
 
 # Convenience name for target.
@@ -230,12 +230,12 @@ lua_autogen: lib/lua/CMakeFiles/lua_autogen.dir/rule
 
 # fast build rule for target.
 lua_autogen/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua_autogen.dir\build.make lib/lua/CMakeFiles/lua_autogen.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua_autogen.dir\build.make lib/lua/CMakeFiles/lua_autogen.dir/build
 .PHONY : lua_autogen/fast
 
 # Convenience name for target.
 lib/lua/CMakeFiles/luac_autogen.dir/rule:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/luac_autogen.dir/rule
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lib/lua/CMakeFiles/luac_autogen.dir/rule
 .PHONY : lib/lua/CMakeFiles/luac_autogen.dir/rule
 
 # Convenience name for target.
@@ -245,7 +245,7 @@ luac_autogen: lib/lua/CMakeFiles/luac_autogen.dir/rule
 
 # fast build rule for target.
 luac_autogen/fast:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac_autogen.dir\build.make lib/lua/CMakeFiles/luac_autogen.dir/build
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac_autogen.dir\build.make lib/lua/CMakeFiles/luac_autogen.dir/build
 .PHONY : luac_autogen/fast
 
 liblua_autogen/mocs_compilation.obj: liblua_autogen/mocs_compilation.cpp.obj
@@ -254,7 +254,7 @@ liblua_autogen/mocs_compilation.obj: liblua_autogen/mocs_compilation.cpp.obj
 
 # target to build an object file
 liblua_autogen/mocs_compilation.cpp.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj
 .PHONY : liblua_autogen/mocs_compilation.cpp.obj
 
 liblua_autogen/mocs_compilation.i: liblua_autogen/mocs_compilation.cpp.i
@@ -263,7 +263,7 @@ liblua_autogen/mocs_compilation.i: liblua_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 liblua_autogen/mocs_compilation.cpp.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.i
 .PHONY : liblua_autogen/mocs_compilation.cpp.i
 
 liblua_autogen/mocs_compilation.s: liblua_autogen/mocs_compilation.cpp.s
@@ -272,7 +272,7 @@ liblua_autogen/mocs_compilation.s: liblua_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 liblua_autogen/mocs_compilation.cpp.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.s
 .PHONY : liblua_autogen/mocs_compilation.cpp.s
 
 libluadll_autogen/mocs_compilation.obj: libluadll_autogen/mocs_compilation.cpp.obj
@@ -281,7 +281,7 @@ libluadll_autogen/mocs_compilation.obj: libluadll_autogen/mocs_compilation.cpp.o
 
 # target to build an object file
 libluadll_autogen/mocs_compilation.cpp.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.obj
 .PHONY : libluadll_autogen/mocs_compilation.cpp.obj
 
 libluadll_autogen/mocs_compilation.i: libluadll_autogen/mocs_compilation.cpp.i
@@ -290,7 +290,7 @@ libluadll_autogen/mocs_compilation.i: libluadll_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 libluadll_autogen/mocs_compilation.cpp.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.i
 .PHONY : libluadll_autogen/mocs_compilation.cpp.i
 
 libluadll_autogen/mocs_compilation.s: libluadll_autogen/mocs_compilation.cpp.s
@@ -299,7 +299,7 @@ libluadll_autogen/mocs_compilation.s: libluadll_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 libluadll_autogen/mocs_compilation.cpp.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/libluadll_autogen/mocs_compilation.cpp.s
 .PHONY : libluadll_autogen/mocs_compilation.cpp.s
 
 lua_autogen/mocs_compilation.obj: lua_autogen/mocs_compilation.cpp.obj
@@ -308,7 +308,7 @@ lua_autogen/mocs_compilation.obj: lua_autogen/mocs_compilation.cpp.obj
 
 # target to build an object file
 lua_autogen/mocs_compilation.cpp.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj
 .PHONY : lua_autogen/mocs_compilation.cpp.obj
 
 lua_autogen/mocs_compilation.i: lua_autogen/mocs_compilation.cpp.i
@@ -317,7 +317,7 @@ lua_autogen/mocs_compilation.i: lua_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 lua_autogen/mocs_compilation.cpp.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.i
 .PHONY : lua_autogen/mocs_compilation.cpp.i
 
 lua_autogen/mocs_compilation.s: lua_autogen/mocs_compilation.cpp.s
@@ -326,7 +326,7 @@ lua_autogen/mocs_compilation.s: lua_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 lua_autogen/mocs_compilation.cpp.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.s
 .PHONY : lua_autogen/mocs_compilation.cpp.s
 
 luac_autogen/mocs_compilation.obj: luac_autogen/mocs_compilation.cpp.obj
@@ -335,7 +335,7 @@ luac_autogen/mocs_compilation.obj: luac_autogen/mocs_compilation.cpp.obj
 
 # target to build an object file
 luac_autogen/mocs_compilation.cpp.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.obj
 .PHONY : luac_autogen/mocs_compilation.cpp.obj
 
 luac_autogen/mocs_compilation.i: luac_autogen/mocs_compilation.cpp.i
@@ -344,7 +344,7 @@ luac_autogen/mocs_compilation.i: luac_autogen/mocs_compilation.cpp.i
 
 # target to preprocess a source file
 luac_autogen/mocs_compilation.cpp.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.i
 .PHONY : luac_autogen/mocs_compilation.cpp.i
 
 luac_autogen/mocs_compilation.s: luac_autogen/mocs_compilation.cpp.s
@@ -353,7 +353,7 @@ luac_autogen/mocs_compilation.s: luac_autogen/mocs_compilation.cpp.s
 
 # target to generate assembly for a file
 luac_autogen/mocs_compilation.cpp.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/luac_autogen/mocs_compilation.cpp.s
 .PHONY : luac_autogen/mocs_compilation.cpp.s
 
 src/lapi.obj: src/lapi.c.obj
@@ -362,8 +362,8 @@ src/lapi.obj: src/lapi.c.obj
 
 # target to build an object file
 src/lapi.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj
 .PHONY : src/lapi.c.obj
 
 src/lapi.i: src/lapi.c.i
@@ -372,8 +372,8 @@ src/lapi.i: src/lapi.c.i
 
 # target to preprocess a source file
 src/lapi.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.i
 .PHONY : src/lapi.c.i
 
 src/lapi.s: src/lapi.c.s
@@ -382,8 +382,8 @@ src/lapi.s: src/lapi.c.s
 
 # target to generate assembly for a file
 src/lapi.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lapi.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lapi.c.s
 .PHONY : src/lapi.c.s
 
 src/lauxlib.obj: src/lauxlib.c.obj
@@ -392,8 +392,8 @@ src/lauxlib.obj: src/lauxlib.c.obj
 
 # target to build an object file
 src/lauxlib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj
 .PHONY : src/lauxlib.c.obj
 
 src/lauxlib.i: src/lauxlib.c.i
@@ -402,8 +402,8 @@ src/lauxlib.i: src/lauxlib.c.i
 
 # target to preprocess a source file
 src/lauxlib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.i
 .PHONY : src/lauxlib.c.i
 
 src/lauxlib.s: src/lauxlib.c.s
@@ -412,8 +412,8 @@ src/lauxlib.s: src/lauxlib.c.s
 
 # target to generate assembly for a file
 src/lauxlib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lauxlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.s
 .PHONY : src/lauxlib.c.s
 
 src/lbaselib.obj: src/lbaselib.c.obj
@@ -422,8 +422,8 @@ src/lbaselib.obj: src/lbaselib.c.obj
 
 # target to build an object file
 src/lbaselib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj
 .PHONY : src/lbaselib.c.obj
 
 src/lbaselib.i: src/lbaselib.c.i
@@ -432,8 +432,8 @@ src/lbaselib.i: src/lbaselib.c.i
 
 # target to preprocess a source file
 src/lbaselib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.i
 .PHONY : src/lbaselib.c.i
 
 src/lbaselib.s: src/lbaselib.c.s
@@ -442,8 +442,8 @@ src/lbaselib.s: src/lbaselib.c.s
 
 # target to generate assembly for a file
 src/lbaselib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbaselib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.s
 .PHONY : src/lbaselib.c.s
 
 src/lbitlib.obj: src/lbitlib.c.obj
@@ -452,8 +452,8 @@ src/lbitlib.obj: src/lbitlib.c.obj
 
 # target to build an object file
 src/lbitlib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj
 .PHONY : src/lbitlib.c.obj
 
 src/lbitlib.i: src/lbitlib.c.i
@@ -462,8 +462,8 @@ src/lbitlib.i: src/lbitlib.c.i
 
 # target to preprocess a source file
 src/lbitlib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.i
 .PHONY : src/lbitlib.c.i
 
 src/lbitlib.s: src/lbitlib.c.s
@@ -472,8 +472,8 @@ src/lbitlib.s: src/lbitlib.c.s
 
 # target to generate assembly for a file
 src/lbitlib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lbitlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.s
 .PHONY : src/lbitlib.c.s
 
 src/lcode.obj: src/lcode.c.obj
@@ -482,8 +482,8 @@ src/lcode.obj: src/lcode.c.obj
 
 # target to build an object file
 src/lcode.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj
 .PHONY : src/lcode.c.obj
 
 src/lcode.i: src/lcode.c.i
@@ -492,8 +492,8 @@ src/lcode.i: src/lcode.c.i
 
 # target to preprocess a source file
 src/lcode.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.i
 .PHONY : src/lcode.c.i
 
 src/lcode.s: src/lcode.c.s
@@ -502,8 +502,8 @@ src/lcode.s: src/lcode.c.s
 
 # target to generate assembly for a file
 src/lcode.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcode.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcode.c.s
 .PHONY : src/lcode.c.s
 
 src/lcorolib.obj: src/lcorolib.c.obj
@@ -512,8 +512,8 @@ src/lcorolib.obj: src/lcorolib.c.obj
 
 # target to build an object file
 src/lcorolib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj
 .PHONY : src/lcorolib.c.obj
 
 src/lcorolib.i: src/lcorolib.c.i
@@ -522,8 +522,8 @@ src/lcorolib.i: src/lcorolib.c.i
 
 # target to preprocess a source file
 src/lcorolib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.i
 .PHONY : src/lcorolib.c.i
 
 src/lcorolib.s: src/lcorolib.c.s
@@ -532,8 +532,8 @@ src/lcorolib.s: src/lcorolib.c.s
 
 # target to generate assembly for a file
 src/lcorolib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lcorolib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.s
 .PHONY : src/lcorolib.c.s
 
 src/lctype.obj: src/lctype.c.obj
@@ -542,8 +542,8 @@ src/lctype.obj: src/lctype.c.obj
 
 # target to build an object file
 src/lctype.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj
 .PHONY : src/lctype.c.obj
 
 src/lctype.i: src/lctype.c.i
@@ -552,8 +552,8 @@ src/lctype.i: src/lctype.c.i
 
 # target to preprocess a source file
 src/lctype.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.i
 .PHONY : src/lctype.c.i
 
 src/lctype.s: src/lctype.c.s
@@ -562,8 +562,8 @@ src/lctype.s: src/lctype.c.s
 
 # target to generate assembly for a file
 src/lctype.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lctype.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lctype.c.s
 .PHONY : src/lctype.c.s
 
 src/ldblib.obj: src/ldblib.c.obj
@@ -572,8 +572,8 @@ src/ldblib.obj: src/ldblib.c.obj
 
 # target to build an object file
 src/ldblib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj
 .PHONY : src/ldblib.c.obj
 
 src/ldblib.i: src/ldblib.c.i
@@ -582,8 +582,8 @@ src/ldblib.i: src/ldblib.c.i
 
 # target to preprocess a source file
 src/ldblib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.i
 .PHONY : src/ldblib.c.i
 
 src/ldblib.s: src/ldblib.c.s
@@ -592,8 +592,8 @@ src/ldblib.s: src/ldblib.c.s
 
 # target to generate assembly for a file
 src/ldblib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldblib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.s
 .PHONY : src/ldblib.c.s
 
 src/ldebug.obj: src/ldebug.c.obj
@@ -602,8 +602,8 @@ src/ldebug.obj: src/ldebug.c.obj
 
 # target to build an object file
 src/ldebug.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj
 .PHONY : src/ldebug.c.obj
 
 src/ldebug.i: src/ldebug.c.i
@@ -612,8 +612,8 @@ src/ldebug.i: src/ldebug.c.i
 
 # target to preprocess a source file
 src/ldebug.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.i
 .PHONY : src/ldebug.c.i
 
 src/ldebug.s: src/ldebug.c.s
@@ -622,8 +622,8 @@ src/ldebug.s: src/ldebug.c.s
 
 # target to generate assembly for a file
 src/ldebug.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldebug.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.s
 .PHONY : src/ldebug.c.s
 
 src/ldo.obj: src/ldo.c.obj
@@ -632,8 +632,8 @@ src/ldo.obj: src/ldo.c.obj
 
 # target to build an object file
 src/ldo.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj
 .PHONY : src/ldo.c.obj
 
 src/ldo.i: src/ldo.c.i
@@ -642,8 +642,8 @@ src/ldo.i: src/ldo.c.i
 
 # target to preprocess a source file
 src/ldo.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.i
 .PHONY : src/ldo.c.i
 
 src/ldo.s: src/ldo.c.s
@@ -652,8 +652,8 @@ src/ldo.s: src/ldo.c.s
 
 # target to generate assembly for a file
 src/ldo.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldo.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldo.c.s
 .PHONY : src/ldo.c.s
 
 src/ldump.obj: src/ldump.c.obj
@@ -662,8 +662,8 @@ src/ldump.obj: src/ldump.c.obj
 
 # target to build an object file
 src/ldump.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj
 .PHONY : src/ldump.c.obj
 
 src/ldump.i: src/ldump.c.i
@@ -672,8 +672,8 @@ src/ldump.i: src/ldump.c.i
 
 # target to preprocess a source file
 src/ldump.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.i
 .PHONY : src/ldump.c.i
 
 src/ldump.s: src/ldump.c.s
@@ -682,8 +682,8 @@ src/ldump.s: src/ldump.c.s
 
 # target to generate assembly for a file
 src/ldump.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ldump.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ldump.c.s
 .PHONY : src/ldump.c.s
 
 src/lfunc.obj: src/lfunc.c.obj
@@ -692,8 +692,8 @@ src/lfunc.obj: src/lfunc.c.obj
 
 # target to build an object file
 src/lfunc.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj
 .PHONY : src/lfunc.c.obj
 
 src/lfunc.i: src/lfunc.c.i
@@ -702,8 +702,8 @@ src/lfunc.i: src/lfunc.c.i
 
 # target to preprocess a source file
 src/lfunc.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.i
 .PHONY : src/lfunc.c.i
 
 src/lfunc.s: src/lfunc.c.s
@@ -712,8 +712,8 @@ src/lfunc.s: src/lfunc.c.s
 
 # target to generate assembly for a file
 src/lfunc.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lfunc.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.s
 .PHONY : src/lfunc.c.s
 
 src/lgc.obj: src/lgc.c.obj
@@ -722,8 +722,8 @@ src/lgc.obj: src/lgc.c.obj
 
 # target to build an object file
 src/lgc.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj
 .PHONY : src/lgc.c.obj
 
 src/lgc.i: src/lgc.c.i
@@ -732,8 +732,8 @@ src/lgc.i: src/lgc.c.i
 
 # target to preprocess a source file
 src/lgc.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.i
 .PHONY : src/lgc.c.i
 
 src/lgc.s: src/lgc.c.s
@@ -742,8 +742,8 @@ src/lgc.s: src/lgc.c.s
 
 # target to generate assembly for a file
 src/lgc.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lgc.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lgc.c.s
 .PHONY : src/lgc.c.s
 
 src/linit.obj: src/linit.c.obj
@@ -752,8 +752,8 @@ src/linit.obj: src/linit.c.obj
 
 # target to build an object file
 src/linit.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj
 .PHONY : src/linit.c.obj
 
 src/linit.i: src/linit.c.i
@@ -762,8 +762,8 @@ src/linit.i: src/linit.c.i
 
 # target to preprocess a source file
 src/linit.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.i
 .PHONY : src/linit.c.i
 
 src/linit.s: src/linit.c.s
@@ -772,8 +772,8 @@ src/linit.s: src/linit.c.s
 
 # target to generate assembly for a file
 src/linit.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/linit.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/linit.c.s
 .PHONY : src/linit.c.s
 
 src/liolib.obj: src/liolib.c.obj
@@ -782,8 +782,8 @@ src/liolib.obj: src/liolib.c.obj
 
 # target to build an object file
 src/liolib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj
 .PHONY : src/liolib.c.obj
 
 src/liolib.i: src/liolib.c.i
@@ -792,8 +792,8 @@ src/liolib.i: src/liolib.c.i
 
 # target to preprocess a source file
 src/liolib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.i
 .PHONY : src/liolib.c.i
 
 src/liolib.s: src/liolib.c.s
@@ -802,8 +802,8 @@ src/liolib.s: src/liolib.c.s
 
 # target to generate assembly for a file
 src/liolib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/liolib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/liolib.c.s
 .PHONY : src/liolib.c.s
 
 src/llex.obj: src/llex.c.obj
@@ -812,8 +812,8 @@ src/llex.obj: src/llex.c.obj
 
 # target to build an object file
 src/llex.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj
 .PHONY : src/llex.c.obj
 
 src/llex.i: src/llex.c.i
@@ -822,8 +822,8 @@ src/llex.i: src/llex.c.i
 
 # target to preprocess a source file
 src/llex.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.i
 .PHONY : src/llex.c.i
 
 src/llex.s: src/llex.c.s
@@ -832,8 +832,8 @@ src/llex.s: src/llex.c.s
 
 # target to generate assembly for a file
 src/llex.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/llex.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/llex.c.s
 .PHONY : src/llex.c.s
 
 src/lmathlib.obj: src/lmathlib.c.obj
@@ -842,8 +842,8 @@ src/lmathlib.obj: src/lmathlib.c.obj
 
 # target to build an object file
 src/lmathlib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj
 .PHONY : src/lmathlib.c.obj
 
 src/lmathlib.i: src/lmathlib.c.i
@@ -852,8 +852,8 @@ src/lmathlib.i: src/lmathlib.c.i
 
 # target to preprocess a source file
 src/lmathlib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.i
 .PHONY : src/lmathlib.c.i
 
 src/lmathlib.s: src/lmathlib.c.s
@@ -862,8 +862,8 @@ src/lmathlib.s: src/lmathlib.c.s
 
 # target to generate assembly for a file
 src/lmathlib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmathlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.s
 .PHONY : src/lmathlib.c.s
 
 src/lmem.obj: src/lmem.c.obj
@@ -872,8 +872,8 @@ src/lmem.obj: src/lmem.c.obj
 
 # target to build an object file
 src/lmem.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj
 .PHONY : src/lmem.c.obj
 
 src/lmem.i: src/lmem.c.i
@@ -882,8 +882,8 @@ src/lmem.i: src/lmem.c.i
 
 # target to preprocess a source file
 src/lmem.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.i
 .PHONY : src/lmem.c.i
 
 src/lmem.s: src/lmem.c.s
@@ -892,8 +892,8 @@ src/lmem.s: src/lmem.c.s
 
 # target to generate assembly for a file
 src/lmem.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lmem.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lmem.c.s
 .PHONY : src/lmem.c.s
 
 src/loadlib.obj: src/loadlib.c.obj
@@ -902,8 +902,8 @@ src/loadlib.obj: src/loadlib.c.obj
 
 # target to build an object file
 src/loadlib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj
 .PHONY : src/loadlib.c.obj
 
 src/loadlib.i: src/loadlib.c.i
@@ -912,8 +912,8 @@ src/loadlib.i: src/loadlib.c.i
 
 # target to preprocess a source file
 src/loadlib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.i
 .PHONY : src/loadlib.c.i
 
 src/loadlib.s: src/loadlib.c.s
@@ -922,8 +922,8 @@ src/loadlib.s: src/loadlib.c.s
 
 # target to generate assembly for a file
 src/loadlib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loadlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.s
 .PHONY : src/loadlib.c.s
 
 src/lobject.obj: src/lobject.c.obj
@@ -932,8 +932,8 @@ src/lobject.obj: src/lobject.c.obj
 
 # target to build an object file
 src/lobject.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj
 .PHONY : src/lobject.c.obj
 
 src/lobject.i: src/lobject.c.i
@@ -942,8 +942,8 @@ src/lobject.i: src/lobject.c.i
 
 # target to preprocess a source file
 src/lobject.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.i
 .PHONY : src/lobject.c.i
 
 src/lobject.s: src/lobject.c.s
@@ -952,8 +952,8 @@ src/lobject.s: src/lobject.c.s
 
 # target to generate assembly for a file
 src/lobject.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lobject.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lobject.c.s
 .PHONY : src/lobject.c.s
 
 src/lopcodes.obj: src/lopcodes.c.obj
@@ -962,8 +962,8 @@ src/lopcodes.obj: src/lopcodes.c.obj
 
 # target to build an object file
 src/lopcodes.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj
 .PHONY : src/lopcodes.c.obj
 
 src/lopcodes.i: src/lopcodes.c.i
@@ -972,8 +972,8 @@ src/lopcodes.i: src/lopcodes.c.i
 
 # target to preprocess a source file
 src/lopcodes.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.i
 .PHONY : src/lopcodes.c.i
 
 src/lopcodes.s: src/lopcodes.c.s
@@ -982,8 +982,8 @@ src/lopcodes.s: src/lopcodes.c.s
 
 # target to generate assembly for a file
 src/lopcodes.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lopcodes.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.s
 .PHONY : src/lopcodes.c.s
 
 src/loslib.obj: src/loslib.c.obj
@@ -992,8 +992,8 @@ src/loslib.obj: src/loslib.c.obj
 
 # target to build an object file
 src/loslib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj
 .PHONY : src/loslib.c.obj
 
 src/loslib.i: src/loslib.c.i
@@ -1002,8 +1002,8 @@ src/loslib.i: src/loslib.c.i
 
 # target to preprocess a source file
 src/loslib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.i
 .PHONY : src/loslib.c.i
 
 src/loslib.s: src/loslib.c.s
@@ -1012,8 +1012,8 @@ src/loslib.s: src/loslib.c.s
 
 # target to generate assembly for a file
 src/loslib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/loslib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/loslib.c.s
 .PHONY : src/loslib.c.s
 
 src/lparser.obj: src/lparser.c.obj
@@ -1022,8 +1022,8 @@ src/lparser.obj: src/lparser.c.obj
 
 # target to build an object file
 src/lparser.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj
 .PHONY : src/lparser.c.obj
 
 src/lparser.i: src/lparser.c.i
@@ -1032,8 +1032,8 @@ src/lparser.i: src/lparser.c.i
 
 # target to preprocess a source file
 src/lparser.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.i
 .PHONY : src/lparser.c.i
 
 src/lparser.s: src/lparser.c.s
@@ -1042,8 +1042,8 @@ src/lparser.s: src/lparser.c.s
 
 # target to generate assembly for a file
 src/lparser.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lparser.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lparser.c.s
 .PHONY : src/lparser.c.s
 
 src/lstate.obj: src/lstate.c.obj
@@ -1052,8 +1052,8 @@ src/lstate.obj: src/lstate.c.obj
 
 # target to build an object file
 src/lstate.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj
 .PHONY : src/lstate.c.obj
 
 src/lstate.i: src/lstate.c.i
@@ -1062,8 +1062,8 @@ src/lstate.i: src/lstate.c.i
 
 # target to preprocess a source file
 src/lstate.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.i
 .PHONY : src/lstate.c.i
 
 src/lstate.s: src/lstate.c.s
@@ -1072,8 +1072,8 @@ src/lstate.s: src/lstate.c.s
 
 # target to generate assembly for a file
 src/lstate.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstate.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstate.c.s
 .PHONY : src/lstate.c.s
 
 src/lstring.obj: src/lstring.c.obj
@@ -1082,8 +1082,8 @@ src/lstring.obj: src/lstring.c.obj
 
 # target to build an object file
 src/lstring.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj
 .PHONY : src/lstring.c.obj
 
 src/lstring.i: src/lstring.c.i
@@ -1092,8 +1092,8 @@ src/lstring.i: src/lstring.c.i
 
 # target to preprocess a source file
 src/lstring.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.i
 .PHONY : src/lstring.c.i
 
 src/lstring.s: src/lstring.c.s
@@ -1102,8 +1102,8 @@ src/lstring.s: src/lstring.c.s
 
 # target to generate assembly for a file
 src/lstring.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstring.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstring.c.s
 .PHONY : src/lstring.c.s
 
 src/lstrlib.obj: src/lstrlib.c.obj
@@ -1112,8 +1112,8 @@ src/lstrlib.obj: src/lstrlib.c.obj
 
 # target to build an object file
 src/lstrlib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj
 .PHONY : src/lstrlib.c.obj
 
 src/lstrlib.i: src/lstrlib.c.i
@@ -1122,8 +1122,8 @@ src/lstrlib.i: src/lstrlib.c.i
 
 # target to preprocess a source file
 src/lstrlib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.i
 .PHONY : src/lstrlib.c.i
 
 src/lstrlib.s: src/lstrlib.c.s
@@ -1132,8 +1132,8 @@ src/lstrlib.s: src/lstrlib.c.s
 
 # target to generate assembly for a file
 src/lstrlib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lstrlib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.s
 .PHONY : src/lstrlib.c.s
 
 src/ltable.obj: src/ltable.c.obj
@@ -1142,8 +1142,8 @@ src/ltable.obj: src/ltable.c.obj
 
 # target to build an object file
 src/ltable.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj
 .PHONY : src/ltable.c.obj
 
 src/ltable.i: src/ltable.c.i
@@ -1152,8 +1152,8 @@ src/ltable.i: src/ltable.c.i
 
 # target to preprocess a source file
 src/ltable.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.i
 .PHONY : src/ltable.c.i
 
 src/ltable.s: src/ltable.c.s
@@ -1162,8 +1162,8 @@ src/ltable.s: src/ltable.c.s
 
 # target to generate assembly for a file
 src/ltable.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltable.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltable.c.s
 .PHONY : src/ltable.c.s
 
 src/ltablib.obj: src/ltablib.c.obj
@@ -1172,8 +1172,8 @@ src/ltablib.obj: src/ltablib.c.obj
 
 # target to build an object file
 src/ltablib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj
 .PHONY : src/ltablib.c.obj
 
 src/ltablib.i: src/ltablib.c.i
@@ -1182,8 +1182,8 @@ src/ltablib.i: src/ltablib.c.i
 
 # target to preprocess a source file
 src/ltablib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.i
 .PHONY : src/ltablib.c.i
 
 src/ltablib.s: src/ltablib.c.s
@@ -1192,8 +1192,8 @@ src/ltablib.s: src/ltablib.c.s
 
 # target to generate assembly for a file
 src/ltablib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltablib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.s
 .PHONY : src/ltablib.c.s
 
 src/ltm.obj: src/ltm.c.obj
@@ -1202,8 +1202,8 @@ src/ltm.obj: src/ltm.c.obj
 
 # target to build an object file
 src/ltm.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj
 .PHONY : src/ltm.c.obj
 
 src/ltm.i: src/ltm.c.i
@@ -1212,8 +1212,8 @@ src/ltm.i: src/ltm.c.i
 
 # target to preprocess a source file
 src/ltm.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.i
 .PHONY : src/ltm.c.i
 
 src/ltm.s: src/ltm.c.s
@@ -1222,8 +1222,8 @@ src/ltm.s: src/ltm.c.s
 
 # target to generate assembly for a file
 src/ltm.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/ltm.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/ltm.c.s
 .PHONY : src/ltm.c.s
 
 src/lua.obj: src/lua.c.obj
@@ -1232,7 +1232,7 @@ src/lua.obj: src/lua.c.obj
 
 # target to build an object file
 src/lua.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.obj
 .PHONY : src/lua.c.obj
 
 src/lua.i: src/lua.c.i
@@ -1241,7 +1241,7 @@ src/lua.i: src/lua.c.i
 
 # target to preprocess a source file
 src/lua.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.i
 .PHONY : src/lua.c.i
 
 src/lua.s: src/lua.c.s
@@ -1250,7 +1250,7 @@ src/lua.s: src/lua.c.s
 
 # target to generate assembly for a file
 src/lua.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\lua.dir\build.make lib/lua/CMakeFiles/lua.dir/src/lua.c.s
 .PHONY : src/lua.c.s
 
 src/luac.obj: src/luac.c.obj
@@ -1259,7 +1259,7 @@ src/luac.obj: src/luac.c.obj
 
 # target to build an object file
 src/luac.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.obj
 .PHONY : src/luac.c.obj
 
 src/luac.i: src/luac.c.i
@@ -1268,7 +1268,7 @@ src/luac.i: src/luac.c.i
 
 # target to preprocess a source file
 src/luac.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.i
 .PHONY : src/luac.c.i
 
 src/luac.s: src/luac.c.s
@@ -1277,7 +1277,7 @@ src/luac.s: src/luac.c.s
 
 # target to generate assembly for a file
 src/luac.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\luac.dir\build.make lib/lua/CMakeFiles/luac.dir/src/luac.c.s
 .PHONY : src/luac.c.s
 
 src/lundump.obj: src/lundump.c.obj
@@ -1286,8 +1286,8 @@ src/lundump.obj: src/lundump.c.obj
 
 # target to build an object file
 src/lundump.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj
 .PHONY : src/lundump.c.obj
 
 src/lundump.i: src/lundump.c.i
@@ -1296,8 +1296,8 @@ src/lundump.i: src/lundump.c.i
 
 # target to preprocess a source file
 src/lundump.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.i
 .PHONY : src/lundump.c.i
 
 src/lundump.s: src/lundump.c.s
@@ -1306,8 +1306,8 @@ src/lundump.s: src/lundump.c.s
 
 # target to generate assembly for a file
 src/lundump.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lundump.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lundump.c.s
 .PHONY : src/lundump.c.s
 
 src/lutf8lib.obj: src/lutf8lib.c.obj
@@ -1316,8 +1316,8 @@ src/lutf8lib.obj: src/lutf8lib.c.obj
 
 # target to build an object file
 src/lutf8lib.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj
 .PHONY : src/lutf8lib.c.obj
 
 src/lutf8lib.i: src/lutf8lib.c.i
@@ -1326,8 +1326,8 @@ src/lutf8lib.i: src/lutf8lib.c.i
 
 # target to preprocess a source file
 src/lutf8lib.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.i
 .PHONY : src/lutf8lib.c.i
 
 src/lutf8lib.s: src/lutf8lib.c.s
@@ -1336,8 +1336,8 @@ src/lutf8lib.s: src/lutf8lib.c.s
 
 # target to generate assembly for a file
 src/lutf8lib.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lutf8lib.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.s
 .PHONY : src/lutf8lib.c.s
 
 src/lvm.obj: src/lvm.c.obj
@@ -1346,8 +1346,8 @@ src/lvm.obj: src/lvm.c.obj
 
 # target to build an object file
 src/lvm.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj
 .PHONY : src/lvm.c.obj
 
 src/lvm.i: src/lvm.c.i
@@ -1356,8 +1356,8 @@ src/lvm.i: src/lvm.c.i
 
 # target to preprocess a source file
 src/lvm.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.i
 .PHONY : src/lvm.c.i
 
 src/lvm.s: src/lvm.c.s
@@ -1366,8 +1366,8 @@ src/lvm.s: src/lvm.c.s
 
 # target to generate assembly for a file
 src/lvm.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lvm.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lvm.c.s
 .PHONY : src/lvm.c.s
 
 src/lzio.obj: src/lzio.c.obj
@@ -1376,8 +1376,8 @@ src/lzio.obj: src/lzio.c.obj
 
 # target to build an object file
 src/lzio.c.obj:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.obj
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.obj
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj
 .PHONY : src/lzio.c.obj
 
 src/lzio.i: src/lzio.c.i
@@ -1386,8 +1386,8 @@ src/lzio.i: src/lzio.c.i
 
 # target to preprocess a source file
 src/lzio.c.i:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.i
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.i
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.i
 .PHONY : src/lzio.c.i
 
 src/lzio.s: src/lzio.c.s
@@ -1396,8 +1396,8 @@ src/lzio.s: src/lzio.c.s
 
 # target to generate assembly for a file
 src/lzio.c.s:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.s
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\libluadll.dir\build.make lib/lua/CMakeFiles/libluadll.dir/src/lzio.c.s
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(MAKE) $(MAKESILENT) -f lib\lua\CMakeFiles\liblua.dir\build.make lib/lua/CMakeFiles/liblua.dir/src/lzio.c.s
 .PHONY : src/lzio.c.s
 
 # Help Target
@@ -1544,6 +1544,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\Administrator\source\repos\video_player2\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

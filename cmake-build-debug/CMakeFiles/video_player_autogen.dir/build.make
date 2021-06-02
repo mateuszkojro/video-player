@@ -61,10 +61,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player
+CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player2\cmake-build-debug
 
 # Utility rule file for video_player_autogen.
 
@@ -72,8 +72,8 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-
 include CMakeFiles/video_player_autogen.dir/progress.make
 
 CMakeFiles/video_player_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target video_player"
-	"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_autogen C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/video_player_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target video_player"
+	"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E cmake_autogen C:/Users/Administrator/source/repos/video_player2/cmake-build-debug/CMakeFiles/video_player_autogen.dir/AutogenInfo.json Debug
 
 video_player_autogen: CMakeFiles/video_player_autogen
 video_player_autogen: CMakeFiles/video_player_autogen.dir/build.make
@@ -90,6 +90,6 @@ CMakeFiles/video_player_autogen.dir/clean:
 .PHONY : CMakeFiles/video_player_autogen.dir/clean
 
 CMakeFiles/video_player_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player C:\Users\Administrator\source\repos\video_player C:\Users\Administrator\source\repos\video_player\cmake-build-debug C:\Users\Administrator\source\repos\video_player\cmake-build-debug C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles\video_player_autogen.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player2 C:\Users\Administrator\source\repos\video_player2 C:\Users\Administrator\source\repos\video_player2\cmake-build-debug C:\Users\Administrator\source\repos\video_player2\cmake-build-debug C:\Users\Administrator\source\repos\video_player2\cmake-build-debug\CMakeFiles\video_player_autogen.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/video_player_autogen.dir/depend
 

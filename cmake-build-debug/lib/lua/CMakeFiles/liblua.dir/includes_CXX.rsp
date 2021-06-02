@@ -1,1 +1,1 @@
--IC:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/liblua_autogen/include -IC:/opencv/install/include -IC:/Users/Administrator/source/repos/video_player/lib/lua/src -IC:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua
+-IC:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua/liblua_autogen/include -IC:/opencv/install/include -IC:/Users/Administrator/source/repos/video_player2/lib/lua/src -IC:/Users/Administrator/source/repos/video_player2/cmake-build-debug/lib/lua
