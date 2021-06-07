@@ -134,6 +134,17 @@ private:
 
     std::string filename_Lua;
 
+
+    void flip_pause_();
+
+    void flip_skip_10_l();
+
+    void flip_skip_10_r();
+
+    QPushButton *pause_;
+    QPushButton *skip_10_l_;
+    QPushButton *skip_10_r_;
+
 };
 
 

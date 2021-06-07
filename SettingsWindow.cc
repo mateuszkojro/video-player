@@ -12,7 +12,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     /// Create buttons assign it to current window ans set its text
     change_script_button_ = new QPushButton("Change script", this);
     change_script_button_->show();
-    connect(change_script_button_,&QPushButton::released, this,&SettingsWindow::open_file_lua_handler);
+    connect(change_script_button_, &QPushButton::released, this, &SettingsWindow::open_file_lua_handler);
     file_name = new QLabel("None", this);
     file_name->show();
 
@@ -104,6 +104,13 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     text_b->show();
     text_blur->show();
 
+    pause_ = new QPushButton("Pause");
+    skip_10_l_ = new QPushButton("Skip -10");
+    skip_10_r_ = new QPushButton("Skip +10");
+    pause_->show();
+    skip_10_r_->show();
+    skip_10_l_->show();
+
     bottom_filler_ = new QWidget;
     bottom_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -125,6 +132,10 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(file_name);
     layout_->addWidget(change_script_button_);
     layout_->addWidget(bottom_filler_);
+    layout_->addWidget(line);
+    layout_->addWidget(skip_10_l_);
+    layout_->addWidget(pause_);
+    layout_->addWidget(skip_10_r_);
     layout_->addWidget(line);
     layout_->addWidget(always_on_top_);
     layout_->addWidget(effect_script_);
@@ -151,7 +162,6 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->addWidget(noise_level_slider_);
     layout_->addWidget(text_noise);
 
-
     /// Add handlers to the buttons
     connect(always_on_top_, &QPushButton::released, this, &SettingsWindow::flip_always_on_top);
     connect(effect_script_, &QPushButton::released, this, &SettingsWindow::flip_effect_script);
@@ -170,15 +180,14 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(neon_b_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_neon_b_level);
     connect(effect_gauss_, &QPushButton::released, this, &SettingsWindow::flip_effect_gauss);
     connect(gauss_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_gauss_level);
+    connect(pause_, &QPushButton::released, this, &SettingsWindow::flip_pause_);
+    connect(skip_10_l_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_l);
+    connect(skip_10_r_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_r);
+
 
     connect(noise_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_noise_level);
 
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
-
-//    createActions();
-//    createMenus();
-//    bottom_filler_->show();
-//    action_menu_->show();
 
     /// Create the window, set the layout and show it
     this->create();
@@ -218,7 +227,7 @@ void SettingsWindow::open_file_lua_handler() {
     std::cout << "filename: " << fileName.toStdString() << std::endl;
 
     filename_Lua = fileName.toStdString();
-    if(fileName.isEmpty()){
+    if (fileName.isEmpty()) {
         file_name->setText("None");
         return;
     }
@@ -328,4 +337,27 @@ void SettingsWindow::flip_always_on_top() {
     is_always_on_top_ = always_on_top_->isChecked();
     std::cout << "is always on top is: " << is_always_on_top_ << std::endl;
     this->setWindowFlag(Qt::WindowStaysOnTopHint, is_always_on_top_);
+}
+
+void SettingsWindow::flip_skip_10_l() {
+    //auto setting = skip_10_l_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i return only some info now
+    auto setting = skip_10_l_->isChecked() ? "clicked" : "no";
+//    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_l_), setting);
+
+}
+
+void SettingsWindow::flip_skip_10_r() {
+    //auto setting = skip_10_r_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i return only some info now
+    auto setting = skip_10_r_->isChecked() ? "clicked" : "no";
+//    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_r_), setting);
+
+}
+
+void SettingsWindow::flip_pause_() {
+    //auto setting = pause_->isChecked() ? new NeonEffect() : nullptr;
+    /// idk what type of message i have to return so for checking i returned only some info now
+    auto setting = pause_->isChecked() ? "clicked" : "no";
+//    opengl_widget_->change_state(static_cast<int>(StateNr::pause_), setting);
 }
