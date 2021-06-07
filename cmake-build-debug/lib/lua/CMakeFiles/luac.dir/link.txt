@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\luac.dir/objects.a
+C:\Qt\Tools\mingw810_64\bin\ar.exe cr CMakeFiles\luac.dir/objects.a @CMakeFiles\luac.dir\objects1.rsp
+C:\Qt\Tools\mingw810_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\luac.dir/objects.a -Wl,--no-whole-archive -o luac.exe -Wl,--out-implib,libluac.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\luac.dir\linklibs.rsp

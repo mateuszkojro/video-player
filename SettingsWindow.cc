@@ -98,17 +98,26 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     text_b->show();
     text_blur->show();
 
+    bottom_filler_ = new QWidget;
+    bottom_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    line = new QFrame;
+    line->setObjectName(QString::fromUtf8("line"));
+    line->setFrameShape(QFrame::HLine);
+    line->setFrameShadow(QFrame::Sunken);
 
 
     /// Create a vertical layout
     layout_ = new QVBoxLayout;
     setSizeGripEnabled(layout_);
+    setWindowTitle(tr("Settings"));
 
     /// Set the margins
     layout_->setContentsMargins(5, 5, 15, 5);
 
     /// Add buttons to layout
-
+    layout_->addWidget(bottom_filler_);
+    layout_->addWidget(line);
     layout_->addWidget(always_on_top_);
     layout_->addWidget(effect_script_);
     layout_->addWidget(effect_grey_scale_);
@@ -158,12 +167,15 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
 
-
+    createActions();
+    createMenus();
+    bottom_filler_->show();
+    action_menu_->show();
 
     /// Create the window, set the layout and show it
     this->create();
     // this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-    this->setFixedSize(220, 700);
+    this->setFixedSize(220, 735);
     this->setLayout(layout_);
     this->show();
 }
@@ -180,7 +192,23 @@ SettingsWindow::~SettingsWindow() {
     delete effect_grey_scale_;
     delete layout_;
 }
+void SettingsWindow::createActions() {
 
+    open_script_action_ =  new QAction(tr("Open Lua"), this);
+    connect(open_script_action_, &QAction::triggered, this, &SettingsWindow::open_file_lua_handler);
+}
+void SettingsWindow::createMenus() {
+    action_menu_ = new QMenuBar(this);
+
+    action_menu_->addAction(open_script_action_);
+}
+void SettingsWindow::open_file_lua_handler() {
+    auto fileName = QFileDialog::getOpenFileName(this,
+                                                 tr("Open Lua File"));
+    std::cout << "filename: " << fileName.toStdString() << std::endl;
+
+    filename_Lua = fileName.toStdString();
+}
 void SettingsWindow::flip_effect_script() {
     auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script2.lua") : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);

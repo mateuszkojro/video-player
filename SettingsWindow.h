@@ -80,6 +80,12 @@ private:
 
     void flip_always_on_top();
 
+    void createMenus();
+
+    void createActions();
+
+    void open_file_lua_handler();
+
     bool is_always_on_top_ = false;
 
     Switch *always_on_top_;
@@ -117,6 +123,13 @@ private:
     QLabel *text_g;
     QLabel *text_b;
 
+    QMenuBar *action_menu_;
+    QAction *open_script_action_;
+    QAction *new_action_;
+    QWidget *bottom_filler_;
+    QFrame *line;
+
+    std::string filename_Lua;
 
 };
 
