@@ -17,6 +17,14 @@
 
 
 class VideoPlayback {
+    enum playback_source{
+        file,
+        camera
+    };
+    enum playback_destination{
+        window,
+        drive
+    };
     std::mutex video_capture_mutex_;
     cv::VideoCapture *video_capture_;
 
@@ -32,7 +40,7 @@ class VideoPlayback {
 
     unsigned current_completed_frame_ = 0;
 
-    bool video_source;
+    playback_source video_source_;
 
     /// last action that has occurred
     /// list of already defined
@@ -92,7 +100,7 @@ public:
     // read new file
     bool change_file(const std::string &path);
 
-    void redirect_input_from_camera();
+    void change_camera();
 
 
     static std::string get_last_error();
@@ -104,11 +112,11 @@ public:
     /// @brief Jump to specified frame clean queue (maybe not all of it if we want to be fast)
     /// @param index the frame to skip to
     /// @return
-    void change_position(int index);
+    bool change_position(int index);
 
-    void skip_10s();
+    bool skip_10s();
 
-    void back_10s();
+    bool back_10s();
 
     /// @brief Index of the current frame
     /// @return

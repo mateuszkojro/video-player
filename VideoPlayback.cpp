@@ -10,7 +10,7 @@ std::string VideoPlayback::last_error = "Video stream offline";
 
 static QImage *mat2Image(cv::Mat &mat);
 
-void VideoPlayback::redirect_input_from_camera() {
+void VideoPlayback::change_camera() {
 
     close();
 
@@ -35,7 +35,7 @@ void VideoPlayback::redirect_input_from_camera() {
 
 }
 
-void VideoPlayback::change_file(const std::string &path) {
+bool VideoPlayback::change_file(const std::string &path) {
     close();
 
       video_capture_ = new cv::VideoCapture(path);
@@ -47,7 +47,7 @@ void VideoPlayback::change_file(const std::string &path) {
 
     if (!video_capture_->isOpened()) {
         last_error = "The video file is malformed";
-        return;
+        return false;
     }
     // video_capture_->set(cv::VIDEO_ACCELERATION_ANY)
     /// clear frame counter
@@ -58,6 +58,7 @@ void VideoPlayback::change_file(const std::string &path) {
     read_thread_ = new std::thread(&VideoPlayback::th_frame_reader, this);
     effect_thread_ = new std::thread(&VideoPlayback::th_effect_adder, this);
     last_error = "Video stream online";
+    return true;
 }
 
 bool VideoPlayback::read_next_frame() {
@@ -243,7 +244,7 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
 }
 
 VideoPlayback::VideoPlayback() {
-
+    video_source_ = file;
     video_capture_ = nullptr;
     raw_frames_ = {};
     analyzed_frames_ = {};
@@ -255,6 +256,7 @@ VideoPlayback::VideoPlayback() {
 }
 
 unsigned VideoPlayback::current_frame() {
+
     return current_completed_frame_;
 }
 
@@ -304,14 +306,20 @@ void VideoPlayback::close() {
 
 }
 
-void VideoPlayback::change_position(int index) {
+bool VideoPlayback::change_position(int index) {
+    if(video_source_ == camera) return false;
+    last_error  = "input from camera does not support this operation";
+
     if (index < 0)
         index = 0;
     video_capture_->set(cv::CAP_PROP_POS_FRAMES, index);
-
+    return true;
 }
 
-void VideoPlayback::skip_10s() {
+bool VideoPlayback::skip_10s() {
+    if(video_source_ == camera) return false;
+    last_error  = "input from camera does not support this operation";
+
     /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
     video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position + 10 * 1000);
@@ -322,9 +330,13 @@ void VideoPlayback::skip_10s() {
     /// but this is a guessing game
     if (video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO) >= 1)
         video_capture_->set(cv::CAP_PROP_POS_AVI_RATIO, 1);
+
+return true;
 }
 
-void VideoPlayback::back_10s() {
+bool VideoPlayback::back_10s() {
+    if(video_source_ == camera) return false;
+    last_error  = "input from camera does not support this operation";
 /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
 
@@ -334,6 +346,7 @@ void VideoPlayback::back_10s() {
         current_position = 0;
 
     video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position);
+    return true;
 }
 
 
