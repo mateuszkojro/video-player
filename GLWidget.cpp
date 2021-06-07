@@ -172,9 +172,9 @@ void GLWidget::paintEvent(QPaintEvent *event) {
         if (frame) {
             *frame = frame->scaled(width(), height());
             change_current_pixmap(frame);
-
         } else {
             set_image(EMPTY_IMAGE);
+            playback_->close();
             QMessageBox::warning(
                     this,
                     QString("Video error"),

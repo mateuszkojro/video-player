@@ -36,6 +36,7 @@ class VideoPlayback {
     /// <li> "The video file is malformed"
     /// <li> "Adding effect failed"
     /// <li> "Video stream offline"
+    /// <li> "Bad format"
     /// <li> "Video stream online"
     /// </ol>
     static std::string last_error;

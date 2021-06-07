@@ -30,6 +30,7 @@ void ScriptHandler::add_custom_libs() {
             {"setPixelBGR",       setPixelBGR},
             {"getSizeX",          getSizeX},
             {"getSizeY",          getSizeY},
+            {"getPixel",          getPixel}
     };
 
     lua_newtable(lua_state_);
