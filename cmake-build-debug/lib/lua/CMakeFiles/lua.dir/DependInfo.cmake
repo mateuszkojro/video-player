@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Administrator/source/repos/video_player/lib/lua/src/lua.c" "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/lua.dir/src/lua.c.obj"
+  "C:/Users/Administrator/source/video_player/lib/lua/src/lua.c" "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/CMakeFiles/lua.dir/src/lua.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "lib/lua"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/lua_autogen/mocs_compilation.cpp" "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj"
+  "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/lua_autogen/mocs_compilation.cpp" "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -31,7 +31,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/libluadll.dir/DependInfo.cmake"
+  "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/CMakeFiles/libluadll.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

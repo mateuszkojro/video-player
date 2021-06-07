@@ -61,10 +61,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player
+CMAKE_SOURCE_DIR = C:\Users\Administrator\source\video_player
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\source\video_player\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/lua/CMakeFiles/lua.dir/depend.make
@@ -78,30 +78,30 @@ include lib/lua/CMakeFiles/lua.dir/flags.make
 lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj: lib/lua/CMakeFiles/lua.dir/flags.make
 lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj: lib/lua/CMakeFiles/lua.dir/includes_CXX.rsp
 lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj: lib/lua/lua_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.obj -c C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.obj -c C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp
 
 lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp > CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp > CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.i
 
 lib/lua/CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lua.dir/lua_autogen/mocs_compilation.cpp.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp -o CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\lua_autogen\mocs_compilation.cpp -o CMakeFiles\lua.dir\lua_autogen\mocs_compilation.cpp.s
 
 lib/lua/CMakeFiles/lua.dir/src/lua.c.obj: lib/lua/CMakeFiles/lua.dir/flags.make
 lib/lua/CMakeFiles/lua.dir/src/lua.c.obj: lib/lua/CMakeFiles/lua.dir/includes_C.rsp
 lib/lua/CMakeFiles/lua.dir/src/lua.c.obj: ../lib/lua/src/lua.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/lua/CMakeFiles/lua.dir/src/lua.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\lua.dir\src\lua.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lua.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/lua/CMakeFiles/lua.dir/src/lua.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\lua.dir\src\lua.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lua.c
 
 lib/lua/CMakeFiles/lua.dir/src/lua.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lua.dir/src/lua.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lua.c > CMakeFiles\lua.dir\src\lua.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lua.c > CMakeFiles\lua.dir\src\lua.c.i
 
 lib/lua/CMakeFiles/lua.dir/src/lua.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lua.dir/src/lua.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lua.c -o CMakeFiles\lua.dir\src\lua.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lua.c -o CMakeFiles\lua.dir\src\lua.c.s
 
 # Object files for target lua
 lua_OBJECTS = \
@@ -118,8 +118,8 @@ lib/lua/lua.exe: lib/lua/liblua53.dll.a
 lib/lua/lua.exe: lib/lua/CMakeFiles/lua.dir/linklibs.rsp
 lib/lua/lua.exe: lib/lua/CMakeFiles/lua.dir/objects1.rsp
 lib/lua/lua.exe: lib/lua/CMakeFiles/lua.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lua.exe"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\lua.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable lua.exe"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\lua.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/lua/CMakeFiles/lua.dir/build: lib/lua/lua.exe
@@ -127,10 +127,10 @@ lib/lua/CMakeFiles/lua.dir/build: lib/lua/lua.exe
 .PHONY : lib/lua/CMakeFiles/lua.dir/build
 
 lib/lua/CMakeFiles/lua.dir/clean:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\lua.dir\cmake_clean.cmake
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\lua.dir\cmake_clean.cmake
 .PHONY : lib/lua/CMakeFiles/lua.dir/clean
 
 lib/lua/CMakeFiles/lua.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player C:\Users\Administrator\source\repos\video_player\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\CMakeFiles\lua.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\video_player C:\Users\Administrator\source\video_player\lib\lua C:\Users\Administrator\source\video_player\cmake-build-debug C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\CMakeFiles\lua.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/lua/CMakeFiles/lua.dir/depend
 

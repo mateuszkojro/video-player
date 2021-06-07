@@ -1,5 +1,5 @@
-C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_Switch.cpp: C:/Users/Administrator/source/repos/video_player/Switch.h \
-  C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h \
+C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_Switch.cpp: C:/Users/Administrator/source/video_player/Switch.h \
+  C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QDeadlineTimer \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QEvent \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/QList \
@@ -856,4 +856,4 @@ C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wow64apiset.h \
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wtypes.h \
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wtypesbase.h \
-  C:/Users/Administrator/source/repos/video_player/Style.h
+  C:/Users/Administrator/source/video_player/Style.h

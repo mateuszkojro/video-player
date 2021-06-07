@@ -61,10 +61,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Administrator\source\repos\video_player
+CMAKE_SOURCE_DIR = C:\Users\Administrator\source\video_player
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Administrator\source\repos\video_player\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\source\video_player\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/lua/CMakeFiles/liblua.dir/depend.make
@@ -78,478 +78,478 @@ include lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj: lib/lua/CMakeFiles/liblua.dir/includes_CXX.rsp
 lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj: lib/lua/liblua_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.obj -c C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.obj -c C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp
 
 lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp > CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp > CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.i
 
 lib/lua/CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/liblua.dir/liblua_autogen/mocs_compilation.cpp.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp -o CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\liblua_autogen\mocs_compilation.cpp -o CMakeFiles\liblua.dir\liblua_autogen\mocs_compilation.cpp.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj: ../lib/lua/src/lapi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lapi.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lapi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lapi.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lapi.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lapi.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lapi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lapi.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lapi.c > CMakeFiles\liblua.dir\src\lapi.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lapi.c > CMakeFiles\liblua.dir\src\lapi.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lapi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lapi.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lapi.c -o CMakeFiles\liblua.dir\src\lapi.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lapi.c -o CMakeFiles\liblua.dir\src\lapi.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj: ../lib/lua/src/lcode.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lcode.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lcode.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lcode.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lcode.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lcode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lcode.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcode.c > CMakeFiles\liblua.dir\src\lcode.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lcode.c > CMakeFiles\liblua.dir\src\lcode.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lcode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lcode.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcode.c -o CMakeFiles\liblua.dir\src\lcode.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lcode.c -o CMakeFiles\liblua.dir\src\lcode.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj: ../lib/lua/src/lctype.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lctype.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lctype.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lctype.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lctype.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lctype.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lctype.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lctype.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lctype.c > CMakeFiles\liblua.dir\src\lctype.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lctype.c > CMakeFiles\liblua.dir\src\lctype.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lctype.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lctype.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lctype.c -o CMakeFiles\liblua.dir\src\lctype.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lctype.c -o CMakeFiles\liblua.dir\src\lctype.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj: ../lib/lua/src/ldebug.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldebug.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldebug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldebug.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ldebug.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ldebug.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldebug.c > CMakeFiles\liblua.dir\src\ldebug.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ldebug.c > CMakeFiles\liblua.dir\src\ldebug.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ldebug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ldebug.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldebug.c -o CMakeFiles\liblua.dir\src\ldebug.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ldebug.c -o CMakeFiles\liblua.dir\src\ldebug.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj: ../lib/lua/src/ldo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldo.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldo.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldo.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ldo.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ldo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ldo.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldo.c > CMakeFiles\liblua.dir\src\ldo.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ldo.c > CMakeFiles\liblua.dir\src\ldo.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ldo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ldo.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldo.c -o CMakeFiles\liblua.dir\src\ldo.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ldo.c -o CMakeFiles\liblua.dir\src\ldo.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj: ../lib/lua/src/ldump.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldump.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldump.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldump.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldump.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ldump.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ldump.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ldump.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldump.c > CMakeFiles\liblua.dir\src\ldump.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ldump.c > CMakeFiles\liblua.dir\src\ldump.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ldump.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ldump.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldump.c -o CMakeFiles\liblua.dir\src\ldump.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ldump.c -o CMakeFiles\liblua.dir\src\ldump.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj: ../lib/lua/src/lfunc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lfunc.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lfunc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lfunc.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lfunc.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lfunc.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lfunc.c > CMakeFiles\liblua.dir\src\lfunc.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lfunc.c > CMakeFiles\liblua.dir\src\lfunc.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lfunc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lfunc.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lfunc.c -o CMakeFiles\liblua.dir\src\lfunc.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lfunc.c -o CMakeFiles\liblua.dir\src\lfunc.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj: ../lib/lua/src/lgc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lgc.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lgc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lgc.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lgc.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lgc.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lgc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lgc.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lgc.c > CMakeFiles\liblua.dir\src\lgc.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lgc.c > CMakeFiles\liblua.dir\src\lgc.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lgc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lgc.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lgc.c -o CMakeFiles\liblua.dir\src\lgc.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lgc.c -o CMakeFiles\liblua.dir\src\lgc.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj: ../lib/lua/src/llex.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\llex.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\llex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object lib/lua/CMakeFiles/liblua.dir/src/llex.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\llex.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\llex.c
 
 lib/lua/CMakeFiles/liblua.dir/src/llex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/llex.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\llex.c > CMakeFiles\liblua.dir\src\llex.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\llex.c > CMakeFiles\liblua.dir\src\llex.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/llex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/llex.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\llex.c -o CMakeFiles\liblua.dir\src\llex.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\llex.c -o CMakeFiles\liblua.dir\src\llex.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj: ../lib/lua/src/lmem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lmem.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lmem.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lmem.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lmem.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lmem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lmem.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmem.c > CMakeFiles\liblua.dir\src\lmem.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lmem.c > CMakeFiles\liblua.dir\src\lmem.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lmem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lmem.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmem.c -o CMakeFiles\liblua.dir\src\lmem.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lmem.c -o CMakeFiles\liblua.dir\src\lmem.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj: ../lib/lua/src/lobject.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lobject.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lobject.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lobject.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lobject.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lobject.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lobject.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lobject.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lobject.c > CMakeFiles\liblua.dir\src\lobject.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lobject.c > CMakeFiles\liblua.dir\src\lobject.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lobject.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lobject.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lobject.c -o CMakeFiles\liblua.dir\src\lobject.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lobject.c -o CMakeFiles\liblua.dir\src\lobject.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj: ../lib/lua/src/lopcodes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lopcodes.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lopcodes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lopcodes.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lopcodes.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lopcodes.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lopcodes.c > CMakeFiles\liblua.dir\src\lopcodes.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lopcodes.c > CMakeFiles\liblua.dir\src\lopcodes.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lopcodes.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lopcodes.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lopcodes.c -o CMakeFiles\liblua.dir\src\lopcodes.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lopcodes.c -o CMakeFiles\liblua.dir\src\lopcodes.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj: ../lib/lua/src/lparser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lparser.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lparser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lparser.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lparser.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lparser.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lparser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lparser.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lparser.c > CMakeFiles\liblua.dir\src\lparser.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lparser.c > CMakeFiles\liblua.dir\src\lparser.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lparser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lparser.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lparser.c -o CMakeFiles\liblua.dir\src\lparser.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lparser.c -o CMakeFiles\liblua.dir\src\lparser.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj: ../lib/lua/src/lstate.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstate.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstate.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstate.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstate.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lstate.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lstate.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lstate.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstate.c > CMakeFiles\liblua.dir\src\lstate.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lstate.c > CMakeFiles\liblua.dir\src\lstate.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lstate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lstate.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstate.c -o CMakeFiles\liblua.dir\src\lstate.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lstate.c -o CMakeFiles\liblua.dir\src\lstate.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj: ../lib/lua/src/lstring.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstring.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstring.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstring.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstring.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lstring.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lstring.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lstring.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstring.c > CMakeFiles\liblua.dir\src\lstring.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lstring.c > CMakeFiles\liblua.dir\src\lstring.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lstring.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lstring.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstring.c -o CMakeFiles\liblua.dir\src\lstring.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lstring.c -o CMakeFiles\liblua.dir\src\lstring.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj: ../lib/lua/src/ltable.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltable.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltable.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltable.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltable.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ltable.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ltable.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ltable.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltable.c > CMakeFiles\liblua.dir\src\ltable.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ltable.c > CMakeFiles\liblua.dir\src\ltable.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ltable.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ltable.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltable.c -o CMakeFiles\liblua.dir\src\ltable.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ltable.c -o CMakeFiles\liblua.dir\src\ltable.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj: ../lib/lua/src/ltm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltm.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltm.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltm.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ltm.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ltm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ltm.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltm.c > CMakeFiles\liblua.dir\src\ltm.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ltm.c > CMakeFiles\liblua.dir\src\ltm.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ltm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ltm.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltm.c -o CMakeFiles\liblua.dir\src\ltm.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ltm.c -o CMakeFiles\liblua.dir\src\ltm.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj: ../lib/lua/src/lundump.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lundump.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lundump.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lundump.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lundump.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lundump.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lundump.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lundump.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lundump.c > CMakeFiles\liblua.dir\src\lundump.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lundump.c > CMakeFiles\liblua.dir\src\lundump.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lundump.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lundump.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lundump.c -o CMakeFiles\liblua.dir\src\lundump.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lundump.c -o CMakeFiles\liblua.dir\src\lundump.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj: ../lib/lua/src/lvm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lvm.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lvm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lvm.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lvm.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lvm.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lvm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lvm.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lvm.c > CMakeFiles\liblua.dir\src\lvm.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lvm.c > CMakeFiles\liblua.dir\src\lvm.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lvm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lvm.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lvm.c -o CMakeFiles\liblua.dir\src\lvm.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lvm.c -o CMakeFiles\liblua.dir\src\lvm.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj: ../lib/lua/src/lzio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lzio.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lzio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lzio.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lzio.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lzio.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lzio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lzio.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lzio.c > CMakeFiles\liblua.dir\src\lzio.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lzio.c > CMakeFiles\liblua.dir\src\lzio.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lzio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lzio.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lzio.c -o CMakeFiles\liblua.dir\src\lzio.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lzio.c -o CMakeFiles\liblua.dir\src\lzio.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj: ../lib/lua/src/lauxlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lauxlib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lauxlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lauxlib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lauxlib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lauxlib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lauxlib.c > CMakeFiles\liblua.dir\src\lauxlib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lauxlib.c > CMakeFiles\liblua.dir\src\lauxlib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lauxlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lauxlib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lauxlib.c -o CMakeFiles\liblua.dir\src\lauxlib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lauxlib.c -o CMakeFiles\liblua.dir\src\lauxlib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj: ../lib/lua/src/lbaselib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lbaselib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbaselib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lbaselib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lbaselib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lbaselib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbaselib.c > CMakeFiles\liblua.dir\src\lbaselib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lbaselib.c > CMakeFiles\liblua.dir\src\lbaselib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lbaselib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lbaselib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbaselib.c -o CMakeFiles\liblua.dir\src\lbaselib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lbaselib.c -o CMakeFiles\liblua.dir\src\lbaselib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj: ../lib/lua/src/lbitlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lbitlib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbitlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lbitlib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lbitlib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lbitlib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbitlib.c > CMakeFiles\liblua.dir\src\lbitlib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lbitlib.c > CMakeFiles\liblua.dir\src\lbitlib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lbitlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lbitlib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lbitlib.c -o CMakeFiles\liblua.dir\src\lbitlib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lbitlib.c -o CMakeFiles\liblua.dir\src\lbitlib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj: ../lib/lua/src/lcorolib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lcorolib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcorolib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lcorolib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lcorolib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lcorolib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcorolib.c > CMakeFiles\liblua.dir\src\lcorolib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lcorolib.c > CMakeFiles\liblua.dir\src\lcorolib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lcorolib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lcorolib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lcorolib.c -o CMakeFiles\liblua.dir\src\lcorolib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lcorolib.c -o CMakeFiles\liblua.dir\src\lcorolib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj: ../lib/lua/src/ldblib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldblib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldblib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ldblib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ldblib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ldblib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldblib.c > CMakeFiles\liblua.dir\src\ldblib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ldblib.c > CMakeFiles\liblua.dir\src\ldblib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ldblib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ldblib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ldblib.c -o CMakeFiles\liblua.dir\src\ldblib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ldblib.c -o CMakeFiles\liblua.dir\src\ldblib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj: ../lib/lua/src/liolib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\liolib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\liolib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object lib/lua/CMakeFiles/liblua.dir/src/liolib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\liolib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\liolib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/liolib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/liolib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\liolib.c > CMakeFiles\liblua.dir\src\liolib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\liolib.c > CMakeFiles\liblua.dir\src\liolib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/liolib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/liolib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\liolib.c -o CMakeFiles\liblua.dir\src\liolib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\liolib.c -o CMakeFiles\liblua.dir\src\liolib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj: ../lib/lua/src/lmathlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lmathlib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmathlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lmathlib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lmathlib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lmathlib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmathlib.c > CMakeFiles\liblua.dir\src\lmathlib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lmathlib.c > CMakeFiles\liblua.dir\src\lmathlib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lmathlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lmathlib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lmathlib.c -o CMakeFiles\liblua.dir\src\lmathlib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lmathlib.c -o CMakeFiles\liblua.dir\src\lmathlib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj: ../lib/lua/src/loslib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\loslib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\loslib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object lib/lua/CMakeFiles/liblua.dir/src/loslib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\loslib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\loslib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/loslib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/loslib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\loslib.c > CMakeFiles\liblua.dir\src\loslib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\loslib.c > CMakeFiles\liblua.dir\src\loslib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/loslib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/loslib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\loslib.c -o CMakeFiles\liblua.dir\src\loslib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\loslib.c -o CMakeFiles\liblua.dir\src\loslib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj: ../lib/lua/src/lstrlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstrlib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstrlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lstrlib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lstrlib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lstrlib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstrlib.c > CMakeFiles\liblua.dir\src\lstrlib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lstrlib.c > CMakeFiles\liblua.dir\src\lstrlib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lstrlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lstrlib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lstrlib.c -o CMakeFiles\liblua.dir\src\lstrlib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lstrlib.c -o CMakeFiles\liblua.dir\src\lstrlib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj: ../lib/lua/src/ltablib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltablib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltablib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\ltablib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\ltablib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/ltablib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltablib.c > CMakeFiles\liblua.dir\src\ltablib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\ltablib.c > CMakeFiles\liblua.dir\src\ltablib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/ltablib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/ltablib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\ltablib.c -o CMakeFiles\liblua.dir\src\ltablib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\ltablib.c -o CMakeFiles\liblua.dir\src\ltablib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj: ../lib/lua/src/lutf8lib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lutf8lib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\lutf8lib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\lutf8lib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\lutf8lib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/lutf8lib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\lutf8lib.c > CMakeFiles\liblua.dir\src\lutf8lib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\lutf8lib.c > CMakeFiles\liblua.dir\src\lutf8lib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/lutf8lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/lutf8lib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\lutf8lib.c -o CMakeFiles\liblua.dir\src\lutf8lib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\lutf8lib.c -o CMakeFiles\liblua.dir\src\lutf8lib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj: ../lib/lua/src/loadlib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\loadlib.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\loadlib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\loadlib.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\loadlib.c
 
 lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/loadlib.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\loadlib.c > CMakeFiles\liblua.dir\src\loadlib.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\loadlib.c > CMakeFiles\liblua.dir\src\loadlib.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/loadlib.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\loadlib.c -o CMakeFiles\liblua.dir\src\loadlib.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\loadlib.c -o CMakeFiles\liblua.dir\src\loadlib.c.s
 
 lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj: lib/lua/CMakeFiles/liblua.dir/flags.make
 lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj: lib/lua/CMakeFiles/liblua.dir/includes_C.rsp
 lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj: ../lib/lua/src/linit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\linit.c.obj -c C:\Users\Administrator\source\repos\video_player\lib\lua\src\linit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\liblua.dir\src\linit.c.obj -c C:\Users\Administrator\source\video_player\lib\lua\src\linit.c
 
 lib/lua/CMakeFiles/liblua.dir/src/linit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/liblua.dir/src/linit.c.i"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\repos\video_player\lib\lua\src\linit.c > CMakeFiles\liblua.dir\src\linit.c.i
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Administrator\source\video_player\lib\lua\src\linit.c > CMakeFiles\liblua.dir\src\linit.c.i
 
 lib/lua/CMakeFiles/liblua.dir/src/linit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/liblua.dir/src/linit.c.s"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\repos\video_player\lib\lua\src\linit.c -o CMakeFiles\liblua.dir\src\linit.c.s
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && C:\Qt\Tools\mingw810_64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Administrator\source\video_player\lib\lua\src\linit.c -o CMakeFiles\liblua.dir\src\linit.c.s
 
 # Object files for target liblua
 liblua_OBJECTS = \
@@ -627,9 +627,9 @@ lib/lua/liblua.a: lib/lua/CMakeFiles/liblua.dir/src/loadlib.c.obj
 lib/lua/liblua.a: lib/lua/CMakeFiles/liblua.dir/src/linit.c.obj
 lib/lua/liblua.a: lib/lua/CMakeFiles/liblua.dir/build.make
 lib/lua/liblua.a: lib/lua/CMakeFiles/liblua.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Administrator\source\repos\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX static library liblua.a"
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\liblua.dir\cmake_clean_target.cmake
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\liblua.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Administrator\source\video_player\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX static library liblua.a"
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\liblua.dir\cmake_clean_target.cmake
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\liblua.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/lua/CMakeFiles/liblua.dir/build: lib/lua/liblua.a
@@ -637,10 +637,10 @@ lib/lua/CMakeFiles/liblua.dir/build: lib/lua/liblua.a
 .PHONY : lib/lua/CMakeFiles/liblua.dir/build
 
 lib/lua/CMakeFiles/liblua.dir/clean:
-	cd /d C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\liblua.dir\cmake_clean.cmake
+	cd /d C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua && $(CMAKE_COMMAND) -P CMakeFiles\liblua.dir\cmake_clean.cmake
 .PHONY : lib/lua/CMakeFiles/liblua.dir/clean
 
 lib/lua/CMakeFiles/liblua.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\repos\video_player C:\Users\Administrator\source\repos\video_player\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua C:\Users\Administrator\source\repos\video_player\cmake-build-debug\lib\lua\CMakeFiles\liblua.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Administrator\source\video_player C:\Users\Administrator\source\video_player\lib\lua C:\Users\Administrator\source\video_player\cmake-build-debug C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua C:\Users\Administrator\source\video_player\cmake-build-debug\lib\lua\CMakeFiles\liblua.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/lua/CMakeFiles/liblua.dir/depend
 

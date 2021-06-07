@@ -1,5 +1,5 @@
-C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_VideoPlayer.cpp: C:/Users/Administrator/source/repos/video_player/VideoPlayer.h \
-  C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h \
+C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/EWIEGA46WW/moc_VideoPlayer.cpp: C:/Users/Administrator/source/video_player/VideoPlayer.h \
+  C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
   C:/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
@@ -492,8 +492,8 @@ C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wow64apiset.h \
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wtypes.h \
   C:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wtypesbase.h \
-  C:/Users/Administrator/source/repos/video_player/Effect.h \
-  C:/Users/Administrator/source/repos/video_player/GLWidget.h \
+  C:/Users/Administrator/source/video_player/Effect.h \
+  C:/Users/Administrator/source/video_player/GLWidget.h \
   C:/opencv/install/include/opencv2/core.hpp \
   C:/opencv/install/include/opencv2/core/base.hpp \
   C:/opencv/install/include/opencv2/core/bufferpool.hpp \

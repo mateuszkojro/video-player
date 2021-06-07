@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player",
+	"BUILD_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/video_player",
 	"CMAKE_EXECUTABLE" : "C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/Administrator/source/repos/video_player/CMakeLists.txt",
+		"C:/Users/Administrator/source/video_player/CMakeLists.txt",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeMinGWFindMake.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeSystem.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCompiler.cmake",
@@ -55,7 +55,7 @@
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeFindBinUtils.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCCompiler.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCXXCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Platform/Windows-Determine-CXX.cmake",
@@ -98,7 +98,7 @@
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeFindBinUtils.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeGenericSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake",
@@ -116,7 +116,7 @@
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Platform/Windows-GNU.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineRCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeRCCompiler.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeRCInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Platform/Windows-windres.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeTestRCCompiler.cmake",
@@ -131,7 +131,7 @@
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCompileFeatures.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Internal/FeatureTesting.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCCompiler.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Platform/Windows-GNU-C-ABI.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake",
@@ -150,7 +150,7 @@
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeDetermineCompileFeatures.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Internal/FeatureTesting.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXCompiler.cmake.in",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"C:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"C:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5/Qt5Config.cmake",
@@ -196,60 +196,60 @@
 		"C:/opencv/install/x64/mingw/lib/OpenCVModules.cmake",
 		"C:/opencv/install/x64/mingw/lib/OpenCVModules-release.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player",
+	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/video_player",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/Administrator/source/repos/video_player/Effect.h",
+			"C:/Users/Administrator/source/video_player/Effect.h",
 			"MU",
 			"EWIEGA46WW/moc_Effect.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/EffectsImplementations.h",
+			"C:/Users/Administrator/source/video_player/EffectsImplementations.h",
 			"MU",
 			"EWIEGA46WW/moc_EffectsImplementations.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/GLWidget.h",
+			"C:/Users/Administrator/source/video_player/GLWidget.h",
 			"MU",
 			"EWIEGA46WW/moc_GLWidget.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/ScriptHandler.h",
+			"C:/Users/Administrator/source/video_player/ScriptHandler.h",
 			"MU",
 			"EWIEGA46WW/moc_ScriptHandler.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/SettingsWindow.h",
+			"C:/Users/Administrator/source/video_player/SettingsWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_SettingsWindow.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/Style.h",
+			"C:/Users/Administrator/source/video_player/Style.h",
 			"MU",
 			"EWIEGA46WW/moc_Style.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/Switch.h",
+			"C:/Users/Administrator/source/video_player/Switch.h",
 			"MU",
 			"EWIEGA46WW/moc_Switch.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/VideoPlayback.h",
+			"C:/Users/Administrator/source/video_player/VideoPlayback.h",
 			"MU",
 			"EWIEGA46WW/moc_VideoPlayback.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/VideoPlayer.h",
+			"C:/Users/Administrator/source/video_player/VideoPlayer.h",
 			"MU",
 			"EWIEGA46WW/moc_VideoPlayer.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_OPENGL_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -260,7 +260,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"C:/Users/Administrator/source/repos/video_player/lib/lua/src",
+		"C:/Users/Administrator/source/video_player/lib/lua/src",
 		"C:/opencv/install/include",
 		"C:/Qt/5.15.2/mingw81_64/include",
 		"C:/Qt/5.15.2/mingw81_64/include/QtCore",
@@ -287,38 +287,26 @@
 		"-c",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/video_player_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/video_player_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/video_player_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/CMakeFiles/video_player_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/CMakeFiles/video_player_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "C:/Users/Administrator/source/repos/video_player/GLWidget.cpp", "MU" ],
-		[
-			"C:/Users/Administrator/source/repos/video_player/ScriptHandler.cpp",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/SettingsWindow.cc",
-			"MU"
-		],
-		[ "C:/Users/Administrator/source/repos/video_player/Switch.cpp", "MU" ],
-		[
-			"C:/Users/Administrator/source/repos/video_player/VideoPlayback.cpp",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/VideoPlayer.cpp",
-			"MU"
-		],
-		[ "C:/Users/Administrator/source/repos/video_player/main.cpp", "MU" ]
+		[ "C:/Users/Administrator/source/video_player/GLWidget.cpp", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/ScriptHandler.cpp", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/SettingsWindow.cc", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/Switch.cpp", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/VideoPlayback.cpp", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/VideoPlayer.cpp", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/main.cpp", "MU" ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

@@ -1,122 +1,119 @@
 {
-	"BUILD_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/liblua_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player/lib/lua",
+	"BUILD_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/liblua_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Administrator/source/video_player/lib/lua",
 	"CMAKE_EXECUTABLE" : "C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/bin/cmake.exe",
-	"CMAKE_LIST_FILES" : 
-	[
-		"C:/Users/Administrator/source/repos/video_player/lib/lua/CMakeLists.txt"
-	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/repos/video_player",
+	"CMAKE_LIST_FILES" : [ "C:/Users/Administrator/source/video_player/lib/lua/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "C:/Users/Administrator/source/video_player",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lapi.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lapi.h",
 			"MU",
 			"UVLADIE3JM/moc_lapi.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lauxlib.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lauxlib.h",
 			"MU",
 			"UVLADIE3JM/moc_lauxlib.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lcode.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lcode.h",
 			"MU",
 			"UVLADIE3JM/moc_lcode.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lctype.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lctype.h",
 			"MU",
 			"UVLADIE3JM/moc_lctype.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldebug.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ldebug.h",
 			"MU",
 			"UVLADIE3JM/moc_ldebug.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldo.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ldo.h",
 			"MU",
 			"UVLADIE3JM/moc_ldo.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lfunc.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lfunc.h",
 			"MU",
 			"UVLADIE3JM/moc_lfunc.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lgc.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lgc.h",
 			"MU",
 			"UVLADIE3JM/moc_lgc.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/llex.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/llex.h",
 			"MU",
 			"UVLADIE3JM/moc_llex.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lmem.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lmem.h",
 			"MU",
 			"UVLADIE3JM/moc_lmem.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lobject.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lobject.h",
 			"MU",
 			"UVLADIE3JM/moc_lobject.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lopcodes.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lopcodes.h",
 			"MU",
 			"UVLADIE3JM/moc_lopcodes.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lparser.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lparser.h",
 			"MU",
 			"UVLADIE3JM/moc_lparser.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lstate.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lstate.h",
 			"MU",
 			"UVLADIE3JM/moc_lstate.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lstring.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lstring.h",
 			"MU",
 			"UVLADIE3JM/moc_lstring.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ltable.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ltable.h",
 			"MU",
 			"UVLADIE3JM/moc_ltable.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ltm.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ltm.h",
 			"MU",
 			"UVLADIE3JM/moc_ltm.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lundump.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lundump.h",
 			"MU",
 			"UVLADIE3JM/moc_lundump.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lvm.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lvm.h",
 			"MU",
 			"UVLADIE3JM/moc_lvm.cpp"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lzio.h",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lzio.h",
 			"MU",
 			"UVLADIE3JM/moc_lzio.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/liblua_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/liblua_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/liblua_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/liblua_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -128,8 +125,8 @@
 	"MOC_INCLUDES" : 
 	[
 		"C:/opencv/install/include",
-		"C:/Users/Administrator/source/repos/video_player/lib/lua/src",
-		"C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua",
+		"C:/Users/Administrator/source/video_player/lib/lua/src",
+		"C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
@@ -148,151 +145,127 @@
 		"-c",
 		"C:/Program Files/JetBrains/CLion 2021.1.1/bin/cmake/win/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/liblua_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/liblua_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/liblua_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/CMakeFiles/liblua_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "C:/Users/Administrator/source/repos/video_player/cmake-build-debug/lib/lua/CMakeFiles/liblua_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/Administrator/source/video_player/cmake-build-debug/lib/lua/CMakeFiles/liblua_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/lapi.c", "MU" ],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lapi.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lauxlib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lauxlib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lbaselib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lbaselib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lbitlib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lbitlib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lcode.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lcode.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lcorolib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lcorolib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lctype.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lctype.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ldblib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldblib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ldebug.c",
+			"MU"
+		],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/ldo.c", "MU" ],
+		[
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ldump.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldebug.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lfunc.c",
+			"MU"
+		],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/lgc.c", "MU" ],
+		[
+			"C:/Users/Administrator/source/video_player/lib/lua/src/linit.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldo.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/liolib.c",
+			"MU"
+		],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/llex.c", "MU" ],
+		[
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lmathlib.c",
+			"MU"
+		],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/lmem.c", "MU" ],
+		[
+			"C:/Users/Administrator/source/video_player/lib/lua/src/loadlib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ldump.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lobject.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lfunc.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lopcodes.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lgc.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/loslib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/linit.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lparser.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/liolib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lstate.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/llex.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lstring.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lmathlib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lstrlib.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lmem.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ltable.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/loadlib.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/ltablib.c",
+			"MU"
+		],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/ltm.c", "MU" ],
+		[
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lundump.c",
 			"MU"
 		],
 		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lobject.c",
+			"C:/Users/Administrator/source/video_player/lib/lua/src/lutf8lib.c",
 			"MU"
 		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lopcodes.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/loslib.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lparser.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lstate.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lstring.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lstrlib.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ltable.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ltablib.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/ltm.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lundump.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lutf8lib.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lvm.c",
-			"MU"
-		],
-		[
-			"C:/Users/Administrator/source/repos/video_player/lib/lua/src/lzio.c",
-			"MU"
-		]
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/lvm.c", "MU" ],
+		[ "C:/Users/Administrator/source/video_player/lib/lua/src/lzio.c", "MU" ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

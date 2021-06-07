@@ -43,7 +43,7 @@ bool VideoPlayback::read_next_frame() {
     }
     if (input_buffer->empty()) {
         raw_frames_.push(nullptr);
-        last_error = "The video file is malformed" ;
+        last_error = "The video file is malformed";
         // video_capture_->set(cv::CAP_PROP_POS_FRAMES, 0);???
         /// if frame is empty, function returns false
         /// it will stop thread
@@ -57,6 +57,7 @@ bool VideoPlayback::read_next_frame() {
 }
 
 void VideoPlayback::th_frame_reader() {
+
     while (2 > 1) {
         /// check whether the thread should be stopped
         if (disable_r_thread_) return;
@@ -94,8 +95,8 @@ void VideoPlayback::add_effect() {
         // std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
         temp_frame = raw_frames_.front();
-      //  raw_frames_.front()->deallocate();
-        //delete raw_frames_.front();
+        //  raw_frames_.front()->deallocate();
+        //  delete raw_frames_.front();
         raw_frames_.pop();
 
     }
@@ -350,10 +351,12 @@ static QImage *mat2Image(cv::Mat &mat) {
     switch (type) {
         case CV_8UC3: {
             image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_BGR888, cleanup_func, buffer);
+
             break;
         }
         case CV_8UC1: {
             image = new QImage(buffer, mat.cols, mat.rows, QImage::Format_Grayscale8, cleanup_func, buffer);
+
             break;
         }
         default:
