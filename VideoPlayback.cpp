@@ -105,7 +105,7 @@ void VideoPlayback::add_effect() {
         std::lock_guard<std::mutex> lock(effects_mutex_);
         for (Effect *effect : effects_) {
             if (effect != nullptr) {
-                effect->operator()(temp_frame);
+                effect->operator()(*temp_frame);
             }
         }
     }
@@ -113,7 +113,7 @@ void VideoPlayback::add_effect() {
     /// place analyzed therefore changed frame on top of analyzed_queue
     {
         //  std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        QImage *temp_image = mat2Image(temp_frame);
+        QImage *temp_image = mat2Image(*temp_frame);
 
         // todo Think about that
         if (!temp_image) {

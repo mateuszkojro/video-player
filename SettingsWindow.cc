@@ -32,6 +32,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     text_g = new QLabel("Saturation of the green color", this);
     text_b = new QLabel("Saturation of the blue color", this);
     text_blur = new QLabel("Value specifying the size of kernel", this);
+    file_name = new QLabel("None",this);
 
     noise_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     noise_level_slider_->setMaximum(99);
@@ -210,7 +211,7 @@ void SettingsWindow::open_file_lua_handler() {
     filename_Lua = fileName.toStdString();
 }
 void SettingsWindow::flip_effect_script() {
-    auto setting = effect_script_->isChecked() ? new LuaEffect("../example-scripts/script2.lua") : nullptr;
+    auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 

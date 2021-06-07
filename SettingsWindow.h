@@ -115,6 +115,7 @@ private:
     QSlider *neon_g_level_slider_;
     QSlider *neon_b_level_slider_;
 
+    QLabel *file_name;
     QLabel *text_noise;
     QLabel *text_sobel;
     QLabel *text_gauss;
