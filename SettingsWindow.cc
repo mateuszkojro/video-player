@@ -10,6 +10,12 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     opengl_widget_ = opengl_widget;
 
     /// Create buttons assign it to current window ans set its text
+    change_script_button_ = new QPushButton("Change script", this);
+    change_script_button_->show();
+    connect(change_script_button_,&QPushButton::released, this,&SettingsWindow::open_file_lua_handler);
+    file_name = new QLabel("None", this);
+    file_name->show();
+
 
     always_on_top_ = new Switch("Always on top");
 
@@ -32,7 +38,6 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     text_g = new QLabel("Saturation of the green color", this);
     text_b = new QLabel("Saturation of the blue color", this);
     text_blur = new QLabel("Value specifying the size of kernel", this);
-    file_name = new QLabel("None",this);
 
     noise_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     noise_level_slider_->setMaximum(99);
@@ -117,6 +122,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_->setContentsMargins(5, 5, 15, 5);
 
     /// Add buttons to layout
+    layout_->addWidget(file_name);
+    layout_->addWidget(change_script_button_);
     layout_->addWidget(bottom_filler_);
     layout_->addWidget(line);
     layout_->addWidget(always_on_top_);
@@ -168,10 +175,10 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     connect(effect_grey_scale_, &QPushButton::released, this, &SettingsWindow::flip_effect_grey_scale);
 
-    createActions();
-    createMenus();
-    bottom_filler_->show();
-    action_menu_->show();
+//    createActions();
+//    createMenus();
+//    bottom_filler_->show();
+//    action_menu_->show();
 
     /// Create the window, set the layout and show it
     this->create();
@@ -193,24 +200,38 @@ SettingsWindow::~SettingsWindow() {
     delete effect_grey_scale_;
     delete layout_;
 }
+
 void SettingsWindow::createActions() {
 
-    open_script_action_ =  new QAction(tr("Open Lua"), this);
+    open_script_action_ = new QAction(tr("Open Lua"), this);
     connect(open_script_action_, &QAction::triggered, this, &SettingsWindow::open_file_lua_handler);
 }
+
 void SettingsWindow::createMenus() {
     action_menu_ = new QMenuBar(this);
 
     action_menu_->addAction(open_script_action_);
 }
+
 void SettingsWindow::open_file_lua_handler() {
     auto fileName = QFileDialog::getOpenFileName(this,
                                                  tr("Open Lua File"));
     std::cout << "filename: " << fileName.toStdString() << std::endl;
 
     filename_Lua = fileName.toStdString();
+    if(fileName.isEmpty()){
+        file_name->setText("None");
+        return;
+    }
+
+    file_name->setText(fileName);
 }
+
 void SettingsWindow::flip_effect_script() {
+
+    if (filename_Lua.empty())
+        return;
+
     auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
     opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }

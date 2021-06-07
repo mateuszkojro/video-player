@@ -130,6 +130,8 @@ private:
     QWidget *bottom_filler_;
     QFrame *line;
 
+    QPushButton* change_script_button_;
+
     std::string filename_Lua;
 
 };
