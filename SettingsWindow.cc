@@ -189,7 +189,6 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 }
 
 SettingsWindow::~SettingsWindow() {
-
     delete effect_hsv_;
     delete effect_blur_r_;
     delete effect_sobel_;
