@@ -342,22 +342,21 @@ void SettingsWindow::flip_always_on_top() {
 void SettingsWindow::flip_skip_10_l() {
     //auto setting = skip_10_l_->isChecked() ? new NeonEffect() : nullptr;
     /// idk what type of message i have to return so for checking i return only some info now
-    auto setting = skip_10_l_->isChecked() ? "clicked" : "no";
-//    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_l_), setting);
-
+//    auto setting = skip_10_l_->isChecked() ? "clicked" : "no";
+    opengl_widget_->request_action(GLWidget::SkipLeft);
 }
 
 void SettingsWindow::flip_skip_10_r() {
     //auto setting = skip_10_r_->isChecked() ? new NeonEffect() : nullptr;
     /// idk what type of message i have to return so for checking i return only some info now
-    auto setting = skip_10_r_->isChecked() ? "clicked" : "no";
-//    opengl_widget_->change_state(static_cast<int>(StateNr::skip_10_r_), setting);
+//    auto setting = skip_10_r_->isChecked() ? "clicked" : "no";
+    opengl_widget_->request_action(GLWidget::SkipRight);
 
 }
 
 void SettingsWindow::flip_pause_() {
     //auto setting = pause_->isChecked() ? new NeonEffect() : nullptr;
     /// idk what type of message i have to return so for checking i returned only some info now
-    auto setting = pause_->isChecked() ? "clicked" : "no";
-//    opengl_widget_->change_state(static_cast<int>(StateNr::pause_), setting);
+//    auto setting = pause_->isChecked() ? "clicked" : "no";
+    opengl_widget_->request_action(GLWidget::Pause);
 }
