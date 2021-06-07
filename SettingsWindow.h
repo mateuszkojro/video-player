@@ -80,6 +80,12 @@ private:
 
     void flip_always_on_top();
 
+    void createMenus();
+
+    void createActions();
+
+    void open_file_lua_handler();
+
     bool is_always_on_top_ = false;
 
     Switch *always_on_top_;
@@ -109,6 +115,7 @@ private:
     QSlider *neon_g_level_slider_;
     QSlider *neon_b_level_slider_;
 
+    QLabel *file_name;
     QLabel *text_noise;
     QLabel *text_sobel;
     QLabel *text_gauss;
@@ -117,6 +124,15 @@ private:
     QLabel *text_g;
     QLabel *text_b;
 
+    QMenuBar *action_menu_;
+    QAction *open_script_action_;
+    QAction *new_action_;
+    QWidget *bottom_filler_;
+    QFrame *line;
+
+    QPushButton* change_script_button_;
+
+    std::string filename_Lua;
 
 };
 

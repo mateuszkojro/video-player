@@ -90,7 +90,7 @@ public:
     // clean buffor
     // open new file
     // read new file
-    void change_file(const std::string &path);
+    bool change_file(const std::string &path);
 
     void redirect_input_from_camera();
 

@@ -139,7 +139,14 @@ void VideoPlayback::add_effect() {
     /// place analyzed therefore changed frame on top of analyzed_queue
     {
         //  std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
-        QImage* temp_image = mat2Image(*temp_frame);
+        QImage *temp_image = mat2Image(*temp_frame);
+
+        // todo Think about that
+        if (!temp_image) {
+            last_error = "Bad format";
+            analyzed_frames_.push(nullptr);
+            return;
+        }
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
         delete temp_image;
         delete temp_frame;
@@ -382,7 +389,7 @@ static QImage *mat2Image(cv::Mat &mat) {
         }
         default:
             std::cout << "format not suported" << std::endl;
-            throw "cv::Mat format not supported";
+            return nullptr;
     }
 
     return image;

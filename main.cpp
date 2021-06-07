@@ -32,6 +32,7 @@ int main(int argc, char *argv[]) {
 
 #else
 
+    QApplication::setStyle("fusion");
     QApplication app(argc, argv);
     VideoPlayer window;
     window.show();
