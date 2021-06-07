@@ -14,6 +14,8 @@
 #include "Effect.h"
 
 
+
+
 class VideoPlayback {
     std::mutex video_capture_mutex_;
     cv::VideoCapture *video_capture_;
@@ -29,6 +31,8 @@ class VideoPlayback {
     std::queue<QPixmap *> analyzed_frames_;
 
     unsigned current_completed_frame_ = 0;
+
+    bool video_source;
 
     /// last action that has occurred
     /// list of already defined
@@ -87,6 +91,8 @@ public:
     // open new file
     // read new file
     void change_file(const std::string &path);
+
+    void redirect_input_from_camera();
 
 
     static std::string get_last_error();

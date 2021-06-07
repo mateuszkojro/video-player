@@ -41,6 +41,6 @@ local clock_stop = os.clock()
 local text = "Frame time = " .. (clock_start - clock_stop)
 
 -- addText(text, pos_x, pos_y, scale, b, g, r, thickness)
---CurrentFrame.addText(text, 25, 25, 0.75, 255, 1.5)
+CurrentFrame.addText(text, 25, 25, 0.75, 255,0,0, 1.5)
 
 -- CurrentFrame.applyGreyscale()

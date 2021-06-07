@@ -10,9 +10,36 @@ std::string VideoPlayback::last_error = "Video stream offline";
 
 static QImage *mat2Image(cv::Mat &mat);
 
+void VideoPlayback::redirect_input_from_camera() {
+
+    close();
+
+    video_capture_ = new cv::VideoCapture(0);
+
+
+    assert(video_capture_->isOpened());
+
+    if (!video_capture_->isOpened()) {
+        last_error = "The camera capture is malformed";
+        return;
+    }
+
+    /// clear frame counter
+    current_completed_frame_ = 0;
+
+
+    /// reboot threads
+    read_thread_ = new std::thread(&VideoPlayback::th_frame_reader, this);
+    effect_thread_ = new std::thread(&VideoPlayback::th_effect_adder, this);
+    last_error = "Video stream online";
+
+}
+
 void VideoPlayback::change_file(const std::string &path) {
     close();
-    video_capture_ = new cv::VideoCapture(path);
+
+      video_capture_ = new cv::VideoCapture(path);
+
     video_capture_->set(cv::CAP_PROP_FPS,30);
     /// look into it:
     //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
@@ -209,6 +236,7 @@ void VideoPlayback::change_effect(int index, Effect *effect) {
 }
 
 VideoPlayback::VideoPlayback() {
+
     video_capture_ = nullptr;
     raw_frames_ = {};
     analyzed_frames_ = {};
@@ -300,6 +328,7 @@ void VideoPlayback::back_10s() {
 
     video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position);
 }
+
 
 static QImage *mat2Image(cv::Mat &mat) {
 
