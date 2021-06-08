@@ -91,6 +91,9 @@ void VideoPlayer::createActions() {
     open_action_->setStatusTip(tr("Open an existing file"));
     connect(open_action_, &QAction::triggered, this, &VideoPlayer::open_file_handler);
 
+    use_camera_action_ = new QAction(tr("&Camera..."), this);
+    connect(use_camera_action_, &QAction::triggered, this, &VideoPlayer::use_camera_handler);
+
     open_script_action_ = new QAction(tr("&Open script file"), this);
 //    open_script_action_->setShortcut(QKeySequence::)
 
@@ -121,6 +124,7 @@ void VideoPlayer::createMenus() {
     action_menu_->addAction(new_action_);
     action_menu_->addAction(open_action_);
     action_menu_->addAction(quit_action_);
+    action_menu_->addAction(use_camera_action_);
     action_menu_->addAction(open_settings_action_);
 
     /// Add "Info" menu to the menu bar
@@ -255,4 +259,8 @@ void VideoPlayer::resizeEvent(QResizeEvent *event) {
     std::cout << "resize main window" << std::endl;
     opengl_widget_->setFixedSize(event->size().width() - 10, event->size().height());
     QWidget::resizeEvent(event);
+}
+
+void VideoPlayer::use_camera_handler() {
+    opengl_widget_->request_action(GLWidget::UseCamera);
 }

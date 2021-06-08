@@ -28,7 +28,8 @@ public:
     enum Action {
         Pause,
         SkipRight,
-        SkipLeft
+        SkipLeft,
+        UseCamera,
     };
 
     GLWidget(QWidget *parent);
@@ -45,6 +46,10 @@ public:
 
     void request_action(Action action) {
         switch (action) {
+            case UseCamera:
+                current_mode_ = Video;
+                playback_->change_camera();
+                break;
             case SkipLeft:
                 playback_->skip_10s();
                 break;

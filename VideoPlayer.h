@@ -49,6 +49,8 @@ private slots:
 private:
     void second_window_create();
 
+    void use_camera_handler();
+
     void createActions();
 
     void createMenus();
@@ -62,6 +64,7 @@ private:
     QAction *open_script_action_;
     QAction *quit_action_;
     QAction *open_settings_action_;
+    QAction *use_camera_action_;
 
     QDialog *second_window_;
 
