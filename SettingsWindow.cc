@@ -43,73 +43,74 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     noise_level_slider_->setMaximum(99);
     noise_level_slider_->setMinimum(1);
     noise_level_slider_->setTickInterval(5);
-    noise_level_slider_->show();
+    //noise_level_slider_->show();
 
 
     sobel_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     sobel_level_slider_->setMaximum(100);
     sobel_level_slider_->setMinimum(1);
     sobel_level_slider_->setTickInterval(1);
-    sobel_level_slider_->show();
+    //sobel_level_slider_->show();
 
     blur_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     blur_level_slider_->setMaximum(19);
     blur_level_slider_->setMinimum(1);
     blur_level_slider_->setTickInterval(1);
-    blur_level_slider_->show();
+    //blur_level_slider_->show();
 
     gauss_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     gauss_level_slider_->setMaximum(10);
     gauss_level_slider_->setMinimum(0.5);
     gauss_level_slider_->setTickInterval(0.5);
-    gauss_level_slider_->show();
+    //gauss_level_slider_->show();
 
     neon_b_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     neon_b_level_slider_->setMaximum(256);
     neon_b_level_slider_->setMinimum(0);
     neon_b_level_slider_->setTickInterval(1);
-    neon_b_level_slider_->show();
+    //neon_b_level_slider_->show();
 
     neon_g_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     neon_g_level_slider_->setMaximum(256);
     neon_g_level_slider_->setMinimum(0);
     neon_g_level_slider_->setTickInterval(1);
-    neon_g_level_slider_->show();
+    ///neon_g_level_slider_->show();
 
     neon_r_level_slider_ = new QSlider(Qt::Orientation::Horizontal, this);
     neon_r_level_slider_->setMaximum(256);
     neon_r_level_slider_->setMinimum(0);
     neon_r_level_slider_->setTickInterval(1);
-    neon_r_level_slider_->show();
+    //neon_r_level_slider_->show();
 
 
     /// Show the buttons
 
-    always_on_top_->show();
-    effect_script_->show();
-    effect_hsv_->show();
-    effect_blur_r_->show();
-    effect_sobel_->show();
-    effect_canny_->show();
-    effect_neon_->show();
-    effect_noise_->show();
-    effect_gauss_->show();
-    effect_grey_scale_->show();
+    //always_on_top_->show();
+    //effect_script_->show();
+    //effect_hsv_->show();
+    //effect_blur_r_->show();
+    //effect_sobel_->show();
+    //effect_canny_->show();
+    //effect_neon_->show();
+    //effect_noise_->show();
+    //effect_grey_scale_->show();
 
-    text_noise->show();
-    text_sobel->show();
-    text_gauss->show();
-    text_r->show();
-    text_g->show();
-    text_b->show();
-    text_blur->show();
+    //text_noise->show();
+    //text_sobel->show();
+    //text_gauss->show();
+   // text_r->show();
+   // text_g->show();
+    //text_b->show();
+    //text_blur->show();
 
     pause_ = new QPushButton("Pause");
     skip_10_l_ = new QPushButton("Skip -10");
     skip_10_r_ = new QPushButton("Skip +10");
-    pause_->show();
-    skip_10_r_->show();
-    skip_10_l_->show();
+    camera_ = new QPushButton("Camera");
+    save_ = new QPushButton("Save");
+    //pause_->show();
+    //skip_10_r_->show();
+    //skip_10_l_->show();
 
     bottom_filler_ = new QWidget;
     bottom_filler_->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -125,42 +126,112 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     setSizeGripEnabled(layout_);
     setWindowTitle(tr("Settings"));
 
+
+    layout_horizontal_up = new QGroupBox(tr("Script layout"));
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->addWidget(effect_script_);
+    layout->addWidget(change_script_button_);
+    layout->addWidget(file_name);
+    layout_horizontal_up->setLayout(layout);
+
+
+    layout_vertical_1 = new QGroupBox(tr("First"));
+    QBoxLayout * layout_1 = new QVBoxLayout;
+    layout_1->addWidget(effect_grey_scale_);
+    layout_1->addWidget(effect_hsv_);
+    layout_vertical_1->setLayout(layout_1);
+
+    layout_vertical_2 = new QGroupBox(tr("Second"));
+    QBoxLayout * layout_2 = new QVBoxLayout;
+    layout_2->addWidget(effect_blur_r_);
+    layout_2->addWidget(blur_level_slider_);
+    layout_2->addWidget(text_blur);
+    layout_2->addWidget(effect_gauss_);
+    layout_2->addWidget(gauss_level_slider_);
+    layout_2->addWidget(text_gauss);
+    layout_2->addWidget(effect_noise_);
+    layout_2->addWidget(noise_level_slider_);
+    layout_2->addWidget(text_noise);
+    layout_vertical_2->setLayout(layout_2);
+
+    layout_vertical_3 = new QGroupBox(tr("Third"));
+    QBoxLayout * layout_3 = new QVBoxLayout;
+    layout_3->addWidget(effect_sobel_);
+    layout_3->addWidget(sobel_level_slider_);
+    layout_3->addWidget(text_sobel);
+    layout_3->addWidget(effect_canny_);
+    layout_3->addWidget(effect_neon_);
+    layout_3->addWidget(neon_b_level_slider_);
+    layout_3->addWidget(text_b);
+    layout_3->addWidget(neon_g_level_slider_);
+    layout_3->addWidget(text_g);
+    layout_3->addWidget(neon_r_level_slider_);
+    layout_3->addWidget(text_r);
+    layout_vertical_3->setLayout(layout_3);
+
+    layout_horizontal_cent = new QGroupBox(tr("Central layout"));
+    QHBoxLayout *layout_central = new QHBoxLayout;
+    layout_central->addWidget(layout_vertical_1);
+    layout_central->addWidget(layout_vertical_2);
+    layout_central->addWidget(layout_vertical_3);
+    layout_horizontal_cent->setLayout(layout_central);
+
+    layout_horizontal_down = new QGroupBox(tr("Skip and Pause"));
+    QHBoxLayout *layout_d = new QHBoxLayout;
+    layout_d->addWidget(skip_10_l_);
+    layout_d->addWidget(pause_);
+    layout_d->addWidget(skip_10_r_);
+    layout_horizontal_down->setLayout(layout_d);
+
+    layout_horizontal_settings = new QGroupBox(tr("Settings"));
+    QHBoxLayout *layout_s = new QHBoxLayout;
+    layout_s->addWidget(always_on_top_);
+    layout_s->addWidget(camera_);
+    layout_s->addWidget(save_);
+    layout_horizontal_settings->setLayout(layout_s);
+
+
     /// Set the margins
     layout_->setContentsMargins(5, 5, 15, 5);
+    layout_->addWidget(layout_horizontal_up);
+    layout_->addWidget(layout_horizontal_cent);
+    layout_->addWidget(layout_horizontal_down);
+    layout_->addWidget(layout_horizontal_settings);
 
     /// Add buttons to layout
-    layout_->addWidget(file_name);
-    layout_->addWidget(change_script_button_);
-    layout_->addWidget(bottom_filler_);
-    layout_->addWidget(line);
-    layout_->addWidget(skip_10_l_);
-    layout_->addWidget(pause_);
-    layout_->addWidget(skip_10_r_);
-    layout_->addWidget(line);
-    layout_->addWidget(always_on_top_);
-    layout_->addWidget(effect_script_);
-    layout_->addWidget(effect_grey_scale_);
-    layout_->addWidget(effect_hsv_);
-    layout_->addWidget(effect_blur_r_);
-    layout_->addWidget(blur_level_slider_);
-    layout_->addWidget(text_blur);
-    layout_->addWidget(effect_gauss_);
-    layout_->addWidget(gauss_level_slider_);
-    layout_->addWidget(text_gauss);
-    layout_->addWidget(effect_sobel_);
-    layout_->addWidget(sobel_level_slider_);
-    layout_->addWidget(text_sobel);
-    layout_->addWidget(effect_canny_);
-    layout_->addWidget(effect_neon_);
-    layout_->addWidget(neon_r_level_slider_);
-    layout_->addWidget(text_r);
-    layout_->addWidget(neon_g_level_slider_);
-    layout_->addWidget(text_g);
-    layout_->addWidget(neon_b_level_slider_);
-    layout_->addWidget(text_b);
-    layout_->addWidget(effect_noise_);
-    layout_->addWidget(noise_level_slider_);
-    layout_->addWidget(text_noise);
+    //layout_->addWidget(file_name);
+    ///layout_->addWidget(change_script_button_);
+    //layout_->addWidget(layout_horizontal_up);
+    //layout_->addWidget(bottom_filler_);
+    //layout_->addWidget(line);
+    //layout_->addWidget(skip_10_l_);
+    //layout_->addWidget(pause_);
+    //layout_->addWidget(skip_10_r_);
+    //layout_->addWidget(line);
+    //layout_->addWidget(always_on_top_);
+    ///layout_->addWidget(effect_script_);
+    //layout_->addWidget(effect_grey_scale_);
+    //layout_->addWidget(effect_hsv_);
+    //layout_->addWidget(effect_blur_r_);
+    //layout_->addWidget(blur_level_slider_);
+    //layout_->addWidget(text_blur);
+    //layout_->addWidget(effect_gauss_);
+    //layout_->addWidget(gauss_level_slider_);
+    //layout_->addWidget(text_gauss);
+    //layout_->addWidget(effect_sobel_);
+    ///layout_->addWidget(sobel_level_slider_);
+    //layout_->addWidget(text_sobel);
+    //layout_->addWidget(effect_canny_);
+    //layout_->addWidget(effect_neon_);
+    //layout_->addWidget(neon_r_level_slider_);
+    //layout_->addWidget(text_r);
+   // layout_->addWidget(neon_g_level_slider_);
+    //layout_->addWidget(text_g);
+    //layout_->addWidget(neon_b_level_slider_);
+    //layout_->addWidget(text_b);
+    //layout_->addWidget(effect_noise_);
+    //layout_->addWidget(noise_level_slider_);
+    //layout_->addWidget(text_noise);
 
     /// Add handlers to the buttons
     connect(always_on_top_, &QPushButton::released, this, &SettingsWindow::flip_always_on_top);
@@ -183,7 +254,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     connect(pause_, &QPushButton::released, this, &SettingsWindow::flip_pause_);
     connect(skip_10_l_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_l);
     connect(skip_10_r_, &QPushButton::released, this, &SettingsWindow::flip_skip_10_r);
-
+    connect(camera_, &QPushButton::released, this, &SettingsWindow::open_camera);
+    connect(save_, &QPushButton::released, this, &SettingsWindow::save_file);
 
     connect(noise_level_slider_, &QSlider::valueChanged, this, &SettingsWindow::change_noise_level);
 
@@ -192,7 +264,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     /// Create the window, set the layout and show it
     this->create();
     // this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-    this->setFixedSize(220, 735);
+    this->setFixedSize(800, 600);
     this->setLayout(layout_);
     this->show();
 }
@@ -207,6 +279,14 @@ SettingsWindow::~SettingsWindow() {
     delete effect_neon_;
     delete effect_grey_scale_;
     delete layout_;
+}
+
+void SettingsWindow::open_camera(){
+
+}
+
+void SettingsWindow::save_file(){
+
 }
 
 void SettingsWindow::createActions() {
