@@ -30,17 +30,20 @@ public:
     void operator()(cv::Mat &frame) override {
         ScriptHandler::update_current_frame(frame);
         if (ScriptHandler::run_script(path_) == ScriptHandler::Error) {
-//            QMessageBox::warning(
-//                    nullptr,
-//                    QString("Script error"),
-//                    QString(ScriptHandler::get_last_error().c_str()));
-
-            throw ScriptHandler::Exception(ScriptHandler::get_last_error());
+            auto mat = cv::imread("../example-scripts/black.jpg");
+            ScriptHandler::update_current_frame(mat);
+            ScriptHandler::update_error(ScriptHandler::get_last_error());
+            ScriptHandler::run_script("../example-scripts/show_error.lua");
+            frame = ScriptHandler::get_current_frame();
+            return;
         }
         frame = ScriptHandler::get_current_frame();
     }
 
     ~LuaEffect() override = default;
+
+    void show_error(const std::string &error);
+
 };
 
 /// apply gray scale effect
@@ -92,8 +95,8 @@ public:
     void operator()(cv::Mat &frame) override {
 
         cv::Mat img_1, img_2;
-        Sobel(frame, img_1, -1, 1, 0,3,scale);
-        Sobel(frame, img_2, -1, 0, 1,3, scale);
+        Sobel(frame, img_1, -1, 1, 0, 3, scale);
+        Sobel(frame, img_2, -1, 0, 1, 3, scale);
         frame = img_1 + img_2;
         //frame = abs(img_1) + abs(img_2);
 
@@ -133,7 +136,7 @@ public:
     /// \note the type of pixel inside frame will be changed to ??? <- something i belive it's 8UC3
     void operator()(cv::Mat &frame) override {
         cv::Mat frame_copy = frame.clone();
-        Canny(frame, frame_copy,100,200);
+        Canny(frame, frame_copy, 100, 200);
         frame = frame_copy.clone();
     }
 };
@@ -262,7 +265,7 @@ public:
     uchar g_;
     uchar b_;
 
-    Color effect_color{r_,g_,b_};
+    Color effect_color{r_, g_, b_};
 
     void operator()(cv::Mat &frame) override {
 

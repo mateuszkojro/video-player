@@ -290,10 +290,10 @@ void SettingsWindow::open_camera() {
 }
 
 void SettingsWindow::save_file() {
-    auto* video_convet = new VideoConvert();
-    auto path = QFileDialog::getSaveFileName(this,"Create new file").toStdString();
+    auto *video_convet = new VideoConvert();
+    auto path = QFileDialog::getSaveFileName(this, "Create new file").toStdString();
     video_convet->setFilePath(path);
-    auto in = QFileDialog::getOpenFileName(this,"Chose file to be converted").toStdString();
+    auto in = QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
     video_convet->change_file(in);
     int frame_no = 100;
     QProgressDialog progress("Rendering video", "Stop render", 0, frame_no, this);
@@ -306,7 +306,6 @@ void SettingsWindow::save_file() {
         if (progress.wasCanceled())
             break;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        //... copy one file
     }
     progress.setValue(frame_no);
 }
@@ -337,20 +336,16 @@ void SettingsWindow::open_file_lua_handler() {
     file_name->setText(fileName);
 }
 
+
 void SettingsWindow::flip_effect_script() {
 
     if (filename_Lua.empty())
         return;
 
+
     auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
-    try {
-        opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
-    } catch (ScriptHandler::Exception &e) {
-        QMessageBox::warning(
-                nullptr,
-                QString("Script error"),
-                QString(e.what()));
-    }
+
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 
 void SettingsWindow::flip_effect_grey_scale() {

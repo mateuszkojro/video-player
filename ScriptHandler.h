@@ -182,8 +182,18 @@ private:
         return 1;
     }
 
+    static int get_error(lua_State *L) {
+        lua_getglobal(L, "__error");
+        auto error = lua_tostring(L, -1);
+        lua_pushstring(L, error);
+        return 1;
+    }
+
     static std::string error_msg_;
     static lua_State *lua_state_;
+
+public:
+    static void update_error(const std::string &error);
 };
 
 
