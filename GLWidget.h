@@ -55,10 +55,10 @@ public:
                 playback_->change_camera();
                 break;
             case SkipLeft:
-                playback_->skip_10s();
+                playback_->back_10s();
                 break;
             case SkipRight:
-                playback_->back_10s();
+                playback_->skip_10s();
                 break;
             case Pause:
                 playing_ = !playing_;
