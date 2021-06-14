@@ -348,6 +348,10 @@ bool VideoPlayback::back_10s() {
     return true;
 }
 
+const std::array<Effect *, 8> VideoPlayback::getEffects() const {
+    return effects_;
+}
+
 
 static QImage *mat2Image(cv::Mat &mat) {
 
