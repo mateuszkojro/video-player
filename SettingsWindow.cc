@@ -295,6 +295,8 @@ void SettingsWindow::save_file() {
     auto path = QFileDialog::getSaveFileName(this, "Create new file").toStdString();
     video_convet->setDestinationFilePath(path);
 
+    video_convet->setEffects(opengl_widget_->get_effects());
+
     auto in = QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
     video_convet->change_file(in);
 

@@ -42,6 +42,10 @@ public:
     void request_apply_effects(cv::Mat frame);
 #endif
 
+    std::array<Effect *, 8> get_effects() {
+        return playback_->getEffects();
+    }
+
     void request_change_effect(int idx, Effect *effect);
 
     void request_action(Action action) {
@@ -70,7 +74,6 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
     void paint_image(QPainter *painter);
-
 
 
     void set_image(const std::string &);
