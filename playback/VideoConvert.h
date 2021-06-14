@@ -37,9 +37,15 @@ protected:
 
     bool disable_a_thread_;
 
+
 public:
+    /// \brief to close all threads and end all tasks
     void close();
 
+
+    void setEffects(const std::array<Effect *, 8> &effects);
+
+    int getProgress() const;
 
     void setSourceFilePath(const std::string &sourceFilePath) {
         source_file_path_ = sourceFilePath;

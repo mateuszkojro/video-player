@@ -48,6 +48,7 @@ void VideoConvert::th_main_loop() {
 }
 
 bool VideoConvert::change_file(const std::string &path) {
+
     close();
     if(path != "none")
         source_file_path_ = path;
@@ -55,7 +56,7 @@ bool VideoConvert::change_file(const std::string &path) {
 
     video_capture_ = new cv::VideoCapture(path);
 
-    video_capture_->set(cv::CAP_PROP_FPS, 30);
+  //  video_capture_->set(cv::CAP_PROP_FPS, 30);
 
     assert(video_capture_->isOpened());
 
@@ -80,7 +81,9 @@ bool VideoConvert::change_file(const std::string &path) {
 }
 
 bool VideoConvert::change_camera() {
+
     close();
+
     video_capture_ = new cv::VideoCapture(0);
 
     video_capture_->set(cv::CAP_PROP_FPS, 30);
@@ -123,4 +126,14 @@ void VideoConvert::close() {
 
     last_error = "Video stream offline";
 
+}
+
+void VideoConvert::setEffects(const std::array<Effect *, 8> &effects) {
+    effects_ = effects;
+}
+
+int VideoConvert::getProgress() const {
+    if(video_capture_ != nullptr)
+        return  video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO )*100;
+    return 0;
 }
