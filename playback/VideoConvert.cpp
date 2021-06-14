@@ -2,6 +2,7 @@
 // Created by studio25 on 08.06.2021.
 //
 
+#include <iostream>
 #include "VideoConvert.h"
 
 std::string VideoConvert::last_error;
@@ -41,7 +42,7 @@ bool VideoConvert::complete_frame() {
 void VideoConvert::th_main_loop() {
     while (2 > 1) {
 
-        if (!complete_frame() || !disable_a_thread_) break;
+        if (!complete_frame() || disable_a_thread_) break;
 
     }
 }
@@ -68,6 +69,7 @@ bool VideoConvert::change_file(const std::string &path) {
 
     int codec = cv::VideoWriter::fourcc('M', 'J', 'P', 'G');
 
+    std::cout<<destination_file_path_<<" <destin\n";
     oVideoWriter = new cv::VideoWriter(destination_file_path_, codec, video_capture_->get(cv::CAP_PROP_FPS), cv::Size(frame_width, frame_height), true);
 
     last_error = "Video stream online";
@@ -83,9 +85,10 @@ bool VideoConvert::change_camera() {
 
     video_capture_->set(cv::CAP_PROP_FPS, 30);
 
-    assert(video_capture_->isOpened());
+
 
     if (!video_capture_->isOpened()) {
+        assert(false);
         last_error = "The video file is malformed";
         return false;
     }
@@ -116,6 +119,7 @@ void VideoConvert::close() {
     disable_a_thread_ = false;
 
     delete video_capture_;
+    delete oVideoWriter;
 
     last_error = "Video stream offline";
 

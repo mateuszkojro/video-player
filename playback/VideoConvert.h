@@ -53,6 +53,7 @@ public:
 
     VideoConvert() {
         video_capture_ = nullptr;
+        oVideoWriter = nullptr;
         disable_a_thread_ = true;
         analyze_thread = nullptr;
         source_file_path_ = "";
