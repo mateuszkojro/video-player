@@ -16,7 +16,6 @@ ScriptHandler::Result ScriptHandler::run_script(const std::string &path) {
         return Result::Ok;
     }
     error_msg_ = lua_tostring(lua_state_, -1);
-
     return Result::Error;
 }
 

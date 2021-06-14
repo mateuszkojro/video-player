@@ -30,11 +30,12 @@ public:
     void operator()(cv::Mat &frame) override {
         ScriptHandler::update_current_frame(frame);
         if (ScriptHandler::run_script(path_) == ScriptHandler::Error) {
-            QMessageBox::warning(
-                    nullptr,
-                    QString("Script error"),
-                    QString(ScriptHandler::get_last_error().c_str()));
-            std::cout << ScriptHandler::get_last_error() << std::endl;
+//            QMessageBox::warning(
+//                    nullptr,
+//                    QString("Script error"),
+//                    QString(ScriptHandler::get_last_error().c_str()));
+
+            throw ScriptHandler::Exception(ScriptHandler::get_last_error());
         }
         frame = ScriptHandler::get_current_frame();
     }

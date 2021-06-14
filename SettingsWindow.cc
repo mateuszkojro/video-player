@@ -1,6 +1,8 @@
 #include "SettingsWindow.h"
 #include "EffectsImplementations.h"
 
+#include <exception>
+
 SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
     parent_ = parent;
@@ -98,8 +100,8 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     //text_noise->show();
     //text_sobel->show();
     //text_gauss->show();
-   // text_r->show();
-   // text_g->show();
+    // text_r->show();
+    // text_g->show();
     //text_b->show();
     //text_blur->show();
 
@@ -136,13 +138,13 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
 
 
     layout_vertical_1 = new QGroupBox(tr("First"));
-    QBoxLayout * layout_1 = new QVBoxLayout;
+    QBoxLayout *layout_1 = new QVBoxLayout;
     layout_1->addWidget(effect_grey_scale_);
     layout_1->addWidget(effect_hsv_);
     layout_vertical_1->setLayout(layout_1);
 
     layout_vertical_2 = new QGroupBox(tr("Second"));
-    QBoxLayout * layout_2 = new QVBoxLayout;
+    QBoxLayout *layout_2 = new QVBoxLayout;
     layout_2->addWidget(effect_blur_r_);
     layout_2->addWidget(blur_level_slider_);
     layout_2->addWidget(text_blur);
@@ -155,7 +157,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_vertical_2->setLayout(layout_2);
 
     layout_vertical_3 = new QGroupBox(tr("Third"));
-    QBoxLayout * layout_3 = new QVBoxLayout;
+    QBoxLayout *layout_3 = new QVBoxLayout;
     layout_3->addWidget(effect_sobel_);
     layout_3->addWidget(sobel_level_slider_);
     layout_3->addWidget(text_sobel);
@@ -225,7 +227,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     //layout_->addWidget(effect_neon_);
     //layout_->addWidget(neon_r_level_slider_);
     //layout_->addWidget(text_r);
-   // layout_->addWidget(neon_g_level_slider_);
+    // layout_->addWidget(neon_g_level_slider_);
     //layout_->addWidget(text_g);
     //layout_->addWidget(neon_b_level_slider_);
     //layout_->addWidget(text_b);
@@ -281,11 +283,11 @@ SettingsWindow::~SettingsWindow() {
     delete layout_;
 }
 
-void SettingsWindow::open_camera(){
-
+void SettingsWindow::open_camera() {
+    opengl_widget_->request_action(GLWidget::UseCamera);
 }
 
-void SettingsWindow::save_file(){
+void SettingsWindow::save_file() {
 
 }
 
@@ -321,7 +323,14 @@ void SettingsWindow::flip_effect_script() {
         return;
 
     auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
-    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
+    try {
+        opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
+    } catch (ScriptHandler::Exception &e) {
+        QMessageBox::warning(
+                nullptr,
+                QString("Script error"),
+                QString(e.what()));
+    }
 }
 
 void SettingsWindow::flip_effect_grey_scale() {

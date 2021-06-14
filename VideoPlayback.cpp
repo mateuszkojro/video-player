@@ -380,11 +380,11 @@ static QImage *mat2Image(cv::Mat &mat) {
 
     auto end = std::chrono::high_resolution_clock::now();
 
-    std::cout << "mat2im: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - now).count() << "(ms)"
-              << std::endl;
+//    std::cout << "mat2im: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - now).count() << "(ms)"
+//              << std::endl;
 
     auto cleanup_func = [](void *ptr) {
-        std::cout << "usuwam image" << std::endl;
+//        std::cout << "usuwam image" << std::endl;
         delete (uchar *) ptr;
     };
 

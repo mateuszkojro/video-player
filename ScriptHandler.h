@@ -21,6 +21,17 @@ public:
         Error,
     };
 
+    class Exception : public std::exception {
+        std::string err_;
+    public:
+        explicit Exception(std::string error) : err_(std::move(error)) {}
+
+        const char *what() const noexcept {
+            return err_.c_str();
+        }
+
+    };
+
     explicit ScriptHandler() = default;
 
     static Result run_script(const std::string &path);
@@ -165,7 +176,7 @@ private:
         auto y = luaL_checkinteger(L, 2);
         auto x = luaL_checkinteger(L, 1);
 
-        auto get_pix = mat->at<uint8_t >(x,y);
+        auto get_pix = mat->at<uint8_t>(x, y);
 
         lua_pushinteger(L, get_pix);
         return 1;
