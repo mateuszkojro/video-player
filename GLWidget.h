@@ -32,6 +32,8 @@ public:
         UseCamera,
     };
 
+    std::string filename_;
+
     GLWidget(QWidget *parent);
 
     void animate();
@@ -44,6 +46,10 @@ public:
 
     std::array<Effect *, 8> get_effects() {
         return playback_->getEffects();
+    }
+
+    VideoPlayback* get_playback(){
+        return playback_;
     }
 
     void request_change_effect(int idx, Effect *effect);

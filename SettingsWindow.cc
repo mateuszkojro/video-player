@@ -293,11 +293,14 @@ void SettingsWindow::save_file() {
     auto *video_convet = new VideoConvert();
 
     auto path = QFileDialog::getSaveFileName(this, "Create new file").toStdString();
+    auto in = opengl_widget_->filename_; // QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
+
+    if (path.empty() || in.empty()) {
+        return;;
+    }
+
     video_convet->setDestinationFilePath(path);
-
     video_convet->setEffects(opengl_widget_->get_effects());
-
-    auto in = QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
     video_convet->change_file(in);
 
     int max_val = 100;
@@ -306,8 +309,9 @@ void SettingsWindow::save_file() {
     progress.open();
 
     while (video_convet->getProgress() < max_val) {
-        if (video_convet->getProgress() == -1) {
-            QMessageBox::warning(this, "Saving did not succeed", "Saving did not succeed");
+        if (video_convet->getProgress() < 0) {
+            video_convet->close();
+            QMessageBox::warning(this, "Saving did not succeed", VideoConvert::last_error.c_str());
         }
         std::cout << video_convet->getProgress() << std::endl;
         progress.setValue(video_convet->getProgress());
@@ -318,10 +322,6 @@ void SettingsWindow::save_file() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     progress.setValue(max_val);
-
-    /// if( file is input )
-    /// else
-    ///video_convet->change_camera();
 }
 
 void SettingsWindow::createActions() {
@@ -355,7 +355,6 @@ void SettingsWindow::flip_effect_script() {
 
     if (filename_Lua.empty())
         return;
-
 
     auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
 

@@ -53,12 +53,7 @@ bool VideoConvert::change_file(const std::string &path) {
     if(path != "none")
         source_file_path_ = path;
 
-
     video_capture_ = new cv::VideoCapture(path);
-
-  //  video_capture_->set(cv::CAP_PROP_FPS, 30);
-
-    assert(video_capture_->isOpened());
 
     if (!video_capture_->isOpened()) {
         last_error = "The video file is malformed";
