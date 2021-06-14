@@ -76,6 +76,7 @@ protected:
 
 
 public:
+    playback_source getVideoSource() const;
 
     const std::array<Effect *, 8> getEffects() const;
 

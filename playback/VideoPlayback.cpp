@@ -16,8 +16,7 @@ void VideoPlayback::change_camera() {
 
     video_capture_ = new cv::VideoCapture(0);
 
-
-    assert(video_capture_->isOpened());
+    video_source_ = camera;
 
     if (!video_capture_->isOpened()) {
         last_error = "The camera capture is malformed";
@@ -41,9 +40,8 @@ bool VideoPlayback::change_file(const std::string &path) {
     video_capture_ = new cv::VideoCapture(path);
 
     video_capture_->set(cv::CAP_PROP_FPS, 30);
-    /// look into it:
-    //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
-    assert(video_capture_->isOpened());
+
+    video_source_ = file;
 
     if (!video_capture_->isOpened()) {
         last_error = "The video file is malformed";
@@ -92,10 +90,20 @@ void VideoPlayback::th_frame_reader() {
             //     std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
-            if (raw_frames_.size() > 10) {
+            if (video_source_ != camera) {
+                if (raw_frames_.size() > 10) {
 
-                std::this_thread::sleep_for(std::chrono::milliseconds(500));
-                continue;
+                    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                    continue;
+                }
+            } else {
+
+                if (raw_frames_.size() > 2) {
+
+                    std::this_thread::sleep_for(std::chrono::milliseconds(16));
+                    continue;
+                }
+
             }
         }
 
@@ -169,6 +177,8 @@ void VideoPlayback::th_effect_adder() {
                 //  std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
                 /// if there are no incoming frames we wait
+
+
                 if (raw_frames_.empty() || analyzed_frames_.size() > 10) wait_for_frames = true;
                 else wait_for_frames = false;
             }
@@ -351,6 +361,10 @@ bool VideoPlayback::back_10s() {
 
 const std::array<Effect *, 8> VideoPlayback::getEffects() const {
     return effects_;
+}
+
+VideoPlayback::playback_source VideoPlayback::getVideoSource() const {
+    return video_source_;
 }
 
 
