@@ -29,7 +29,7 @@ enum class EffectNr {
 #include <QLabel>
 
 
-#include "Switch.h"
+#include "custom_buttons/Switch.h"
 #include "GLWidget.h"
 
 class SettingsWindow : public QDialog {

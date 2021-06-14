@@ -11,7 +11,7 @@
 #include <QPixmap>
 #include <queue>
 #include <thread>
-#include "Effect.h"
+#include "../Effect.h"
 
 
 
@@ -101,7 +101,6 @@ public:
     bool change_file(const std::string &path);
 
     void change_camera();
-
 
     static std::string get_last_error();
 
