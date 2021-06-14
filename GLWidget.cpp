@@ -222,6 +222,7 @@ void GLWidget::request_change_file(const std::string &path, Mode mode) {
 #if NEW_PIPELINE
     current_mode_ = mode;
     if (path != "") {
+        filename_ = path;
         switch (mode) {
             case Mode::Image:
                 set_image(path);
