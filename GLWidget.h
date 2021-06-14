@@ -12,7 +12,7 @@
 
 #if NEW_PIPELINE
 
-#include "VideoPlayback.h"
+#include "playback/VideoPlayback.h"
 
 #endif
 
