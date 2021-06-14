@@ -126,7 +126,7 @@ GLWidget::GLWidget(QWidget *parent)
 
     effects_.fill(nullptr);
 #endif
-
+    playing_ = true;
 
     setFixedSize(parent->width(), parent->height());
 
@@ -168,6 +168,8 @@ void GLWidget::paintEvent(QPaintEvent *event) {
 
 #if NEW_PIPELINE
     if (current_mode_ == Mode::Video) {
+        if (!playing_)
+            return;
         QPixmap *frame = playback_->next_frame();
         if (frame) {
             *frame = frame->scaled(width(), height());

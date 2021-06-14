@@ -46,6 +46,20 @@ private:
 
     QLayout *layout_;
 
+    QGroupBox *layout_horizontal_up;
+
+    QGroupBox *layout_vertical_1;
+
+    QGroupBox *layout_vertical_2;
+
+    QGroupBox *layout_vertical_3;
+
+    QGroupBox *layout_horizontal_cent;
+
+    QGroupBox *layout_horizontal_down;
+
+    QGroupBox *layout_horizontal_settings;
+
     void flip_effect_script();
 
     void flip_effect_grey_scale();
@@ -83,6 +97,10 @@ private:
     void createMenus();
 
     void createActions();
+
+    void open_camera();
+
+    void save_file();
 
     void open_file_lua_handler();
 
@@ -132,7 +150,22 @@ private:
 
     QPushButton* change_script_button_;
 
+    QPushButton* camera_;
+
+    QPushButton* save_;
+
     std::string filename_Lua;
+
+
+    void flip_pause_();
+
+    void flip_skip_10_l();
+
+    void flip_skip_10_r();
+
+    QPushButton *pause_;
+    QPushButton *skip_10_l_;
+    QPushButton *skip_10_r_;
 
 };
 
