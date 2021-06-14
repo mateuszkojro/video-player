@@ -20,12 +20,13 @@ add_executable(${PROJECT_NAME}
         VideoPlayer.cpp VideoPlayer.h
         glwidget.h glwidget.cpp
         SettingsWindow.cc SettingsWindow.h
-        Switch.h Switch.cpp
-        Style.h
+        custom_buttons/Switch.h custom_buttons/Switch.cpp
+        custom_buttons/Style.h
         Effect.h
         EffectsImplementations.h
-        VideoPlayback.cpp VideoPlayback.h
-        VideoConvert.h VideoConvert.cpp
+        playback/VideoPlayback.cpp playback/VideoPlayback.h
+        playback/VideoConvert.h playback/VideoConvert.cpp
+        playback/ImageLoad.h playback/ImageLoad.cpp
         ScriptHandler.cpp ScriptHandler.h
         )
 
