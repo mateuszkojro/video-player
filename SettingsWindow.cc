@@ -290,24 +290,36 @@ void SettingsWindow::open_camera() {
 }
 
 void SettingsWindow::save_file() {
-    auto* video_convet = new VideoConvert();
+    auto *video_convet = new VideoConvert();
 
-    auto path = QFileDialog::getSaveFileName(this,"Create new file").toStdString();
+    auto path = QFileDialog::getSaveFileName(this, "Create new file").toStdString();
     video_convet->setDestinationFilePath(path);
 
+    auto in = QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
+    video_convet->change_file(in);
 
+    int max_val = 100;
+    QProgressDialog progress("Rendering video", "Stop render", 0, max_val, this);
+    progress.setWindowModality(Qt::WindowModal);
+    progress.open();
+
+    while (video_convet->getProgress() < max_val) {
+        if (video_convet->getProgress() == -1) {
+            QMessageBox::warning(this, "Saving did not succeed", "Saving did not succeed");
+        }
+        std::cout << video_convet->getProgress() << std::endl;
+        progress.setValue(video_convet->getProgress());
+        if (progress.wasCanceled()) {
+            progress.close();
+            break;;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    progress.setValue(max_val);
 
     /// if( file is input )
-    auto in = QFileDialog::getOpenFileName(this,"Chose file to be converted").toStdString();
-    video_convet->change_file(in);
     /// else
     ///video_convet->change_camera();
-
-   while(video_convet->getProgress() < 100) {
-       progress.setValue(video_convet->getProgress());
-   }
-
-    std::cout << "it worked?" << std::endl;
 }
 
 void SettingsWindow::createActions() {
