@@ -17,11 +17,13 @@
 
 
 class VideoPlayback {
-protected:
+public:
     enum playback_source{
         file,
         camera
     };
+
+protected:
 
     std::mutex video_capture_mutex_;
     cv::VideoCapture *video_capture_;

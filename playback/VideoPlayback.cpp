@@ -321,6 +321,7 @@ bool VideoPlayback::change_position(int index) {
 
     if (index < 0)
         index = 0;
+
     video_capture_->set(cv::CAP_PROP_POS_FRAMES, index);
     return true;
 }

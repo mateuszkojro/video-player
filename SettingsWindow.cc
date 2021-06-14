@@ -295,26 +295,42 @@ void SettingsWindow::save_file() {
     auto path = QFileDialog::getSaveFileName(this, "Create new file").toStdString();
     auto in = opengl_widget_->filename_; // QFileDialog::getOpenFileName(this, "Chose file to be converted").toStdString();
 
-    if (path.empty() || in.empty()) {
+    if (path.empty()) {
         return;;
     }
 
     video_convet->setDestinationFilePath(path);
     video_convet->setEffects(opengl_widget_->get_effects());
-    video_convet->change_file(in);
 
     int max_val = 100;
     QProgressDialog progress("Rendering video", "Stop render", 0, max_val, this);
+
+    auto mode = opengl_widget_->get_playback()->getVideoSource();
+    if (mode == VideoPlayback::file) {
+        if (in.empty())
+            return;
+        video_convet->change_file(in);
+    } else {
+        opengl_widget_->get_playback()->close();
+        video_convet->change_camera();
+    }
+
     progress.setWindowModality(Qt::WindowModal);
     progress.open();
 
-    while (video_convet->getProgress() < max_val) {
-        if (video_convet->getProgress() < 0) {
+    int position = 1;
+    while (position < max_val) {
+        if (mode == VideoPlayback::file) {
+            position = video_convet->getProgress();
+        } else {
+            position = position < max_val - 1 ? position + 5 : 1;
+        }
+        if (position < 0) {
             video_convet->close();
             QMessageBox::warning(this, "Saving did not succeed", VideoConvert::last_error.c_str());
         }
-        std::cout << video_convet->getProgress() << std::endl;
-        progress.setValue(video_convet->getProgress());
+        std::cout << position << std::endl;
+        progress.setValue(position);
         if (progress.wasCanceled()) {
             progress.close();
             break;;
