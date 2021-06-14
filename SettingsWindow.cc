@@ -303,9 +303,9 @@ void SettingsWindow::save_file() {
     /// else
     ///video_convet->change_camera();
 
-    for (int i = 0; i < frame_no; i++) {
-        progress.setValue(i);
-
+   while(video_convet->getProgress() < 100) {
+       progress.setValue(video_convet->getProgress());
+   }
 
     std::cout << "it worked?" << std::endl;
 }
