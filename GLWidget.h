@@ -12,7 +12,7 @@
 
 #if NEW_PIPELINE
 
-#include "VideoPlayback.h"
+#include "playback/VideoPlayback.h"
 
 #endif
 
@@ -22,7 +22,6 @@ class GLWidget : public QOpenGLWidget {
 public:
     enum Mode {
         Video,
-
         Image
     };
 

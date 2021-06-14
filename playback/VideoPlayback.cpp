@@ -38,9 +38,9 @@ void VideoPlayback::change_camera() {
 bool VideoPlayback::change_file(const std::string &path) {
     close();
 
-      video_capture_ = new cv::VideoCapture(path);
+    video_capture_ = new cv::VideoCapture(path);
 
-    video_capture_->set(cv::CAP_PROP_FPS,30);
+    video_capture_->set(cv::CAP_PROP_FPS, 30);
     /// look into it:
     //video_capture_ = new cv::VideoCapture(path,cv::VIDEO_ACCELERATION_ANY);
     assert(video_capture_->isOpened());
@@ -92,28 +92,30 @@ void VideoPlayback::th_frame_reader() {
             //     std::lock_guard<std::mutex> lock(raw_frames_mutex_);
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
-            if (raw_frames_.size() > 50) {
-
+            if (raw_frames_.size() > 10) {
+                std::cout << "overflow";
                 std::this_thread::sleep_for(std::chrono::milliseconds(500));
                 continue;
             }
         }
 
         /// if  read next frame returns false, the file ended
+
         if (!read_next_frame()) return;
     }
 
 }
 
 void VideoPlayback::add_effect() {
+
     /// we .clone() frames anyway so we dont need to use move
     /// if i'm not mistaken ofc
-    cv::Mat* temp_frame ;
+    cv::Mat *temp_frame;
 
     /// check if raw_frames_.front() is nullptr
-    if(!raw_frames_.front()){
+    if (!raw_frames_.front()) {
         analyzed_frames_.push(nullptr);
-        return ;
+        return;
     }
 
 
@@ -149,6 +151,7 @@ void VideoPlayback::add_effect() {
             return;
         }
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
+
         delete temp_image;
 //        delete temp_frame;
     }
@@ -166,7 +169,7 @@ void VideoPlayback::th_effect_adder() {
                 //  std::lock_guard<std::mutex> lock(raw_frames_mutex_);
 
                 /// if there are no incoming frames we wait
-                if (raw_frames_.empty()) wait_for_frames = true;
+                if (raw_frames_.empty() || analyzed_frames_.size() > 10) wait_for_frames = true;
                 else wait_for_frames = false;
             }
 
@@ -192,6 +195,7 @@ QPixmap *VideoPlayback::next_frame() {
         {
             //   std::lock_guard<std::mutex> lock(analyzed_frames_mutex_);
             /// check whether we should wait for frames
+
             if (analyzed_frames_.empty()) wait_for_frames = true;
             else wait_for_frames = false;
         }
@@ -201,11 +205,6 @@ QPixmap *VideoPlayback::next_frame() {
             std::this_thread::sleep_for(std::chrono::milliseconds(32)); /// 16 milliseconds == 1/60 s
 
     } while (wait_for_frames);
-
-    /// we need to make copy here, well we could simply pass the pointer
-    /// but in that case we would need rewrite some code,
-    /// so for now it's a copy and fixme next_frame should return QPixmap*
-    /// for now i leave it as is
 
     auto temp = analyzed_frames_.front();
     /// delete frame from
@@ -307,8 +306,8 @@ void VideoPlayback::close() {
 }
 
 bool VideoPlayback::change_position(int index) {
-    if(video_source_ == camera) return false;
-    last_error  = "input from camera does not support this operation";
+    if (video_source_ == camera) return false;
+    last_error = "input from camera does not support this operation";
 
     if (index < 0)
         index = 0;
@@ -317,8 +316,8 @@ bool VideoPlayback::change_position(int index) {
 }
 
 bool VideoPlayback::skip_10s() {
-    if(video_source_ == camera) return false;
-    last_error  = "input from camera does not support this operation";
+    if (video_source_ == camera) return false;
+    last_error = "input from camera does not support this operation";
 
     /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
@@ -331,12 +330,12 @@ bool VideoPlayback::skip_10s() {
     if (video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO) >= 1)
         video_capture_->set(cv::CAP_PROP_POS_AVI_RATIO, 1);
 
-return true;
+    return true;
 }
 
 bool VideoPlayback::back_10s() {
-    if(video_source_ == camera) return false;
-    last_error  = "input from camera does not support this operation";
+    if (video_source_ == camera) return false;
+    last_error = "input from camera does not support this operation";
 /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
 
