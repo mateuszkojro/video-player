@@ -134,6 +134,6 @@ void VideoConvert::setEffects(const std::array<Effect *, 8> &effects) {
 
 int VideoConvert::getProgress() const {
     if(video_capture_ != nullptr)
-        return (video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO )*100.0);
+        return ( (video_capture_->get(cv::CAP_PROP_POS_FRAMES  ) / (double) video_capture_->get(cv::CAP_PROP_FRAME_COUNT ) )*100.0);
     return -1;
 }

@@ -316,7 +316,9 @@ bool VideoPlayback::change_position(int index) {
 }
 
 bool VideoPlayback::skip_10s() {
+
     if (video_source_ == camera) return false;
+
     last_error = "input from camera does not support this operation";
 
     /// current_position is in milliseconds
@@ -334,7 +336,9 @@ bool VideoPlayback::skip_10s() {
 }
 
 bool VideoPlayback::back_10s() {
+
     if (video_source_ == camera) return false;
+
     last_error = "input from camera does not support this operation";
 /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
