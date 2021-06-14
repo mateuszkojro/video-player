@@ -303,6 +303,8 @@ void SettingsWindow::save_file() {
     /// else
     ///video_convet->change_camera();
 
+    for (int i = 0; i < frame_no; i++) {
+        progress.setValue(i);
 
 
     std::cout << "it worked?" << std::endl;
@@ -334,20 +336,16 @@ void SettingsWindow::open_file_lua_handler() {
     file_name->setText(fileName);
 }
 
+
 void SettingsWindow::flip_effect_script() {
 
     if (filename_Lua.empty())
         return;
 
+
     auto setting = effect_script_->isChecked() ? new LuaEffect(filename_Lua) : nullptr;
-    try {
-        opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
-    } catch (ScriptHandler::Exception &e) {
-        QMessageBox::warning(
-                nullptr,
-                QString("Script error"),
-                QString(e.what()));
-    }
+
+    opengl_widget_->request_change_effect(static_cast<int>(EffectNr::effect_script_), setting);
 }
 
 void SettingsWindow::flip_effect_grey_scale() {

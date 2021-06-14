@@ -48,6 +48,7 @@ private:
 
     QGroupBox *layout_horizontal_up;
 
+
     QGroupBox *layout_vertical_1;
 
     QGroupBox *layout_vertical_2;
@@ -148,11 +149,11 @@ private:
     QWidget *bottom_filler_;
     QFrame *line;
 
-    QPushButton* change_script_button_;
+    QPushButton *change_script_button_;
 
-    QPushButton* camera_;
+    QPushButton *camera_;
 
-    QPushButton* save_;
+    QPushButton *save_;
 
     std::string filename_Lua;
 

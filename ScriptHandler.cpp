@@ -11,6 +11,7 @@ const char *ScriptHandler::CURRENT_FRAME = "__current_frame";
 std::string ScriptHandler::error_msg_;
 
 ScriptHandler::Result ScriptHandler::run_script(const std::string &path) {
+//    add_custom_libs();
     if (luaL_dofile(lua_state_, path.c_str()) == LUA_OK) {
         lua_pop(lua_state_, lua_gettop(lua_state_));
         return Result::Ok;
@@ -29,7 +30,8 @@ void ScriptHandler::add_custom_libs() {
             {"setPixelBGR",       setPixelBGR},
             {"getSizeX",          getSizeX},
             {"getSizeY",          getSizeY},
-            {"getPixel",          getPixel}
+            {"getPixel",          getPixel},
+            {"getError",          get_error}
     };
 
     lua_newtable(lua_state_);
@@ -50,6 +52,12 @@ void ScriptHandler::update_current_frame(cv::Mat &frame) {
     auto &L = ScriptHandler::lua_state_;
     lua_pushlightuserdata(L, reinterpret_cast<void *>(&frame));
     lua_setglobal(L, CURRENT_FRAME);
+}
+
+void ScriptHandler::update_error(const std::string& error) {
+    auto &L = ScriptHandler::lua_state_;
+    lua_pushstring(L, error.c_str());
+    lua_setglobal(L, "__error");
 }
 
 cv::Mat ScriptHandler::get_current_frame() {
