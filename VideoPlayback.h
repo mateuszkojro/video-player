@@ -17,14 +17,12 @@
 
 
 class VideoPlayback {
+protected:
     enum playback_source{
         file,
         camera
     };
-    enum playback_destination{
-        window,
-        drive
-    };
+
     std::mutex video_capture_mutex_;
     cv::VideoCapture *video_capture_;
 
@@ -34,9 +32,11 @@ class VideoPlayback {
     std::mutex raw_frames_mutex_;
     std::queue<cv::Mat *> raw_frames_;
 
-
+private:
     std::mutex analyzed_frames_mutex_;
     std::queue<QPixmap *> analyzed_frames_;
+
+protected:
 
     unsigned current_completed_frame_ = 0;
 
@@ -70,7 +70,7 @@ class VideoPlayback {
 
     bool read_next_frame();
 
-    void add_effect();
+    virtual void add_effect();
 
     void buck_up_reading(int number_of_frames);
 

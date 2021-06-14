@@ -25,6 +25,7 @@ add_executable(${PROJECT_NAME}
         Effect.h
         EffectsImplementations.h
         VideoPlayback.cpp VideoPlayback.h
+        VideoConvert.h VideoConvert.cpp
         ScriptHandler.cpp ScriptHandler.h
         )
 
