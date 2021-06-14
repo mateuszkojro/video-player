@@ -22,6 +22,7 @@ class GLWidget : public QOpenGLWidget {
 public:
     enum Mode {
         Video,
+
         Image
     };
 

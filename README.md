@@ -23,9 +23,12 @@ Cmake for Lua sourced from
 
 - [ ] pause / resume
 - [ ] skip 10s next / prev
+- [ ] save to file
+- [ ] 
 
 ## UI
 
 - [ ] pause, resume, skip UI
 - [ ] Additional settings for effects
+- [ ] unify UI so that input can be redirected at any time 
 

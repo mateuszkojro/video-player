@@ -11,6 +11,9 @@
 
 #define cyan500 QColor("#00bcd4")
 #define gray50 QColor("#fafafa")
+// because blue is hunted
+#define bluek QColor("#0c89eb")         // counter of people who failed to change that macro to "blue" : 2
+                                        // go ahead If u'r brave enough
 #define black QColor("#000000")
 #define gray400 QColor("#bdbdbd")
 #define orange QColor("#ff860d")
@@ -36,9 +39,9 @@ namespace Style {
                 height{ 36 },
                 font{ QFont("Helvetica", 13) },
                 indicatorMargin{ QMargins(8, 8, 8, 8) },
-                thumbOnBrush{ orange },
+                thumbOnBrush{ bluek },
                 thumbOnOpacity{ 1 },
-                trackOnBrush{ orange },
+                trackOnBrush{ bluek },
                 trackOnOpacity{ 0.5 },
                 thumbOffBrush{ gray50 },
                 thumbOffOpacity{ 1 },

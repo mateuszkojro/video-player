@@ -1,4 +1,4 @@
-#include "switch.h"
+#include "Switch.h"
 
 Animator::Animator(QObject *target, QObject *parent) : QVariantAnimation(parent) {
     setTargetObject(target);
