@@ -320,18 +320,15 @@ bool VideoPlayback::skip_10s() {
     if (video_source_ == camera) return false;
 
     last_error = "input from camera does not support this operation";
-
-    /// current_position is in milliseconds
+/// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
-    video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position + 10 * 1000);
 
+    current_position += 10 * 100;
 
-    /// if we went past the file
-    /// snap back to the end
-    /// but this is a guessing game
-    if (video_capture_->get(cv::CAP_PROP_POS_AVI_RATIO) >= 1)
-        video_capture_->set(cv::CAP_PROP_POS_AVI_RATIO, 1);
+    if (current_position * video_capture_->get(cv::CAP_PROP_FPS) >= video_capture_->get(cv::CAP_PROP_FRAME_COUNT))
+        return true;
 
+    video_capture_->set(cv::CAP_PROP_POS_MSEC, current_position);
     return true;
 }
 
@@ -343,7 +340,7 @@ bool VideoPlayback::back_10s() {
 /// current_position is in milliseconds
     double current_position = video_capture_->get(cv::CAP_PROP_POS_MSEC);
 
-    current_position -= 10 * 1000;
+    current_position -= 10 * 100;
 
     if (current_position < 0)
         current_position = 0;
