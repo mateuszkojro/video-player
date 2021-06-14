@@ -207,6 +207,7 @@ void VideoPlayer::close_handler() {
             QMessageBox::Yes |
             QMessageBox::Cancel,
             QMessageBox::Cancel)) {
+
         case QMessageBox::Yes: {
             /// Print to console
             qDebug("yes");
@@ -253,6 +254,7 @@ void VideoPlayer::open_script_handler() {
 
 void VideoPlayer::closeEvent(QCloseEvent *event) {
     VideoPlayer::close_handler();
+    event->ignore();
 }
 
 void VideoPlayer::resizeEvent(QResizeEvent *event) {
