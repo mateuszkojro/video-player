@@ -291,10 +291,20 @@ void SettingsWindow::open_camera() {
 
 void SettingsWindow::save_file() {
     auto* video_convet = new VideoConvert();
+
     auto path = QFileDialog::getSaveFileName(this,"Create new file").toStdString();
-    video_convet->setFilePath(path);
+    video_convet->setDestinationFilePath(path);
+
+
+
+    /// if( file is input )
     auto in = QFileDialog::getOpenFileName(this,"Chose file to be converted").toStdString();
     video_convet->change_file(in);
+    /// else
+    ///video_convet->change_camera();
+
+
+
     std::cout << "it worked?" << std::endl;
 }
 
