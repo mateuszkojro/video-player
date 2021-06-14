@@ -6,6 +6,7 @@
 #include <exception>
 #include <stdexcept>
 #include <QMessageBox>
+#include <iostream>
 
 #define EMPTY_IMAGE "empty.png"
 
@@ -136,7 +137,8 @@ GLWidget::GLWidget(QWidget *parent)
 }
 
 void GLWidget::animate() {
-    elapsed_ = (elapsed_ + qobject_cast<QTimer *>(sender())->interval()) % 1000;
+//    elapsed_ = (elapsed_ + qobject_cast<QTimer *>(sender())->interval()) ;
+
     update();
 }
 
@@ -167,6 +169,12 @@ void GLWidget::paintEvent(QPaintEvent *event) {
     painter.setRenderHint(QPainter::LosslessImageRendering);
 
 #if NEW_PIPELINE
+
+    static auto time = std::chrono::high_resolution_clock::now();
+    auto now = std::chrono::high_resolution_clock::now();
+//    std::cout << "elapsed time: " << std::chrono::duration_cast<std::chrono::milliseconds>(time - now).count() << std::endl;
+    time = now;
+
     if (current_mode_ == Mode::Video) {
         if (!playing_)
             return;
