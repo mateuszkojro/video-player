@@ -93,7 +93,7 @@ void VideoPlayback::th_frame_reader() {
             /// if the buffer is filled with next 300 frames that is 10s video 30fps
             /// wait a bit, stop, get some help
             if (raw_frames_.size() > 10) {
-                std::cout << "overflow";
+
                 std::this_thread::sleep_for(std::chrono::milliseconds(500));
                 continue;
             }
