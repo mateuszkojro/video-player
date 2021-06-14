@@ -153,7 +153,7 @@ void VideoPlayback::add_effect() {
         analyzed_frames_.push(new QPixmap(QPixmap::fromImage(*temp_image)));
 
         delete temp_image;
-//        delete temp_frame;
+        delete temp_frame;
     }
 
 }

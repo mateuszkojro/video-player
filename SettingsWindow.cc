@@ -295,7 +295,20 @@ void SettingsWindow::save_file() {
     video_convet->setFilePath(path);
     auto in = QFileDialog::getOpenFileName(this,"Chose file to be converted").toStdString();
     video_convet->change_file(in);
-    std::cout << "it worked?" << std::endl;
+    int frame_no = 100;
+    QProgressDialog progress("Rendering video", "Stop render", 0, frame_no, this);
+    progress.setWindowModality(Qt::WindowModal);
+    progress.open();
+
+    for (int i = 0; i < frame_no; i++) {
+        progress.setValue(i);
+
+        if (progress.wasCanceled())
+            break;
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        //... copy one file
+    }
+    progress.setValue(frame_no);
 }
 
 void SettingsWindow::createActions() {
