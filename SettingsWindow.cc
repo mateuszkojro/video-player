@@ -139,13 +139,13 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_horizontal_up->setLayout(layout);
 
 
-    layout_vertical_1 = new QGroupBox(tr("First"));
+    layout_vertical_1 = new QGroupBox(tr(""));
     QBoxLayout *layout_1 = new QVBoxLayout;
     layout_1->addWidget(effect_grey_scale_);
     layout_1->addWidget(effect_hsv_);
     layout_vertical_1->setLayout(layout_1);
 
-    layout_vertical_2 = new QGroupBox(tr("Second"));
+    layout_vertical_2 = new QGroupBox(tr(""));
     QBoxLayout *layout_2 = new QVBoxLayout;
     layout_2->addWidget(effect_blur_r_);
     layout_2->addWidget(blur_level_slider_);
@@ -158,7 +158,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_2->addWidget(text_noise);
     layout_vertical_2->setLayout(layout_2);
 
-    layout_vertical_3 = new QGroupBox(tr("Third"));
+    layout_vertical_3 = new QGroupBox(tr(""));
     QBoxLayout *layout_3 = new QVBoxLayout;
     layout_3->addWidget(effect_sobel_);
     layout_3->addWidget(sobel_level_slider_);
@@ -173,7 +173,7 @@ SettingsWindow::SettingsWindow(QWidget *parent, GLWidget *opengl_widget) {
     layout_3->addWidget(text_r);
     layout_vertical_3->setLayout(layout_3);
 
-    layout_horizontal_cent = new QGroupBox(tr("Central layout"));
+    layout_horizontal_cent = new QGroupBox(tr("Effects"));
     QHBoxLayout *layout_central = new QHBoxLayout;
     layout_central->addWidget(layout_vertical_1);
     layout_central->addWidget(layout_vertical_2);
