@@ -20,7 +20,7 @@ local function draw_lines()
         cf.setPixelBGR(i + 40, i, 255, 0, 0)
     end
 
--- end
+end
 
 -- CurrentFrame.applyHSV();
 
